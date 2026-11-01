@@ -107,6 +107,23 @@ photographs aggregated for surveillance.
 
 ### 2.3 Shortcomings of current approaches
 
+Eight public implementations were reviewed on 21 October 2026 through the GitHub API and their
+Hugging Face model cards. They are the realistic benchmark: a panel that has seen a coffee-leaf
+project before has seen one of these.
+
+| System | Classes | Form | Offline | The specific failure |
+|---|---|---|---|---|
+| Coffee Recognize [12] | rust, miner | Ionic mobile app | **No** — calls a separate API service | no offline path at all |
+| Manso *et al.* [11] | rust, miner | mobile app | not stated | two classes; no guidance layer |
+| Hitimana *et al.* [21] | 4 + GPS | mobile app | not stated | no abstention; no external evaluation |
+| Brewguard [28] | rust, Cercospora, algal, sooty | Streamlit | **No** | cloud-only; no field protocol |
+| Omdena [13] | all five | Gradio / Streamlit | **No** | cloud-only |
+| *sleepypioneer* [29] | rust vs other | Streamlit + Lambda | **No** | a binary task, not a diagnosis |
+| ConvNeXt coffee [27] | 7 | HF model, 99 MB | yes | 99 MB does not load on a low-end phone |
+| EfficientNet-B2 [14] | 8 | HF model + 8.57 MB TFLite | yes, in principle | **1.9 % external rust recall** — 16 of 847 rust images accepted |
+
+The pattern is consistent, and it is not about accuracy on a benchmark:
+
 | Shortcoming | Consequence |
 |---|---|
 | Cloud/API dependence | The system is unavailable in exactly the low-connectivity areas that need it most |
@@ -115,6 +132,11 @@ photographs aggregated for surveillance.
 | No longitudinal record | Disease progression cannot be tracked; repeated visits are unmeasured |
 | Validation on curated imagery only | Reported accuracy does not reflect field performance |
 | No uncertainty handling | Confident misclassification is presented to the user as a diagnosis |
+
+Every one of these systems is a **classifier**: it accepts an image and reports a label or a
+probability. None states what that answer is worth, none separates a bad photograph from an ambiguous
+leaf, and none learns that it was ever wrong. The offline ones are large or collapse out of
+distribution; the accurate ones need a network.
 
 ### 2.4 The specific gap this project addresses
 
@@ -149,6 +171,36 @@ Additionally, the project satisfies well over five of the ten standard-complexit
 requirements analysis, architecture and design, database/data engineering, model development,
 substantial programming in three languages (Python, Dart, TypeScript/JavaScript), systematic
 testing, quantitative and user evaluation, security design, deployment, and practical research.
+
+### 2.6 What this project adds that the published systems do not
+
+The gap in §2.4 is a gap in capability. This section states what fills it: five features, each with
+the condition under which we will admit it failed. They are numbered ★1–★5 in the requirements
+baseline, and the pass conditions below are what the design review will hold the project to — not
+what the presentation will claim.
+
+| | Feature | What it replaces in the published work | Pass condition |
+|---|---|---|---|
+| **★1** | **Conformal prediction sets.** The app returns a *set* — `{rust}` when it is sure, `{rust, Cercospora}` when it is not — with a stated guarantee that the true class is in the set at least `1 − α` of the time | "rust, 91 %": a number with no defined meaning | empirical coverage ≥ `1 − α` within its binomial confidence interval on a held-out external set, with mean set size reported per dataset |
+| **★2** | **Uncertainty attribution.** When it abstains, it says whether the *photograph* is at fault or the *leaf* is genuinely ambiguous — two different diagnoses with two opposite actions | a single "low confidence" message, or none | ≥ 80 % correct attribution on 30 deliberately degraded and 30 genuinely ambiguous images, two annotators, disagreements recorded |
+| **★3** | **Offline look-alike retrieval.** Five confirmed field photographs of the predicted class, retrieved on the device from a ~300 KB embedding index | Grad-CAM, which shows where the model looked rather than what it matched, and which a farmer cannot falsify | top-5 class-consistent in ≥ 70 % of queries; < 50 ms per query; index ≤ 300 KB |
+| **★4** | **Field-truth flywheel and a local scorecard.** One tap to confirm or correct; the app reports its own accuracy *on that farm*; a signed, anonymised packet carries the correction out | nothing at all — no published system learns whether it was right | the packet round-trips and verifies; no image leaves the device without an explicit user action; the scorecard arithmetic is correct on a scripted 20-record scenario |
+| **★5** | **Colour-constancy normalisation** before inference, so a model trained under one illuminant does not collapse under another | an implicit assumption that the training light is the field light | the measured gain on the cross-dataset evaluation, reported whether positive or negative |
+
+**The claim this supports, in one sentence.** Public projects ship a classifier that reports a
+probability; this project ships an instrument that states what it does not know, shows the farmer
+*why* it does not know, proves the answer against confirmed field cases, and turns the farmer's
+correction into the first Ethiopian coffee-leaf field dataset — without an image leaving the phone
+unless the farmer says so. Every clause in that sentence maps to a numbered feature above with a
+measured pass condition. No system in §2.3 can make it.
+
+**What the project deliberately does not claim.** No severity percentage (it requires lesion
+segmentation and a validated scale, and an unvalidated "34 % infected" is worse than no number); no
+product names or application rates (the app names active-ingredient classes and refers the user to the
+registered label and the extension service); no general-purpose chatbot (the corpus is the boundary,
+and the system refuses outside it); no multi-crop generalisation. Stating the boundary is part of the
+contribution, because the failure mode of this literature is a system that answers everything and is
+right about less than it appears.
 
 ## 3. Motivation
 
@@ -639,6 +691,10 @@ The complete IEEE-formatted reference list is maintained at `docs/literature/ref
 [26] X. Wu, X. Fan, P. Luo, S. D. Choudhury, T. Tjahjadi, and C. Hu, "From laboratory to field: unsupervised domain adaptation for plant disease recognition in the wild," *Plant Phenomics*, vol. 5, Art. no. 0038, 2023, doi: 10.34133/plantphenomics.0038.
 
 [27] ixrbhii, "Coffee disease ConvNeXt — model card," Hugging Face, `ixrbhii/coffee-disease-convnext`.
+
+[28] FTsune, "Kape — coffee leaf disease detection," GitHub, `FTsune/kape`, accessed 21 Oct. 2026. [Online]. Available: https://github.com/FTsune/kape
+
+[29] sleepypioneer, "Coffee leaf disease detection — Streamlit application," GitHub, `sleepypioneer/coffee-leaf-disease-detection`, accessed 21 Oct. 2026. [Online]. Available: https://github.com/sleepypioneer/coffee-leaf-disease-detection
 
 ---
 

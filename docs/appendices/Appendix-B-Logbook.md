@@ -12,8 +12,8 @@
 > departmental Google Sheet (the template the advisor circulated on 19 Oct 2026). Every Friday,
 > each member updates **their own row** for the week in the sheet; on the meeting week, the row
 > goes to the advisor for initials. This markdown file is the group's consolidated copy, and it
-> is what gets archived with the submission package. **One person (Yohannes) pastes the sheet
-> content here each week — but each member writes their own row, never someone else's.**
+> is what gets archived with the submission package. **Nahom compiles it here each Friday
+> (`02-WEEKLY-PLAN.md` §3) — but each member writes their own row, never someone else's.**
 
 **Columns (Appendix B):** Week and date · Member(s) · Objective addressed · Planned activity ·
 Completed activity · Problems and risks · Advisor feedback · Agreed actions and next milestone ·
@@ -38,40 +38,57 @@ Advisor initials.
 
 ## Week 1 — Oct 19–25, 2026
 
+> **Completed retrospectively on 1 November 2026, at the end of W2.** Every line below is traceable to
+> a commit, a file, a dated message or a screenshot. The two gate tests that failed are recorded as
+> failed rather than backdated, because a logbook that is right about everything is not believed about
+> anything.
+
 | Field | Entry |
 |---|---|
 | **Member(s)** | H (Hayredin), B (Bemnet), Y (Yohannes), N (Nahom) |
-| **Objective addressed** | Pre-SO — project setup and proposal preparation (SO1, SO7 planning) |
-| **Planned activity** | H: download JMuBEN/JMuBEN2 and BRACOL; record class counts and licences; begin the duplicate-grouping script. B: install Flutter; scaffold the app; run it on a physical Android device; sketch the four screens. Y: create the GitHub repository with README, branch protection, PR and issue templates; draft the architecture v0.1. N: read the three anchor papers; start the comparison table; contact EIAR/JARC about the knowledge base. **All:** read the Guideline; send the ELD the phone number and group number; create the AI-use log; meet the advisor and obtain the first initials. |
-| **Completed activity** | *(to be completed on Friday 23 Oct)* |
-| **Problems and risks** | The JMuBEN author has not replied to the dataset request (R1). The JMuBEN paper's "respectively" mapping is inverted relative to the Mendeley record titles — corrected in the group's notes to avoid mislabelling (R13). |
-| **Advisor feedback** | *(at the meeting)* |
-| **Agreed actions and next milestone** | *(at the meeting)* |
+| **Objective addressed** | Pre-SO — orientation and inputs (SO1, SO7) |
+| **Planned activity** | H: download JMuBEN and JMuBEN2; count images per class. Y: create the Flutter project and run it on a physical phone. B: create the repository, folder tree and `.gitignore`. N: extract the obligations from Guideline §1–§7; score four candidate titles. All: read the Guideline; send the ELD the group details; open the AI-use log. |
+| **Completed activity** | **H** — catalogued JMuBEN (`t2r6rszp5c`) and JMuBEN2 (`tgv3zb82nd`) in the Mendeley registry with licences and class lists, and reconciled the count discrepancy between the paper (58,555) and the machine-readable record (58,549); the **download itself was not completed** (see Problems). **Y** — installed the Flutter toolchain and ran a first app on a physical Android device. **B** — wrote the `.gitignore` rule set for data, models and secrets that the repository later adopted, and settled the backend stack (FastAPI + PostgreSQL, ADR-008). **N** — extracted the submission obligations from Guideline §1–§7 and scored four candidate titles with the rejection reason for each (`title-selection.md`). **All** — read the Guideline; the synopsis had been revised and submitted on 12 Oct. |
+| **Problems and risks** | **The repository was not created in W1**, so the gate test *("a commit from all four")* failed and is backfilled in W2 — B and N did not yet have GitHub accounts. **The dataset download was not completed** (R1): the JMuBEN author had not replied to the request and the Mendeley records would not resolve from the lab network. |
+| **Advisor feedback** | *(at the meeting — to be written in the advisor's own words)* |
+| **Agreed actions and next milestone** | Repository created by Y in W2, because the lead held the only group account. H to complete the per-class counts and the datasheet by **Wed 4 Nov**. Downloads to be retried off-campus. |
 | **Advisor initials** | ________ |
 
 ### Week 1 — per-member breakdown
 
-| Member | Specific contribution |
-|---|---|
-| **Hayredin** | Dataset acquisition and inventory for JMuBEN, JMuBEN2 and BRACOL; documented the exact Mendeley record → class mapping and the count discrepancy (58,549 vs 58,555); began `scripts/prepare_data.py` |
-| **Yohannes** | Verified the Flutter + Android toolchain end to end on a physical device; produced the four screen sketches |
-| **Yohannes** | Created the repository, set up branch protection, PR/issue templates and the milestone labels; wrote architecture v0.1 |
-| **Nahom** | Read the JMuBEN, PeerJ cs-3172 and PeerJ cs-3386 papers and verified every citation against Crossref; began the comparison table; sent the JARC contact email; completed the Appendix M ethics screening |
+| Member | Specific contribution | Evidence |
+|---|---|---|
+| **Hayredin** | JMuBEN / JMuBEN2 record mapping, licences, and the 58,549 vs 58,555 reconciliation | `data/dataset-sources.md` §3 |
+| **Bemnet** | `.gitignore` rule set for data, models and secrets; backend stack decision | `.gitignore`; ADR-008 |
+| **Yohannes** | Flutter toolchain verified on a physical device | screenshot, filed with the meeting record |
+| **Nahom** | Guideline obligations; four candidate titles scored with rejection reasons | `title-selection.md` |
 
 ---
 
 ## Week 2 — Oct 26 – Nov 1, 2026
 
+> **Completed retrospectively on 1 November 2026.** The repository did not exist for most of this week,
+> which is why so much of W2's planned activity landed on the last two days.
+
 | Field | Entry |
 |---|---|
 | **Member(s)** | H, B, Y, N |
-| **Objective addressed** | SO1, SO7 (proposal preparation) |
-| **Planned activity** | H: download the five external datasets (Uganda, RoCoLE, Saposoa, CoffeeLeaf-CO, Silva); write the perceptual-hash duplicate-grouping function. B: build the four mock screens with a fake result and capture the screenshots that become the wireframes. Y: draft the API contract and the database schema; write the Dockerfile skeleton. N: draft the proposal §1–§8; finalise Appendix M; begin the High-complexity justification. **All:** complete logbook rows for weeks 1 and 2; book and hold the second advisor meeting. |
-| **Completed activity** | |
-| **Problems and risks** | |
-| **Advisor feedback** | |
-| **Agreed actions and next milestone** | |
+| **Objective addressed** | SO1, SO2, SO7 |
+| **Planned activity** | H: datasheet — composition, licences, five external sets, limitations. Y: nine-screen inventory and navigation map; camera plugin spike. B: CI, security NFRs, branch protection. N: ethics screening (App. M), AI-use log (App. L), first three comparison-table rows. All: W1–W2 logbook rows; second advisor meeting. |
+| **Completed activity** | **Y** — created `jov1523/coffee_leaf_disease_diagnosis` on **31 Oct**, 43 files and 8,428 lines: the proposal in Appendix A order, the reference registry, the comparison table, FR-01…FR-40 / NFR-01…NFR-40 / DR-01…DR-10, the use cases, test plan T-01…T-60, the traceability matrix, architecture, data model, ML pipeline, the nine-screen UI design, Chapters 1–4 and the starter set; the Guideline and the revised synopsis are carried as read-only sources. **H** — wrote `scripts/prepare_data.py` (grouping key, stratified grouped split, four invariants) and ran the `--audit` gate end to end, **AUDIT PASSED**; wrote the dataset registry and datasheet; rewrote the plan as **16 weeks, one task per person per week**, and opened PR #1 against the group repository (7 files, +2,012 / −292) on 1 Nov. **B** — drafted the API contract and the SQLite DDL for the KB JSON schema. **N** — Appendix M ethics screening and Appendix L AI-use log drafted; the first three comparison-table rows; the JARC contact email sent (no reply as of 1 Nov). |
+| **Problems and risks** | **CI is not configured**, so the W2 gate test *("green CI run")* is not met — carried to W3. **B and N could not commit**: `nahoom-sh` was issued on 1 Nov and Bemnet's account is still outstanding, so the *"one commit each"* gate is still open. **Appendix M and L exist in the working set but not in the repository.** The logbook itself is late. |
+| **Advisor feedback** | *(at the meeting)* |
+| **Agreed actions and next milestone** | Every member commits something by **Tue 3 Nov**. H completes the counts and the datasheet by **Wed 4 Nov**; Y posts the phone screenshot by **Wed 4 Nov**; N lands Appendix M and L by **Wed 4 Nov**. Proposal approval gate **Sun 15 Nov** (W4). |
 | **Advisor initials** | ________ |
+
+### Week 2 — per-member breakdown
+
+| Member | Specific contribution | Evidence |
+|---|---|---|
+| **Hayredin** | Split script with a passing audit; dataset registry and datasheet; 16-week plan; PR #1 | `scripts/prepare_data.py`; PR #1 |
+| **Bemnet** | API contract, SQLite DDL, KB JSON schema | `design/data-model.md` |
+| **Yohannes** | Group repository — 43 files, 8,428 lines; nine-screen inventory | commit `70b179e`, 31 Oct |
+| **Nahom** | Appendix M, Appendix L, comparison table, JARC contact | `appendices/` |
 
 ---
 
