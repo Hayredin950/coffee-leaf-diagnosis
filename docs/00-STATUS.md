@@ -216,13 +216,13 @@ If time runs short, the mobile app is the deliverable and the web client is the 
 - [ ] Write the duplicate-grouping script (pHash clustering) — `scripts/prepare_data.py`
 - [ ] Start the logbook row: which datasets, licenses, collection notes
 
-**Bemnet — mobile app**
+**Yohannes — mobile app & UI/UX**
 - [ ] Read the Flutter TFLite stack: `tflite_flutter`, `image_picker`, `camera`, `sqflite`
 - [ ] Scaffold the Flutter app, run it on a real Android phone (or emulator) — prove the toolchain
 - [ ] Draw the 4 screens on paper / Figma: Capture-Upload, Result, Guidance, History
 - [ ] Get the app running with a **placeholder** model + mock result → this de-risks everything
 
-**Yohannes — backend & platform**
+**Bemnet — backend & platform**
 - [ ] Create the GitHub org/repo: README, `main` protected, issue board, milestone tags, PR template
 - [ ] Design the API contract (draft) → `docs/design/api-spec.md`
 - [ ] Design the diagnosis-history schema → `docs/design/database-schema.md`

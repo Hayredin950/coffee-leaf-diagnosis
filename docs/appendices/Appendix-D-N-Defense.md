@@ -23,7 +23,7 @@
 | 2 | The student can explain every specific objective and its evidence | ✔ | ✔ | Nahom | SO1–SO7 with their measurable targets; the traceability matrix | |
 | 3 | The student can explain the methodology and justify the major choices | ✔ | ✔ | Nahom + Hayredin | The iterative-prototype method; why transfer learning over training from scratch; why a grouped split; why temperature scaling and not DANN | |
 | 4 | The student can explain the system architecture and design | ✔ | ✔ | Yohannes | Figure 4.1–4.8; the design-decision record | |
-| 5 | The student can demonstrate the major implemented functionality | ➖ | ✔ | Bemnet | The live demo: capture → diagnosis → guidance → history → export | |
+| 5 | The student can demonstrate the major implemented functionality | ➖ | ✔ | Yohannes | The live demo: capture → diagnosis → guidance → history → export | |
 | 6 | The student can explain the database, data or model design | ✔ | ✔ | Hayredin + Yohannes | The split strategy; the schema; the artefact contract; the model card | |
 | 7 | The student can explain the testing and the failures encountered | ➖ | ✔ | All | The defect register; the representative failure cases; the honest account of what failed | |
 | 8 | The student can interpret the evaluation results | ➖ | ✔ | Hayredin | The external results; the calibration; the abstention curve; what the numbers mean for a farmer | |
@@ -58,8 +58,8 @@ that no member relies on a fixed sequence.
 | Literature review and related work | 15 | 10 | Chapter 2, organised into five themes with an explicit gap statement; the comparison table with three-plus systems; the "how the review shaped the design" table | Nahom (+ Hayredin for §2.2) |
 | Objectives and requirements | 20 | 10 | SO1–SO7 with measurable targets; RQ1–RQ5 with hypotheses; 37 FRs, 35 NFRs and 8 DRs with IDs, priorities and acceptance criteria; the traceability matrix | Nahom |
 | Methodology | 15 | 10 | The iterative-prototype method justified per objective; the baseline justification; the experimental protocol with seeds and versions; the risk register | Nahom + Hayredin |
-| Analysis and design | 25 | 15 | Figures 4.1–4.14; the design-decision record with the alternatives rejected and why; the schema and the API contract; the consistency checklist | Yohannes + Bemnet |
-| Technical implementation | 0 | 20 | The working app, the API, the web client, the model artefact, the training pipeline; the repository history; the reproducibility package | Bemnet + Yohannes + Hayredin |
+| Analysis and design | 25 | 15 | Figures 4.1–4.14; the design-decision record with the alternatives rejected and why; the schema and the API contract; the consistency checklist | Bemnet + Yohannes |
+| Technical implementation | 0 | 20 | The working app, the API, the web client, the model artefact, the training pipeline; the repository history; the reproducibility package | Yohannes + Bemnet + Hayredin |
 | Testing and evaluation | 0 | 10 | 55 test cases with actual results and evidence; the defect register; the performance measurements; the usability study | All |
 | Results, analysis and discussion | 0 | 5 | The external evaluation, the calibration, the ablation, the significance test, the error analysis; each objective with an achievement status | Hayredin |
 | Documentation and report quality | 5 | 5 | The formatted report; the datasheet; the model card; the installation and user guides; the licence list | Nahom |
@@ -97,8 +97,8 @@ question from another member's area at every rehearsal:
 | Member | Own area | Must be able to answer about another member's area |
 |---|---|---|
 | **Hayredin** | Data, splits, training, quantisation, evaluation | How the app renders the guidance and where the threshold comes from; how the API validates an upload and why it rejects by magic bytes |
-| **Bemnet** | The Flutter client, on-device inference, the history store | How the split prevents leakage and what "grouped" means; how the model was quantised and what changed |
-| **Yohannes** | The API, the database, deployment, CI, security | How the external evaluation was set up and what the generalisation gap turned out to be; how the knowledge base was sourced and reviewed |
+| **Yohannes** | The Flutter client, on-device inference, the history store | How the split prevents leakage and what "grouped" means; how the model was quantised and what changed |
+| **Bemnet** | The API, the database, deployment, CI, security | How the external evaluation was set up and what the generalisation gap turned out to be; how the knowledge base was sourced and reviewed |
 | **Nahom** | The literature, the requirements, the KB, the test plan, the report | How the model is trained and exported; how the offline operation was verified with a packet capture |
 
 ## N.4 The questions the panel is most likely to ask

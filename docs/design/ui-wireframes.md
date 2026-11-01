@@ -1,6 +1,6 @@
 # UI Wireframes and Screen Design
 
-**Owner:** Bemnet Tesfaye · **Reviewer:** Nahom Solomon (usability), Yohannes Berhanu (API contract)
+**Owner:** Yohannes Berhanu · **Reviewer:** Nahom Solomon (usability), Bemnet Tesfaye (API contract)
 **Tool:** Figma (free tier) → exported to PNG for the report; the ASCII sketches below are the
 working reference for implementation.
 

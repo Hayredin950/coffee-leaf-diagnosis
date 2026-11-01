@@ -97,7 +97,7 @@
 |---|---|---|
 | I.1 Documents | Nahom Solomon | |
 | I.2 Code and repository | Yohannes Berhanu | |
-| I.3 The system | Bemnet Tesfaye | |
+| I.3 The system | Yohannes Berhanu | |
 | I.4 Data and models | Hayredin Mohammed | |
 | I.5 Documentation | Nahom Solomon | |
 | I.6 Assembly | Yohannes Berhanu | |
@@ -109,7 +109,7 @@
 
 > **Guideline §8.6:** *"The submission must include the technical documentation described in
 > Appendix J, together with an installation guide and a user guide."*
-> **Owner:** Yohannes Berhanu, with Bemnet Tesfaye for the user guide.
+> **Owner:** Yohannes Berhanu, with Bemnet Tesfaye for the technical documentation.
 
 | # | Item | Where it lives | Status |
 |---|---|---|---|

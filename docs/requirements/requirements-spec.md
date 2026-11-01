@@ -3,7 +3,7 @@
 **Project:** Design and Development of a Coffee Leaf Disease Diagnosis System Using Deep Learning
 **Version:** 1.0 (Requirements Baseline)
 **Status:** ☐ Draft ☐ Advisor-reviewed ☐ **Approved as baseline** (Guideline §7.3 — gate falls in FYP I weeks 5–7)
-**Owner:** Nahom Solomon · **Contributors:** Bemnet Tesfaye (app testability), Yohannes Berhanu (security/deployment NFRs), Hayredin Mohammed (model NFRs)
+**Owner:** Nahom Solomon · **Contributors:** Yohannes Berhanu (app testability), Bemnet Tesfaye (security/deployment NFRs), Hayredin Mohammed (model NFRs)
 
 **Notation.** *Must* / *Should* / *May* follow Guideline §1.5. Every requirement has a unique ID,
 a priority, a traceability target (objective → design → test), and a measurable acceptance

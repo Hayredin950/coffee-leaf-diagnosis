@@ -2,7 +2,7 @@
 
 **Project:** Design and Development of a Coffee Leaf Disease Diagnosis System Using Deep Learning
 **Version:** 1.0
-**Owner:** Yohannes Berhanu (architecture) · **Contributors:** Bemnet Tesfaye (app layers), Hayredin Mohammed (model pipeline), Nahom Solomon (KB layer)
+**Owner:** Bemnet Tesfaye (architecture) · **Contributors:** Yohannes Berhanu (app layers), Hayredin Mohammed (model pipeline), Nahom Solomon (KB layer)
 
 > **Guideline §7.4** recommends a use-case diagram, activity diagram, sequence diagram, class
 > diagram, state diagram, relational schema, data dictionary, architecture, component/deployment
@@ -31,20 +31,20 @@
 
 | Layer | Choice | Alternatives considered | Why this one | Owner |
 |---|---|---|---|---|
-| Mobile framework | **Flutter 3.x (Dart)** | React Native, native Kotlin | One codebase for Android + iOS; the best-supported TFLite plugin (`tflite_flutter`); camera, gallery and SQLite plugins are mature; one language for the whole client | Bemnet |
+| Mobile framework | **Flutter 3.x (Dart)** | React Native, native Kotlin | One codebase for Android + iOS; the best-supported TFLite plugin (`tflite_flutter`); camera, gallery and SQLite plugins are mature; one language for the whole client | Yohannes |
 | On-device runtime | **TFLite (LiteRT) via `tflite_flutter`** | ONNX Runtime Mobile, TF Lite Micro | Model Maker produces the `.tflite` with metadata directly; the MediaPipe Image Classifier task provides a validated image-classification pipeline with a score threshold and a label allow-list [48]; TF Lite Micro targets microcontrollers, not phones | Hayredin |
 | Model architecture | **MobileNetV3-Small**, compared against **EfficientNet-Lite0** and **MobileNetV2** | ConvNeXt-S, EfficientNet-B2 | Both are TFLite-supported and phone-targeted [36], [40]. ConvNeXt-S is 99 MB and misses Cercospora badly [33]; EfficientNet-B2 is 8.57 MB but has 1.9 % external rust recall [34]. We want a model we can actually trust, so we train and compare | Hayredin |
 | Quantisation | **int8 post-training quantisation**, with float16 and float32 kept for comparison | Dynamic-range quantisation, full-integer with a representative dataset | Documented to shrink plant-disease models with no accuracy loss [41]; LiteRT supports float fallback for mixed precision [43] | Hayredin |
-| Local database (mobile) | **SQLite via `sqflite`, wrapped in Drift** | Hive, Isar, Realm | SQL is queryable and auditable; Drift adds typed DAOs, schema versioning and migrations, which FR-20 requires | Bemnet |
-| Local database (server) | **PostgreSQL 16** | SQLite, MySQL | Concurrent writes from multiple extension officers; `jsonb` for the confidence vector; standard | Yohannes |
-| ORM and migrations | **SQLAlchemy 2.0 + Alembic** | Django ORM, raw SQL | Typed, migration-supported, framework-light | Yohannes |
-| API framework | **FastAPI + Pydantic v2** | Flask, Django REST, Express | Automatic OpenAPI generation satisfies FR-28; Pydantic validation satisfies NFR-18 directly; async performance | Yohannes |
+| Local database (mobile) | **SQLite via `sqflite`, wrapped in Drift** | Hive, Isar, Realm | SQL is queryable and auditable; Drift adds typed DAOs, schema versioning and migrations, which FR-20 requires | Yohannes |
+| Local database (server) | **PostgreSQL 16** | SQLite, MySQL | Concurrent writes from multiple extension officers; `jsonb` for the confidence vector; standard | Bemnet |
+| ORM and migrations | **SQLAlchemy 2.0 + Alembic** | Django ORM, raw SQL | Typed, migration-supported, framework-light | Bemnet |
+| API framework | **FastAPI + Pydantic v2** | Flask, Django REST, Express | Automatic OpenAPI generation satisfies FR-28; Pydantic validation satisfies NFR-18 directly; async performance | Bemnet |
 | Web client | **Vanilla HTML/CSS/JS** (no build step) | React, Vue, Svelte, Gradio | Zero build risk in the last week before the defense; the OpenAPI schema guarantees the contract; a Gradio app would not support the history browsing and export that FR-33 requires | Yohannes + Bemnet |
-| Authentication | **JWT bearer tokens** | Sessions, API keys | Stateless, works for both front-ends, standard | Yohannes |
+| Authentication | **JWT bearer tokens** | Sessions, API keys | Stateless, works for both front-ends, standard | Bemnet |
 | Model registry | **A versioned directory + a `manifest.json`** | MLflow | No extra infrastructure to run for the defense; the manifest is human-readable evidence | Hayredin |
 | Experiment tracking | **YAML configs + a `results.md` table** | W&B, TensorBoard | Reproducibility requirement §9.7 asks for a table linking each result to its script — that *is* the artefact | Hayredin |
-| CI | **GitHub Actions** | Jenkins, GitLab CI | Free, zero setup, and the repository is already on GitHub for the advisor and examiners (§8.4) | Yohannes |
-| Deployment | **Docker + a free-tier container host** | Kubernetes, VMs | Reproducible, cheap, demonstrable. The API is stateless behind a container | Yohannes |
+| CI | **GitHub Actions** | Jenkins, GitLab CI | Free, zero setup, and the repository is already on GitHub for the advisor and examiners (§8.4) | Bemnet |
+| Deployment | **Docker + a free-tier container host** | Kubernetes, VMs | Reproducible, cheap, demonstrable. The API is stateless behind a container | Bemnet |
 
 **Rejected on purpose:** a microservices split (the API is one service — splitting it would add
 deployment risk for no benefit); a message queue (no asynchronous work); a NoSQL store (the

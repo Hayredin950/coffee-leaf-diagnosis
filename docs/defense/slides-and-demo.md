@@ -1,7 +1,7 @@
 # Defense Slides Outline and Demonstration Script
 
 **Project:** Design and Development of a Coffee Leaf Disease Diagnosis System Using Deep Learning
-**Owner:** Nahom Solomon (slides) · **Demo owner:** Bemnet Tesfaye
+**Owner:** Nahom Solomon (slides) · **Demo owner:** Yohannes Berhanu
 **Constraint (Guideline §12.4):** *"A general rule is one slide per minute. A 20-minute
 presentation should have about 20 slides, and no more than 22 slides, including the title
 slide, are allowed for the defense. Backup slides placed after the final slide are not
@@ -27,7 +27,7 @@ and table legible from the back of the room.
 | 5 | **Our goal and objectives** | The general objective; the seven specific objectives in one table | Nahom | 1:00 | Table 1.2 |
 | 6 | **Research questions** | RQ1 the gap · RQ2 the best mitigation · RQ3 calibration · RQ4 the device budget | Nahom | 0:45 | §1.4.3 |
 | 7 | **The gap we address** | One sentence in a box: no offline five-class system, with guidance, history and external evaluation | Nahom | 0:45 | §1.2.4 |
-| 8 | **System architecture** | The context diagram; offline core in the phone; API and web optional | Yohannes | 1:00 | Fig. 4.1 |
+| 8 | **System architecture** | The context diagram; offline core in the phone; API and web optional | Bemnet | 1:00 | Fig. 4.1 |
 | 9 | **The model pipeline** | Acquire → validate → quality → preprocess → TFLite → calibrate → abstain | Hayredin | 1:00 | §4.3.3 |
 | 10 | **The dataset** | 9 corpora, 6 countries, 2 species, ~58 k images; the datasheet | Hayredin | 1:00 | Table 3.1 |
 | 11 | **Why the split is the hard part** | JMuBEN is augmented and cropped; BRACOL crops come from leaves; RoCoLE has 4 views per plant → a random split leaks | Hayredin | 1:30 | §4.1.2 |
@@ -38,8 +38,8 @@ and table legible from the back of the room.
 | 16 | **The generalisation gap** | Internal vs 5 external datasets, per model; the gap stated | Hayredin | 1:30 | Table 6.3, Fig. 6.1 |
 | 17 | **Which classes survive** | The per-class external recall table; the "n/a" cells shown honestly | Hayredin | 1:00 | Table 6.4 |
 | 18 | **Calibration and abstention** | ECE before/after; the coverage curve; the chosen operating point | Hayredin | 1:00 | Table 6.6, Fig. 6.3 |
-| 19 | **The system** | The five screens; offline; SQLite history; the knowledge base | Bemnet | 1:00 | Ch. 5.4–5.5 |
-| 20 | **On-device performance** | Latency on 3 devices; memory; model size; airplane mode | Bemnet | 1:00 | Tables 6.9–6.11 |
+| 19 | **The system** | The five screens; offline; SQLite history; the knowledge base | Yohannes | 1:00 | Ch. 5.4–5.5 |
+| 20 | **On-device performance** | Latency on 3 devices; memory; model size; airplane mode | Yohannes | 1:00 | Tables 6.9–6.11 |
 | 21 | **Usability and testing** | 55 test cases; the SUS; what participants struggled with | Nahom | 1:00 | Tables 6.1, 6.12 |
 | 22 | **Contributions, limitations, future work** | Three contributions; the honest limitations; the top recommendations | Nahom | 1:00 | Ch. 7 |
 
@@ -63,14 +63,14 @@ Each speaker has a contiguous block, which avoids the fragmented handovers that 
 | **Nahom** | 1–7 | 6:45 | The problem is real, the gap is specific, and it is not a repeat of published work |
 | **Hayredin** | 9–18 | 10:30 | The dataset is not what it appears to be, the split is the hard part, and the honest external numbers are the contribution |
 | **Yohannes** | 8 | 1:00 | The architecture is offline-first and the components are clean |
-| **Bemnet** | 19–20 | 2:00 | It is a working, offline, usable system — and it is about to be demonstrated live |
+| **Yohannes** | 19–20 | 2:00 | It is a working, offline, usable system — and it is about to be demonstrated live |
 | **Nahom** | 21–22 | 2:00 | It was tested properly, users found it usable, and here is what is left to do |
 
 **Handover language.** Each speaker ends with a bridging sentence that names the next topic,
 so the panel hears a coherent argument rather than a sequence of monologues:
 - Nahom → Hayredin (slide 9): *"Before the architecture, one sentence about the hardest part
   of this project, which was not the model — it was the data."*
-- Hayredin → Bemnet (slide 19): *"Those are the numbers. Now the part you actually wanted to
+- Hayredin → Yohannes (slide 19): *"Those are the numbers. Now the part you actually wanted to
   see — a working system, on a phone, offline."*
 - Bemnet → Nahom (slide 21): *"So it works. Now, how do we know it works?"*
 
@@ -82,7 +82,7 @@ the "n/a" message and the ablation is moved to a backup slide.
 
 ## 3. Demonstration script
 
-**Owner:** Bemnet Tesfaye · **Duration:** 10 minutes (§17.1) · **Backup:** a recorded video is
+**Owner:** Yohannes Berhanu · **Duration:** 10 minutes (§17.1) · **Backup:** a recorded video is
 always prepared and kept on a second device.
 
 ### 3.1 Pre-demo checklist (done 15 minutes before)

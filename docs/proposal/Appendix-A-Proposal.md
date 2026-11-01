@@ -512,12 +512,12 @@ paths before the real components are ready. The second is what de-risks the sche
 | R1 | JMuBEN author does not share the original un-augmented images | M | M | The released dataset is sufficient if duplicate grouping is done properly; the group proceeds regardless and documents the limitation | Hayredin |
 | R2 | External datasets prove unavailable or unlabelled | M | H | Five independent external sources are already verified; at least three are sufficient | Hayredin |
 | R3 | No GPU available for training | M | M | Kaggle/Colab free-tier P100/T4 notebooks; the reference architectures train in under 2 h | Hayredin |
-| R4 | Flutter/TFLite integration stalls | M | H | Fallback: TensorFlow Lite task library via platform channels; second fallback: a Kotlin camera app using the same `.tflite` artefact | Bemnet |
-| R5 | Model too large or too slow for low-end devices | M | M | Progressive fallback: int8 quantisation → EfficientNet-Lite0 → MobileNetV2 → 160×160 input | Hayredin + Bemnet |
+| R4 | Flutter/TFLite integration stalls | M | H | Fallback: TensorFlow Lite task library via platform channels; second fallback: a Kotlin camera app using the same `.tflite` artefact | Yohannes |
+| R5 | Model too large or too slow for low-end devices | M | M | Progressive fallback: int8 quantisation → EfficientNet-Lite0 → MobileNetV2 → 160×160 input | Hayredin + Yohannes |
 | R6 | External accuracy is too low to demonstrate usefulness | H | M | This is a *finding*, not a failure. The contribution is the quantified gap plus abstention; the report states it honestly | All |
 | R7 | Scope expansion into detection, severity or other crops | M | H | Explicit non-goals in §5.1; change control per Guideline §4.6 | All |
 | R8 | Schedule delay from an unavailable member or exam period | M | M | Weekly cross-review rotation keeps knowledge distributed; tasks have named backups | All |
-| R9 | The system is deployed but cannot be demonstrated at the defense | L | H | A recorded demonstration is always kept as a backup; the app runs offline with no server dependency for the core flow | Bemnet + Yohannes |
+| R9 | The system is deployed but cannot be demonstrated at the defense | L | H | A recorded demonstration is always kept as a backup; the app runs offline with no server dependency for the core flow | Yohannes + Bemnet |
 | R10 | Agronomic guidance is challenged as inaccurate | M | M | Every KB field carries a citation; JARC reviews before inclusion; the app states that guidance is advisory | Nahom |
 | R11 | AI-generated content in the report is treated as misconduct | M | H | Appendix L is maintained from day one; every AI-assisted artifact is reviewed, understood and tested by a named member | All |
 | R12 | Personal data or photos of identifiable people enter the repository | L | M | No personal data is collected; photos are of leaves; `.gitignore` excludes raw uploads; the ethics screen (Appendix M) records this | Yohannes |

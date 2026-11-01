@@ -54,7 +54,7 @@ Advisor initials.
 | Member | Specific contribution |
 |---|---|
 | **Hayredin** | Dataset acquisition and inventory for JMuBEN, JMuBEN2 and BRACOL; documented the exact Mendeley record → class mapping and the count discrepancy (58,549 vs 58,555); began `scripts/prepare_data.py` |
-| **Bemnet** | Verified the Flutter + Android toolchain end to end on a physical device; produced the four screen sketches |
+| **Yohannes** | Verified the Flutter + Android toolchain end to end on a physical device; produced the four screen sketches |
 | **Yohannes** | Created the repository, set up branch protection, PR/issue templates and the milestone labels; wrote architecture v0.1 |
 | **Nahom** | Read the JMuBEN, PeerJ cs-3172 and PeerJ cs-3386 papers and verified every citation against Crossref; began the comparison table; sent the JARC contact email; completed the Appendix M ethics screening |
 

@@ -137,9 +137,9 @@ rather than merely generated.
 | Person | Package | Also owns |
 |---|---|---|
 | **Hayredin Mohammed** | Data and model — corpus, splits, training, quantisation, TFLite export, external evaluation, error analysis | The JMuBEN data correspondence |
-| **Bemnet Tesfaye** | The Flutter app — capture, on-device inference, the result and guidance screens, offline mode, the local history | The web client and the defense demo |
-| **Yohannes Berhanu** | The API, the database, deployment, security, repository governance, CI, the reproducibility package | The risk register and the submission package |
-| **Nahom Solomon** | The literature review, the requirements, the test plan, the knowledge base, the ethics screening, the usability study, the report | The logbook and the decision log |
+| **Yohannes Berhanu** | The Flutter app — capture, on-device inference, the result and guidance screens, offline mode, the local history — and the project lead role | The web client and the defense demo |
+| **Bemnet Tesfaye** | The API, the database, the knowledge-base implementation, deployment, security, CI, the reproducibility package | The risk register and the submission package |
+| **Nahom Solomon** | The literature review, the requirements, the test plan, the knowledge base content, the ethics screening, the usability study, the report | The logbook and the decision log |
 
 Each member holds primary technical responsibility for one major component (Guideline §14.2)
 and must be able to explain the whole system at the defense (Guideline §14.3). The weekly

@@ -55,21 +55,21 @@ my work, subject to the University's academic-integrity rules.
 
 ---
 
-## Page 2 — Bemnet Tesfaye (UGR/3266/16)
+## Page 2 — Yohannes Berhanu (UGR/9440/16)
 
-**Role:** Mobile App Lead · **Primary work package:** the Flutter client — capture and upload,
-on-device inference, the result and guidance screens, offline operation, and the local
-diagnosis history.
+**Role:** Mobile App and UI/UX Lead, and Project Lead · **Primary work package:** the Flutter
+client — capture and upload, on-device inference, the result and guidance screens, offline
+operation and the local diagnosis history — plus repository governance.
 
 | Area | Specific contribution | Evidence | Estimated effort (% of own time) |
 |---|---|---|---|
 | **Requirements** | Co-authored the functional requirements for acquisition, inference, the result screen and the history; specified the UI state model and the abstention user experience | `docs/requirements/requirements-spec.md` §2.1–§2.3; `docs/design/ui-wireframes.md` | 6 % |
 | **Design** | Designed the four screens and the navigation model; wrote the wireframes and the accessibility checklist; designed the offline-first interaction model and the photo-quality gate | `docs/design/ui-wireframes.md` (Figures 4.10–4.14) | 8 % |
-| **Implementation** | Built the Flutter application: camera and gallery acquisition, the image validator, the quality gate, the preprocessing pipeline, the TFLite interpreter integration, the calibrator, the abstention policy, the KB resolver, the SQLite/Drift repository with migrations, the history screen with search and filter, and the CSV exporter; implemented the localisation scaffolding | `mobile/lib/` — commit history under `bemnet` | 24 % |
+| **Implementation** | Built the Flutter application: camera and gallery acquisition, the image validator, the quality gate, the preprocessing pipeline, the TFLite interpreter integration, the calibrator, the abstention policy, the KB resolver, the SQLite/Drift repository with migrations, the history screen with search and filter, and the CSV exporter; implemented the localisation scaffolding | `mobile/lib/` — commit history under `yohannes` | 24 % |
 | **Database or data** | Designed and implemented the on-device SQLite schema, the DAOs and the forward-only migration strategy | `mobile/lib/data/`; migration test T-40 | 5 % |
 | **Testing** | Executed T-17…T-40 and T-65; wrote the golden-image preprocessing test that proves the Dart and Python pipelines agree; ran the airplane-mode and packet-capture verification; co-executed the web client cases | `docs/appendices/Appendix-F-Test-Cases.md` §F.4, §F.7; `evidence/` | 10 % |
-| **Documentation** | Wrote the installation guide, the user guide, the on-device troubleshooting section and the model-card usage notes | `docs/appendices/Appendix-J-TechDoc-Checklist.md`; Chapter 5 draft | 7 % |
-| **Other** | Maintained the APK build pipeline and the release signing for the defence build; produced the demo script and the recorded backup video; ran the weekly cross-review of the model and the deployment packages | `mobile/` release notes; `docs/defense/demo-script.md` | 6 % |
+| **Documentation** | Wrote the installation guide, the user guide, the on-device troubleshooting section and the model-card usage notes | `docs/appendices/Appendix-I-J-Checklists.md`; Chapter 5 draft | 7 % |
+| **Other** | Maintained the APK build pipeline and the release signing for the defence build; produced the demo script and the recorded backup video; created and governed the repository — branch protection, PR templates, the issue board, the milestone tags; managed the advisor and examiner access; ran the weekly cross-review of the model and the deployment packages | `mobile/` release notes; `docs/defense/slides-and-demo.md`; repository settings history | 6 % |
 
 **Total: ___ %**
 
@@ -82,20 +82,21 @@ my work, subject to the University's academic-integrity rules.
 
 ---
 
-## Page 3 — Yohannes Berhanu (UGR/9440/16)
+## Page 3 — Bemnet Tesfaye (UGR/3266/16)
 
 **Role:** Backend and Platform Lead · **Primary work package:** the REST API, the server-side
-database, deployment, security, repository governance, CI, and the reproducibility package.
+database, the knowledge-base implementation, deployment, security, CI and the reproducibility
+package.
 
 | Area | Specific contribution | Evidence | Estimated effort (% of own time) |
 |---|---|---|---|
 | **Requirements** | Co-authored the API and web-client functional requirements and the security, availability, performance and reproducibility NFRs | `docs/requirements/requirements-spec.md` §2.4–§2.5, §3 | 5 % |
 | **Design** | Designed the system architecture, the component and deployment diagrams, the API contract, the server-side relational schema, the data dictionary and the transaction and migration strategy | `docs/design/architecture.md` (Figures 4.1–4.8); `docs/design/database-and-api.md` | 10 % |
-| **Implementation** | Built the FastAPI service with Pydantic v2 validation, JWT authentication, rate limiting, the SQLAlchemy models and the Alembic migrations; built the static web client; wrote the Dockerfile, the deployment pipeline and the health and metrics endpoints | `api/`; `web/`; `docker/` — commit history under `yohannes` | 20 % |
+| **Implementation** | Built the FastAPI service with Pydantic v2 validation, JWT authentication, rate limiting, the SQLAlchemy models and the Alembic migrations; built the static web client; wrote the Dockerfile, the deployment pipeline and the health and metrics endpoints; implemented the versioned knowledge-base JSON asset with its checksum | `api/`; `web/`; `docker/` — commit history under `bemnet` | 20 % |
 | **Database or data** | Implemented the PostgreSQL schema with its constraints and indexes, the migration scripts and the seed data; implemented the transaction and idempotency rules | `api/app/models.py`; `api/migrations/`; `scripts/seed.sql` | 6 % |
 | **Testing** | Executed T-51…T-60 and T-63; set up CI with lint, unit tests, the container build, the model-artefact check, the KB audit and the secret scan; ran the OWASP ZAP baseline against the group's own staging deployment; wrote the security checklist | `docs/appendices/Appendix-F-Test-Cases.md` §F.5; `.github/workflows/` | 12 % |
-| **Documentation** | Wrote the technical documentation and the installation guide; wrote the third-party licence list; assembled the final submission package; maintained the risk register and the logbook compilation | `docs/appendices/Appendix-I-J-Checklists.md`; `THIRD_PARTY_LICENSES.md` | 8 % |
-| **Other** | Created and governed the repository — branch protection, PR templates, the issue board, the milestone tags; managed the advisor and examiner access; produced the reproducibility package and the deployment runbook | Repository settings history; `docs/05-DECISION-LOG.md` | 5 % |
+| **Documentation** | Wrote the technical documentation and the installation guide; wrote the third-party licence list; assembled the final submission package; maintained the risk register | `docs/appendices/Appendix-I-J-Checklists.md`; `THIRD_PARTY_LICENSES.md` | 8 % |
+| **Other** | Produced the reproducibility package and the deployment runbook; maintained the staging environment through the design review; ran the weekly cross-review of the app and the data packages | Repository settings history; `docs/05-DECISION-LOG.md` | 5 % |
 
 **Total: ___ %**
 

@@ -1,6 +1,6 @@
 # Database Design and API Specification
 
-**Owner:** Yohannes Berhanu
+**Owner:** Bemnet Tesfaye
 **Applies to:** the on-device SQLite store (mobile client) and the server-side PostgreSQL
 store (API service). Guideline §8.2 requires: *"document the schema design, relationships,
 constraints, normalization, indexing, transactions, security, and backup and recovery

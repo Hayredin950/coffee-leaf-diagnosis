@@ -44,8 +44,8 @@ no real-time video diagnosis in v1.
 | 0.3 | Download and inventory all 6 datasets; record exact counts + licenses | Hayredin | `data/dataset-sources.md` |
 | 0.4 | Duplicate-grouping + leakage-safe split script | Hayredin | `scripts/prepare_data.py` |
 | 0.5 | Repo, branches, PR template, issue board, CI skeleton | Yohannes | GitHub repo live |
-| 0.6 | Architecture + API contract + DB schema (v0.1) | Yohannes | `docs/design/*` |
-| 0.7 | Flutter scaffold running on a real device with a mock model | Bemnet | APK installs, screen navigable |
+| 0.6 | Architecture + API contract + DB schema (v0.1) | Bemnet | `docs/design/*` |
+| 0.7 | Flutter scaffold running on a real device with a mock model | Yohannes | APK installs, screen navigable |
 | 0.8 | Read 6 anchor papers; fill comparison table; draft gap statement | Nahom | `docs/literature/*` |
 | 0.9 | Appendix M ethical screening; draft proposal (all 14 sections) | Nahom + all | `docs/proposal/Appendix-A-Proposal.md` |
 | 0.10 | Contact EIAR/JARC for knowledge-base review | Nahom | Email sent |
@@ -77,8 +77,8 @@ no real-time video diagnosis in v1.
 | 2.3 | Gap statement: what exists does not do, why it matters, how we respond | Nahom | Chapter 2 |
 | 2.4 | Write FR/NFR specification with IDs and priorities | Nahom + Bemnet | `docs/requirements/requirements-spec.md` |
 | 2.5 | Verify every reference against the publisher page; complete the IEEE reference list | Nahom | `docs/literature/references.md` |
-| 2.6 | Literature-informed architecture decisions (cite where each choice came from) | Yohannes | Architecture v1.0 |
-| 2.7 | Test plan + test-case templates + levels justified | Nahom + Yohannes | `docs/requirements/test-plan.md` |
+| 2.6 | Literature-informed architecture decisions (cite where each choice came from) | Bemnet | Architecture v1.0 |
+| 2.7 | Test plan + test-case templates + levels justified | Nahom + Bemnet | `docs/requirements/test-plan.md` |
 | 2.8 | Traceability matrix v0.1 (SO → FR/NFR → design → test) | All | `docs/requirements/traceability-matrix.md` |
 | 2.9 | Advisor meeting; obtain **requirements baseline approval** | All | Signed spec |
 
@@ -89,16 +89,16 @@ no real-time video diagnosis in v1.
 
 | # | Task | Owner | Output |
 |---|---|---|---|
-| 3.1 | System architecture, component, deployment and data-flow diagrams | Yohannes | `docs/design/architecture.md` |
-| 3.2 | Database schema, data dictionary, migrations, seed script | Yohannes | `docs/design/database-schema.md` |
-| 3.3 | Use-case, activity, sequence and state diagrams | Bemnet | `docs/design/ui-wireframes.md` |
-| 3.4 | UI wireframes for the 4 screens + clickable prototype | Bemnet | Wireframes |
+| 3.1 | System architecture, component, deployment and data-flow diagrams | Bemnet | `docs/design/architecture.md` |
+| 3.2 | Database schema, data dictionary, migrations, seed script | Bemnet | `docs/design/database-schema.md` |
+| 3.3 | Use-case, activity, sequence and state diagrams | Yohannes | `docs/design/ui-wireframes.md` |
+| 3.4 | UI wireframes for the 4 screens + clickable prototype | Yohannes | Wireframes |
 | 3.5 | **Train the first real model** on the leakage-safe split; report metrics | Hayredin | Trained model + metrics |
 | 3.6 | External test-set evaluation v0 (Uganda, ROCoLE, Saposoa) | Hayredin | External metrics |
 | 3.7 | Convert to TFLite, quantise int8, measure size/latency | Hayredin | `.tflite` artefact |
 | 3.8 | Build the agronomic knowledge base with JARC/FAO/peer-reviewed sources | Nahom | `data/knowledge-base.md` |
-| 3.9 | API implemented + Dockerised + deployed to staging | Yohannes | Staging URL |
-| 3.10 | Flutter app wired to the real `.tflite` model | Bemnet | Working APK |
+| 3.9 | API implemented + Dockerised + deployed to staging | Bemnet | Staging URL |
+| 3.10 | Flutter app wired to the real `.tflite` model | Yohannes | Working APK |
 | 3.11 | Write Chapters 1–4 of the report | All (Nahom integrating) | `docs/report/ch1..ch4` |
 | 3.12 | Traceability matrix v0.5; risk register review with advisor | Yohannes | Updated matrix |
 
@@ -121,13 +121,13 @@ Week 14 is the defense; W15–W16 are corrections and final submission — see `
 
 | # | Task | Owner | Output |
 |---|---|---|---|
-| 5.1 | Mobile app: camera capture, gallery upload, quality gate, result screen | Bemnet | Screens work end-to-end |
-| 5.2 | Mobile app: local SQLite history, search, filter, delete, export | Bemnet | History works |
-| 5.3 | Knowledge-base rendering from the embedded JSON | Bemnet | Guidance screen works |
-| 5.4 | Confidence threshold + "retake photo" path | Bemnet | UX matches design |
-| 5.5 | API: `/predict`, `/diagnoses`, `/diagnoses/{id}`, `/health`, `/kb` | Yohannes | API live |
-| 5.6 | Optimise: model size, latency, memory on a low-end phone | Hayredin + Bemnet | Perf table |
-| 5.7 | Unit tests for inference wrapper, history DAO and API | Yohannes + Hayredin | Test suite |
+| 5.1 | Mobile app: camera capture, gallery upload, quality gate, result screen | Yohannes | Screens work end-to-end |
+| 5.2 | Mobile app: local SQLite history, search, filter, delete, export | Yohannes | History works |
+| 5.3 | Knowledge-base rendering from the embedded JSON | Yohannes | Guidance screen works |
+| 5.4 | Confidence threshold + "retake photo" path | Yohannes | UX matches design |
+| 5.5 | API: `/predict`, `/diagnoses`, `/diagnoses/{id}`, `/health`, `/kb` | Bemnet | API live |
+| 5.6 | Optimise: model size, latency, memory on a low-end phone | Hayredin + Yohannes | Perf table |
+| 5.7 | Unit tests for inference wrapper, history DAO and API | Bemnet + Hayredin | Test suite |
 | 5.8 | Weekly logbook + advisor meeting | All | Logbook current |
 
 **Gate 5 (end W20):** Core prototype demonstrated to advisor.
@@ -138,12 +138,12 @@ Week 14 is the defense; W15–W16 are corrections and final submission — see `
 | # | Task | Owner | Output |
 |---|---|---|---|
 | 6.1 | Web client: upload → diagnosis → guidance → history | Bemnet + Yohannes | Live web app |
-| 6.2 | Optional history sync (device → server), conflict rule documented | Yohannes | Sync working |
+| 6.2 | Optional history sync (device → server), conflict rule documented | Bemnet | Sync working |
 | 6.3 | Model v2: retrain with the best augmentation recipe, recalibrate confidence | Hayredin | Model v2 |
 | 6.4 | Calibration: temperature scaling; report ECE + selective risk | Hayredin | Calibration results |
 | 6.5 | Retrain/refresh the external evaluation on all 5 external sets | Hayredin | Final metrics |
-| 6.6 | Security pass: input validation, file-size/type limits, auth on the API, dependency scan | Yohannes | Security checklist |
-| 6.7 | Offline verification: airplane-mode test of every core feature | Bemnet | Offline test evidence |
+| 6.6 | Security pass: input validation, file-size/type limits, auth on the API, dependency scan | Bemnet | Security checklist |
+| 6.7 | Offline verification: airplane-mode test of every core feature | Yohannes | Offline test evidence |
 | 6.8 | Write Chapter 5 | All (Nahom integrating) | Chapter 5 draft |
 
 **Gate 6 (end W22):** Integrated system demoed; Chapter 5 drafted.
@@ -185,7 +185,7 @@ Week 14 is the defense; W15–W16 are corrections and final submission — see `
 |---|---|---|---|
 | 9.1 | Submit slides to the Coordinator ≥48 h before | Yohannes | Email |
 | 9.2 | Rehearsal ×3; question-drill each other against Appendix D | All | Notes |
-| 9.3 | **Live demonstration**: phone offline demo + web demo + failure case | Bemnet | Demo passes |
+| 9.3 | **Live demonstration**: phone offline demo + web demo + failure case | Yohannes | Demo passes |
 | 9.4 | All members present; each explains their own module **and** the whole system | All | — |
 
 ### Phase 10 — Corrections and final submission (Weeks 31–32, May 17 – May 30)
@@ -193,7 +193,7 @@ Week 14 is the defense; W15–W16 are corrections and final submission — see `
 | # | Task | Owner | Output |
 |---|---|---|---|
 | 10.1 | Implement the panel's required corrections | All | Corrected report |
-| 10.2 | Re-run any test affected by the corrections; update Appendix E and F | Hayredin + Yohannes | Updated evidence |
+| 10.2 | Re-run any test affected by the corrections; update Appendix E and F | Hayredin + Bemnet | Updated evidence |
 | 10.3 | Final submission package assembled per Appendix I | Yohannes | Package |
 | 10.4 | Advisor verification sign-off | All | Verified report |
 | 10.5 | Archive the repo snapshot; final logbook completion | Yohannes | Archived |
@@ -213,7 +213,7 @@ Week 5 ─ literature ─► requirements baseline ─► design ─────
                                               external eval ─► Chapter 6 ─► report ─► defense
 ```
 
-**The critical path is Hayredin's data → model → TFLite chain feeding Bemnet's app.**
+**The critical path is Hayredin's data → model → TFLite chain feeding Yohannes's app.**
 If that slips, everything slips. Mitigation: a placeholder model must exist in the app by
 **Week 13** even if it is the 2-class baseline, so integration is never the blocker.
 

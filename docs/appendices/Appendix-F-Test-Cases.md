@@ -71,7 +71,7 @@ executed, passing case. Every Should-priority requirement has at least one execu
 
 ---
 
-## F.4 Mobile client — Bemnet Tesfaye
+## F.4 Mobile client — Yohannes Berhanu
 
 | Test ID | Requirement | Precondition or input | Expected result | Actual result | Status | Evidence / defect | Severity if failed |
 |---|---|---|---|---|---|---|---|
@@ -102,7 +102,7 @@ executed, passing case. Every Should-priority requirement has at least one execu
 
 ---
 
-## F.5 API — Yohannes Berhanu
+## F.5 API — Bemnet Tesfaye
 
 | Test ID | Requirement | Precondition or input | Expected result | Actual result | Status | Evidence / defect | Severity if failed |
 |---|---|---|---|---|---|---|---|
@@ -119,7 +119,7 @@ executed, passing case. Every Should-priority requirement has at least one execu
 
 ---
 
-## F.6 Web client — Bemnet Tesfaye and Yohannes Berhanu
+## F.6 Web client — Yohannes Berhanu and Bemnet Tesfaye
 
 | Test ID | Requirement | Precondition or input | Expected result | Actual result | Status | Evidence / defect | Severity if failed |
 |---|---|---|---|---|---|---|---|
@@ -130,7 +130,7 @@ executed, passing case. Every Should-priority requirement has at least one execu
 
 ---
 
-## F.7 Accessibility — Bemnet Tesfaye
+## F.7 Accessibility — Yohannes Berhanu
 
 | Test ID | Requirement | Precondition or input | Expected result | Actual result | Status | Evidence / defect | Severity if failed |
 |---|---|---|---|---|---|---|---|
@@ -188,7 +188,7 @@ defects are discussed in Chapter 6 with their impact, as §10.3 requires.
 | Role | Name | Date | Signature |
 |---|---|---|---|
 | Test coordinator | Nahom Solomon | | |
-| Mobile client | Bemnet Tesfaye | | |
+| Mobile client | Yohannes Berhanu | | |
 | Model and data | Hayredin Mohammed | | |
-| API and deployment | Yohannes Berhanu | | |
+| API and deployment | Bemnet Tesfaye | | |
 | Advisor | Surafiel Habib Asefa | | |

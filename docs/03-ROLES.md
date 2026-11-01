@@ -9,10 +9,10 @@ work package (Guideline §14.2). Roles are declared in the proposal and repeated
 
 | Role | Owner | ID | Primary work package | Secondary |
 |---|---|---|---|---|
-| **A. Data & Model Lead** | **Hayredin Mohammed** | UGR/2361/16 | Dataset curation, leakage-safe splits, training, baselines, quantisation, TFLite export, evaluation and error analysis | Backend CI, model serving |
-| **B. Mobile App Lead** | **Bemnet Tesfaye** | UGR/3266/16 | Flutter app: capture/upload, on-device inference, result screen, knowledge-base rendering, offline mode, local history | Web client, demo |
-| **C. Backend & Platform Lead** | **Yohannes Berhanu** | UGR/9440/16 | FastAPI service, database schema, deployment, security, repository governance, CI, reproducibility package | Web client, logbook compilation |
-| **D. Research, Requirements & Quality Lead** | **Nahom Solomon** | UGR/3155/16 | Literature review, gap analysis, requirements specification, test plan, knowledge-base content, ethics screening, usability study, report integration | Model evaluation, KB verification |
+| **A. Data & Model Lead** | **Hayredin Mohammed** | UGR/2361/16 | Dataset curation, leakage-safe splits, training, baselines, quantisation, TFLite export, evaluation and error analysis | Model serving |
+| **B. Mobile App & UI/UX Lead** *(also project lead)* | **Yohannes Berhanu** | UGR/9440/16 | Flutter app: capture/upload, on-device inference, result screen, knowledge-base rendering, offline mode, local history; repository governance and CI | Web client, demo |
+| **C. Backend & Platform Lead** | **Bemnet Tesfaye** | UGR/3266/16 | FastAPI service, database schema, deployment, security, knowledge-base implementation, reproducibility package | Web client, CI |
+| **D. Research, Requirements & Quality Lead** | **Nahom Solomon** | UGR/3155/16 | Literature review, gap analysis, requirements specification, test plan, knowledge-base content, ethics screening, usability study, report integration, logbook compilation | Model evaluation, KB verification |
 
 Swap freely if someone has a stronger prior skill — but write the swap into `docs/05-DECISION-LOG.md`
 and tell the advisor. The *labels* matter less than the *coverage*.
@@ -44,18 +44,20 @@ R = Responsible (does the work) · A = Accountable (one person, owns the outcome
 | TFLite quantisation & export | **A/R** | C | I | I |
 | External evaluation & error analysis | **A/R** | C | I | C |
 | Calibration (temperature scaling) | **A/R** | I | I | C |
-| Flutter app — screens & navigation | C | **A/R** | C | I |
-| On-device inference integration | C | **A/R** | C | I |
-| Local SQLite history | C | **A/R** | C | I |
-| Offline-mode verification | C | **A/R** | I | I |
+| Flutter app — screens & navigation | C | C | **A/R** | I |
+| On-device inference integration | C | C | **A/R** | I |
+| Local SQLite history | C | C | **A/R** | I |
+| Offline-mode verification | C | C | **A/R** | I |
 | Knowledge base content | C | C | I | **A/R** |
-| Knowledge base rendering | I | **A/R** | I | C |
-| FastAPI service | C | I | **A/R** | I |
-| Database schema & migrations | C | C | **A/R** | I |
-| Deployment & CI | C | C | **A/R** | I |
-| Security review & OWASP checklist | C | C | **A/R** | I |
-| Web client | C | **A/R** | C | I |
-| Repository governance & logbook compile | C | C | **A/R** | C |
+| Knowledge base rendering (in-app) | I | C | **A/R** | C |
+| Knowledge base implementation (JSON asset, versioning) | I | **A/R** | C | C |
+| FastAPI service | C | **A/R** | I | I |
+| Database schema & migrations | C | **A/R** | I | I |
+| Deployment & CI | C | **A/R** | I | I |
+| Security review & OWASP checklist | C | **A/R** | C | I |
+| Web client | C | C | **A/R** | I |
+| Repository governance | C | C | **A/R** | C |
+| Logbook compilation | C | C | C | **A/R** |
 | Literature review & gap | C | C | C | **A/R** |
 | Requirements specification | C | C | C | **A/R** |
 | Test plan & test cases | C | C | C | **A/R** |
@@ -105,8 +107,8 @@ person's package. This is cheap insurance for the defense.
 
 | Week | Hayredin reviews | Bemnet reviews | Yohannes reviews | Nahom reviews |
 |---|---|---|---|---|
-| Odd weeks | Bemnet's app | Yohannes's API | Nahom's requirements | Hayredin's data pipeline |
-| Even weeks | Nahom's KB/literature | Hayredin's model | Bemnet's app | Yohannes's deployment |
+| Odd weeks | Yohannes's app | Bemnet's API | Nahom's requirements | Hayredin's data pipeline |
+| Even weeks | Nahom's KB/literature | Hayredin's model | Yohannes's app | Bemnet's deployment |
 
 **Rule:** the reviewer writes the comment in the PR and the author must respond. Both names land
 in the git history — which the examiners read for the ICF.
@@ -130,7 +132,7 @@ in the git history — which the examiners read for the ICF.
    URLs and a `scripts/prepare_data.py` that reproduces the split from a manifest. (§8.5, §9.7)
 4. **Never mark a task done in the logbook that you cannot show a commit, a screenshot or a
    document for.** The logbook is evidence (§13.2).
-5. **One person owns the logbook compilation** (Yohannes), but **every member writes their own
+5. **One person owns the logbook compilation** (Nahom), but **every member writes their own
    row**. Do not let one person write all four rows — that is visible in the handwriting/style
    and it undermines the ICF.
 6. **Update Appendix L the same day you use an AI tool**, not the night before submission.

@@ -1,6 +1,6 @@
 # Chapter 4 — Requirements Analysis and Design
 
-> **Owner:** Yohannes Berhanu (architecture, database, API) with Bemnet Tesfaye (the client
+> **Owner:** Bemnet Tesfaye (architecture, database, API) with Yohannes Berhanu (the client
 > and interface design), Hayredin Mohammed (the model design) and Nahom Solomon (the
 > knowledge base and the requirements) · **Estimated length:** 8–10 pages
 >

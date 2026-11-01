@@ -23,9 +23,9 @@ behind us and must be backfilled this week** — see §7.
 | Code | Person | Owns |
 |---|---|---|
 | **H** | Hayredin | Data & model — datasets, splits, training, quantisation, evaluation |
-| **B** | Bemnet | Mobile app — capture, on-device inference, result screen, history |
-| **Y** | Yohannes | Backend & platform — API, database, CI, security, repository, document assembly |
-| **N** | Nahom | Research & quality — literature, requirements, test plan, KB content, ethics, report |
+| **Y** | Yohannes | Mobile app & UI/UX — capture, on-device inference, result screen, history; also project lead |
+| **B** | Bemnet | Backend & platform — API, database, KB implementation, CI, security, deployment |
+| **N** | Nahom | Research & quality — literature, requirements, test plan, KB content, ethics, report, logbook |
 
 ---
 
@@ -108,8 +108,8 @@ These run alongside the weekly tasks, and they are what you write in the report 
 | Code | Standing duty | Where it is recorded |
 |---|---|---|
 | **H** | Keep `data/` honest: every count and licence claim traceable to a fetch | `data/dataset-sources.md` |
-| **B** | The app must build and run on the real phone, every week — never "will fix later" | screenshot or 20 s clip |
-| **Y** | CI green; no secret, dataset or model binary committed; one commit per person per week | repo + Actions tab |
+| **Y** | The app must build and run on the real phone, every week — never "will fix later" | screenshot or 20 s clip |
+| **B** | CI green; no secret, dataset or model binary committed; one commit per person per week | repo + Actions tab |
 | **N** | Logbook compiled and sent Friday; AI-use log kept current | `Appendix-L` + logbook |
 
 **Every Friday, each person sends N four lines.** N compiles and sends the logbook to the advisor.
@@ -129,8 +129,8 @@ differentiation (§5) — the reason this is not the same project as everyone el
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Download JMuBEN (`t2r6rszp5c`) and JMuBEN2 (`tgv3zb82nd`); count images per class | `data/dataset-sources.md` with per-class counts |
-| **B** | Create the Flutter project; run it on a **physical phone** | Photo of the app running on the device |
-| **Y** | Create the GitHub repo, folder tree, `.gitignore` for data/models/secrets | Repo URL the advisor can open |
+| **Y** | Create the Flutter project; run it on a **physical phone** | Photo of the app running on the device |
+| **B** | Create the GitHub repo, folder tree, `.gitignore` for data/models/secrets | Repo URL the advisor can open |
 | **N** | Extract obligations from Guideline §1–§7; score 4 candidate titles | Title record with the rejection reasons |
 
 **Gate test:** `git log --author` shows a commit from all four.
@@ -142,8 +142,8 @@ differentiation (§5) — the reason this is not the same project as everyone el
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Datasheet: composition, licences, the 5 external test sets, limitations | `data/datasheet.md` |
-| **B** | Nine-screen inventory + navigation map; camera plugin spike | Wireframes v0 + a captured photo in-app |
-| **Y** | CI (lint + test), security NFRs, branch protection | Green CI run |
+| **Y** | Nine-screen inventory + navigation map; camera plugin spike | Wireframes v0 + a captured photo in-app |
+| **B** | CI (lint + test), security NFRs, branch protection | Green CI run |
 | **N** | Ethics screening (App. M) + AI-use log (App. L); first 3 comparison-table rows | Completed Appendix M |
 
 **Gate test:** the advisor has seen the outline and the dataset counts.
@@ -155,8 +155,8 @@ differentiation (§5) — the reason this is not the same project as everyone el
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Proposal §2 gap + novelty, written from `06-DIFFERENTIATION.md`, with numbers from prior work (e.g. 1.9 % external rust recall) | 2 pages, every number cited |
-| **B** | §10 condensed requirements + the proposed-system UI figure | One figure at 300 dpi |
-| **Y** | §9 method (design science) + §14 schedule + the High-complexity argument (§2.4) | 4 pages |
+| **Y** | §10 condensed requirements + the proposed-system UI figure | One figure at 300 dpi |
+| **B** | §9 method (design science) + §14 schedule + the High-complexity argument (§2.4) | 4 pages |
 | **N** | §1 problem, §5 questions, §6 scope, §8 literature | 6 pages |
 
 **Gate test:** the 14 sections are all present in one file.
@@ -166,8 +166,8 @@ differentiation (§5) — the reason this is not the same project as everyone el
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Dataset registry final, with checksums and a reproducibility plan | `data/dataset-sources.md` frozen |
-| **B** | Architecture / container figure | 300 dpi figure referenced in the text |
-| **Y** | Format to §11 (TNR 12, 1.5 spacing, margins), approval block, searchable PDF | Submission PDF |
+| **Y** | Architecture / container figure | 300 dpi figure referenced in the text |
+| **B** | Format to §11 (TNR 12, 1.5 spacing, margins), approval block, searchable PDF | Submission PDF |
 | **N** | ≥15 verified references in IEEE order; zero uncited claims; proofread | Reference registry |
 
 **Gate test:** **submitted Sunday 15 November.** A late proposal moves every later week and the defense
@@ -180,8 +180,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | 5 efficiency/edge papers → model comparison (params, size, accuracy) | Filled comparison columns |
-| **B** | 5 on-device inference papers → the latency/size budget we must hit | NFR targets with sources |
-| **Y** | 3 offline/system/KB-versioning works → our security and versioning constraints | Design constraints list |
+| **Y** | 5 on-device inference papers → the latency/size budget we must hit | NFR targets with sources |
+| **B** | 3 offline/system/KB-versioning works → our security and versioning constraints | Design constraints list |
 | **N** | Synthesis themes 1–3 (argue, do not summarise) + gap statement v1 | Gap statement, 1 paragraph, checkable |
 
 **Gate test:** 15 sources read and logged with page numbers — not abstracts.
@@ -191,8 +191,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | DR-01…DR-08, with the split invariants written as testable statements | Data requirements table |
-| **B** | FR for capture, result, history, KB — each with an acceptance criterion | FR register, app side |
-| **Y** | FR for the service + NFR for performance/security; reference device decided | NFR table with numbers |
+| **Y** | FR for capture, result, history, KB — each with an acceptance criterion | FR register, app side |
+| **B** | FR for the service + NFR for performance/security; reference device decided | NFR table with numbers |
 | **N** | Use cases UC-01…UC-08; consolidate the FR/NFR register | Use case document |
 
 **Gate test:** no requirement without an actor, a condition and a test.
@@ -202,8 +202,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Implement and **test** the leakage-safe splitter; publish the manifest hash | `scripts/prepare_data.py` + `AUDIT PASSED` log |
-| **B** | App-side test cases with preconditions and expected results | Test-case register |
-| **Y** | Traceability matrix rows + the baseline sign-off pack | Signed baseline |
+| **Y** | App-side test cases with preconditions and expected results | Test-case register |
+| **B** | Traceability matrix rows + the baseline sign-off pack | Signed baseline |
 | **N** | Full test plan; run the baseline meeting; write the minutes | Minutes + signature |
 
 **Gate test:** **signed Friday 4 December.** After this, a new requirement is a change request.
@@ -213,8 +213,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Training pipeline end to end on a 20 % subset | **One real accuracy number** |
-| **B** | All nine screens specified, including empty / loading / error states | Screen spec |
-| **Y** | ERD + SQLite DDL + the API contract (OpenAPI) | Schema file + OpenAPI JSON |
+| **Y** | All nine screens specified, including empty / loading / error states | Screen spec |
+| **B** | ERD + SQLite DDL + the API contract (OpenAPI) | Schema file + OpenAPI JSON |
 | **N** | Chapter 2 final; Chapter 4 §4.1–4.2 | Chapters with figures referenced |
 
 **Gate test:** a number exists that was produced by our own code.
@@ -224,8 +224,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Model v1 on the full internal split; confusion matrix, per-class recall | Confusion matrix + per-class table |
-| **B** | TFLite inference spike on the phone; measured ms per image | Latency measurement on the real device |
-| **Y** | API skeleton: `/health`, `/predict` stub, model checksum pin | Running service + curl output |
+| **Y** | TFLite inference spike on the phone; measured ms per image | Latency measurement on the real device |
+| **B** | API skeleton: `/health`, `/predict` stub, model checksum pin | Running service + curl output |
 | **N** | ★ The five unique features written as requirements **with pass conditions** | ★ spec table (§5) |
 
 **Gate test:** accuracy *and* on-device latency both measured.
@@ -235,8 +235,8 @@ date does not move with it.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Evaluate v1 on Uganda, ROCoLE, Saposoa → **the generalisation gap** | Per-dataset table + the gap |
-| **B** | ★ Capture coach: blur, exposure, leaf-coverage measured pre-shutter | Warning fires correctly on 10 bad photos |
-| **Y** | Model artifact contract + a CI job that checks size and checksum | CI model check |
+| **Y** | ★ Capture coach: blur, exposure, leaf-coverage measured pre-shutter | Warning fires correctly on 10 bad photos |
+| **B** | Model artifact contract + a CI job that checks size and checksum | CI model check |
 | **N** | Error analysis + threats to validity | 2 pages, with examples |
 
 **Gate test:** the gap is a number, and it is written down even if it is bad. **A bad number is a result;
@@ -247,8 +247,8 @@ a missing number is a failure.**
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | int8 TFLite export; size / latency / accuracy-delta table | Artifact + the three-way table |
-| **B** | **Camera → prediction → guidance → history, offline, on the phone** | 30 s clip, airplane mode ON |
-| **Y** | KB JSON schema, version field, checksum, served by the API | Validated KB asset |
+| **Y** | **Camera → prediction → guidance → history, offline, on the phone** | 30 s clip, airplane mode ON |
+| **B** | KB JSON schema, version field, checksum, served by the API | Validated KB asset |
 | **N** | Chapter 3 final | Chapter 3 |
 
 **Gate test:** **the vertical slice runs with the radio off.** This is the demo; everything after it is
@@ -259,8 +259,8 @@ polish and evidence.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | ★ Conformal threshold + uncertainty attribution (TTA disagreement) | Shipped threshold file + coverage table |
-| **B** | ★ Result screen: prediction set, "why unsure", look-alike cases | Three screens |
-| **Y** | ★ Correction packet (signed, anonymised) + local scorecard | Round-trip test |
+| **Y** | ★ Result screen: prediction set, "why unsure", look-alike cases | Three screens |
+| **B** | ★ Correction packet (signed, anonymised) + local scorecard | Round-trip test |
 | **N** | ★ KB content final in English + Amharic; citation audit; reviewer sign-off | Signed content review |
 
 **Gate test:** at least three ★ features work; the rest have a pass condition and a fallback.
@@ -270,8 +270,8 @@ polish and evidence.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Evaluation design frozen: sets, metrics, baselines, statistical tests | Evaluation protocol |
-| **B** | All wireframes exported at 300 dpi + figure list | Figure folder |
-| **Y** | Document assembled to §11; similarity check run | PDF + similarity report |
+| **Y** | All wireframes exported at 300 dpi + figure list | Figure folder |
+| **B** | Document assembled to §11; similarity check run | PDF + similarity report |
 | **N** | Chapters 1–4 final; traceability complete for the FYP I columns | Complete document |
 
 **Gate test:** **design review Wednesday 13 January**; the document is defensible as it stands.
@@ -281,8 +281,8 @@ polish and evidence.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **All** | Two timed dry runs (Mon, Wed); each member answers 3 questions outside their own area | Rehearsal notes |
-| **Y** | Slides + document submitted **48 h ahead**; receipt kept | Submission receipt |
-| **B** | Live demo rehearsed on the actual phone, battery charged, backup video recorded | Backup clip |
+| **B** | Slides + document submitted **48 h ahead**; receipt kept | Submission receipt |
+| **Y** | Live demo rehearsed on the actual phone, battery charged, backup video recorded | Backup clip |
 | **N** | Logbook, contribution statements and declarations complete and signed | Signed Appendix G |
 
 **Gate test:** the defense is delivered. Note: **Timket (19–20 Jan) may move the date** — confirm with
@@ -293,8 +293,8 @@ the Coordinator in W5, not in January.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Re-run any experiment the panel questioned; update the tables | Updated results |
-| **B** | Fix the UI findings; re-export the affected figures | Updated figures |
-| **Y** | Apply the corrections; archive the evidence pack | Corrected document |
+| **Y** | Fix the UI findings; re-export the affected figures | Updated figures |
+| **B** | Apply the corrections; archive the evidence pack | Corrected document |
 | **N** | Revise the chapters; update the traceability matrix | Updated chapters |
 
 **Gate test:** every panel condition has an owner and is closed or explicitly deferred in writing.
@@ -304,8 +304,8 @@ the Coordinator in W5, not in January.
 | Code | Task | The thing you can show |
 |---|---|---|
 | **H** | Freeze the model card and the results tables | `data/model-card.md` |
-| **B** | Freeze the APK and the demo script | Tagged release |
-| **Y** | Assemble the submission package; keep the receipt | Receipt |
+| **Y** | Freeze the APK and the demo script | Tagged release |
+| **B** | Assemble the submission package; keep the receipt | Receipt |
 | **N** | Final proofread, reference pass, contribution statements signed | Final PDF |
 
 **Gate test:** submitted, receipted, and the repository is tagged.

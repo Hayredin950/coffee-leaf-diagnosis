@@ -19,14 +19,14 @@
 | `scripts/` | `prepare_data.py` — the inventory, grouping, clustering, split and audit pipeline | Hayredin |
 | `training/` | `train.py`, `evaluate_internal.py`, `evaluate_external.py`, `calibrate.py`, `ablate.py`, `significance.py`, `selective_risk.py` | Hayredin |
 | `model/` | `export_tflite.py`, `model.tflite`, `labels.txt`, `metadata.json`, `model-card.md` | Hayredin |
-| `mobile/` | The Flutter client — `lib/` (UI, acquisition, validation, quality, inference, calibration, abstention, KB resolver, repository), `test/`, `android/` | Bemnet |
-| `api/` | The FastAPI service — `app/` (routers, services, models), `migrations/`, `openapi.json` | Yohannes |
+| `mobile/` | The Flutter client — `lib/` (UI, acquisition, validation, quality, inference, calibration, abstention, KB resolver, repository), `test/`, `android/` | Yohannes |
+| `api/` | The FastAPI service — `app/` (routers, services, models), `migrations/`, `openapi.json` | Bemnet |
 | `web/` | The static web client | Bemnet + Yohannes |
 | `data/` | `datasheet.md`, `dataset-sources.md`, `knowledge_base.json`, `knowledge-base.md`, `split_manifest.csv` | Hayredin + Nahom |
 | `docs/` | All design, requirements, literature and report documents | All |
 | `evidence/` | The test evidence — screenshots, logs and captures referenced from Appendix F | All |
 | `results/` | One file per evaluation experiment, referenced from `results.md` | Hayredin |
-| `.github/workflows/` | CI — lint, unit tests, the container build, the artefact check, the KB audit, the secret scan | Yohannes |
+| `.github/workflows/` | CI — lint, unit tests, the container build, the artefact check, the KB audit, the secret scan | Bemnet |
 
 **Table 5.2** — The implementation languages and frameworks, with their versions.
 
@@ -313,7 +313,7 @@ field officer can verify the recommendation and an extension officer can follow 
 
 ## 5.6 The API service and the web client
 
-**Lead: Yohannes Berhanu (API) with Bemnet Tesfaye (web client)**
+**Lead: Bemnet Tesfaye (API) with Yohannes Berhanu (web client)**
 
 ### 5.6.1 The API
 

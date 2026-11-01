@@ -2,7 +2,7 @@
 
 **Project:** Design and Development of a Coffee Leaf Disease Diagnosis System Using Deep Learning
 **Version:** 1.0
-**Owner:** Nahom Solomon · **Contributors:** Yohannes Berhanu (API/security), Bemnet Tesfaye (UI), Hayredin Mohammed (model/performance)
+**Owner:** Nahom Solomon · **Contributors:** Bemnet Tesfaye (API/security), Yohannes Berhanu (UI), Hayredin Mohammed (model/performance)
 **Gate:** Prepared during design; executed in FYP II weeks 23–24 (Guideline Table 16.1, "Testing and evaluation").
 **Template:** Appendix F — Test ID · Requirement · Precondition/input · Expected result · Actual result · Status · Evidence or defect ID · Severity if failed.
 
@@ -134,7 +134,7 @@ coverage per area.
 | T-15 | Abstention | At the configured threshold, the abstention rate and accepted accuracy are computed correctly on the external sets |
 | T-16 | Unsupported class | Red spider mite, weevil and *Mycena* images are routed to `unsupported` and never to a disease class |
 
-### 7.3 Mobile client (Bemnet) — T-17…T-40
+### 7.3 Mobile client (Yohannes) — T-17…T-40
 
 | Test ID | Area | Check |
 |---|---|---|
@@ -163,7 +163,7 @@ coverage per area.
 | T-39 | History | The CSV export opens in a spreadsheet with one row per record and a header |
 | T-40 | History | A record written at schema v1 is readable after migration to v2 |
 
-### 7.4 API (Yohannes) — T-51…T-60
+### 7.4 API (Bemnet) — T-51…T-60
 
 | Test ID | Area | Check |
 |---|---|---|
@@ -178,7 +178,7 @@ coverage per area.
 | T-59 | Performance | p95 API latency ≤ 2,000 ms for a 224×224 upload at the target concurrency |
 | T-60 | Availability | The health endpoint returns 200 throughout the evaluation window; uptime ≥ 99 % |
 
-### 7.5 Web client (Bemnet + Yohannes) — T-61…T-64
+### 7.5 Web client (Yohannes + Bemnet) — T-61…T-64
 
 | Test ID | Area | Check |
 |---|---|---|
