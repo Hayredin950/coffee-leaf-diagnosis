@@ -1,0 +1,88 @@
+# ─── Private / not for publication ───────────────────────────────────────────
+# Advisor correspondence and screenshots. Kept locally, never pushed.
+chat.txt
+Pasted image.png
+
+# ─── Datasets — never redistributed (licences permit it, discipline does not) ─
+# The repository carries download instructions and the split manifest only.
+data/raw/
+data/interim/
+data/processed/
+data/external/
+data/*.zip
+data/*.tar.gz
+*.jpg
+*.jpeg
+*.png
+!docs/**/*.png
+!data/figures/*.png
+
+# ─── Models and generated artefacts ──────────────────────────────────────────
+models/
+*.tflite
+*.onnx
+*.pt
+*.pth
+*.h5
+*.keras
+*.safetensors
+*.bin
+*.ckpt
+runs/
+mlruns/
+lightning_logs/
+wandb/
+
+# ─── Split manifests may be committed; raw indexes may not ───────────────────
+data/splits/*.csv
+!data/splits/split_manifest.json
+!data/splits/README.md
+
+# ─── Secrets ─────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+google-services.json
+GoogleService-Info.plist
+*.jks
+*.keystore
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ─── Flutter / Dart ──────────────────────────────────────────────────────────
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+*.g.dart
+*.freezed.dart
+ios/Pods/
+android/.gradle/
+android/local.properties
+
+# ─── Node (web client, if it ever needs a build) ─────────────────────────────
+node_modules/
+dist/
+
+# ─── Editor / OS ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ─── Office lock files (the .docx/.pdf themselves are committed) ─────────────
+~$*

@@ -1,0 +1,80 @@
+
+
+COLLEGE OF NATURAL AND  COMPUTATIONAL
+SCIENCES                                                      
+
+  Department of Computer Science
+
+          Course Title: Final Year Project I
+
+Final Year Project I Revised Synopsis
+
+
+
+                                          Group members
+                 Name                                                          ID
+Yohannes Berhanu                                     UGR/9440/16
+Hayredin Mohammed                                 UGR/2361/16                        
+Bemnet Tesfaye                                          UGR/3266/16
+Nahom Solomon                                         UGR/3155/16
+
+
+
+                                                                                             Submission Date: October 12, 2026 
+
+Project Title
+Design and Development of a Coffee Leaf Disease Diagnosis System Using Deep Learning
+Introduction
+Coffee is a cornerstone of agricultural economies, but yields are frequently threatened by crop diseases such as Coffee Leaf Rust (Hemileia vastatrix), Cercospora Leaf Spot, Leaf Miner damage, and Phoma Leaf Spot. Early detection is critical for mitigation, yet traditional agricultural extensions rely on visual inspection by field experts, which is slow and inaccessible to rural farmers.
+This project presents an automated computer vision approach that provides real-time multi-class disease diagnosis through an interactive software application. Designed specifically for accessibility and low-cost mobile devices, the system allows users to capture or upload leaf images, performs fast offline inference, displays localized diagnosis results alongside relevant agronomic guidance, and maintains a local diagnosis history for longitudinal crop monitoring.
+Statement of the Problem
+Smallholder coffee farmers in remote regions lack immediate access to agronomists, leading to delayed disease identification and crop loss. While automated computer vision models exist, they often suffer from several practical limitations:
+Infrastructure Dependency: Many solutions rely on cloud-based deep learning APIs, which fail in rural environments due to absent or unstable internet connectivity.
+Lack of End-to-End Usability: Existing technical models output raw classifications without user-friendly interfaces, actionable treatment recommendations, or historical tracking capabilities needed by farmers to monitor disease progression over time.
+Hardware Constraints: Standard deep learning models are computationally heavy, making them unsuitable for deployment on low-cost edge mobile hardware.
+There is a critical need for an integrated, lightweight edge application that not only classifies coffee leaf diseases accurately offline but also guides the user through mitigation strategies and logs historical data.
+Objectives
+General Objective:
+To design and develop a deep learning-based coffee leaf disease diagnosis system that enables users to capture or upload leaf images, receive real-time multi-class classifications with actionable mitigation guidance, and track diagnosis history on low-cost edge devices.
+Specific Objectives:
+To curate, augment, and preprocess a robust multi-class coffee leaf image dataset covering major pathogens (Coffee Leaf Rust, Cercospora, Leaf Miner, Phoma) and healthy leaves.
+To train, optimize, and quantize lightweight Convolutional Neural Network (CNN) architectures (e.g., MobileNetV3) to minimize model size and inference latency.
+To develop an intuitive application interface allowing users to seamlessly capture photos via camera or upload existing images from device storage.
+To integrate a structured agronomic knowledge base that dynamically displays disease descriptions, severity levels, and targeted treatment guidance based on inference outcomes.
+To implement a secure local database (e.g., SQLite) to record and maintain a searchable diagnosis history.
+To evaluate the complete system’s performance in terms of classification accuracy, inference latency, memory footprint, power consumption, and overall user usability.
+Scope and Limitation
+Scope:
+Diagnostic Categories: Identifies four primary coffee leaf diseases (Coffee Leaf Rust, Cercospora Leaf Spot, Leaf Miner, Phoma Leaf Spot) and healthy leaves using RGB imagery.
+Application Features: Complete end-to-end workflow including camera capture/file upload, real-time offline CNN inference, dynamic display of results and chemical/organic treatment guidelines, and a local diagnosis history log.
+Environment: Operates entirely offline on standard mobile/edge operating systems.
+Limitation:
+The diagnostic scope is strictly restricted to coffee leaves and does not extend to soil analysis, root health, or coffee cherry/stalk diseases.
+Model classification accuracy may degrade under extreme lighting conditions (e.g., direct blinding glare or deep shadows) or severely motion-blurred inputs.
+Diagnosis history is stored locally on the user's device and does not synchronize with a cloud server unless explicitly exported.
+Significance of the Proposed Project
+By transforming a raw deep learning model into a fully realized, interactive application, this project bridges the gap between advanced artificial intelligence and practical field use. It empowers rural coffee farmers with an immediate, self-contained diagnostic assistant that functions without internet dependency. Furthermore, by coupling disease identification with tailored treatment recommendations and historical tracking, farmers can apply precise treatments, reduce chemical overuse, prevent recurring outbreaks, and safeguard their livelihoods.
+System Development and Implementation Plan
+To successfully design, build, and test the complete system within the available project timeline, the work has been structured into four sequential phases:
+Phase 1: Data Curation & Model Optimization
+Weeks 1–3
+Gather and preprocess the multi-class coffee leaf dataset, applying data augmentation to handle varying angles and lighting conditions.
+Train a lightweight baseline CNN (MobileNetV3) and apply post-training quantization (TFLite / ONNX) to minimize model size and latency.
+Validate baseline classification accuracy against test split metrics.
+Phase 2: Application UI & Knowledge Base Integration
+Weeks 4–6
+Design and implement the mobile/edge application interface supporting both live camera capture and gallery image upload.
+Build the local agronomic knowledge base mapping each predicted class to specific symptoms, severity indicators, and organic/chemical treatment guidelines.
+Implement a local SQLite database schema to save timestamps, image references, classification results, and applied notes.
+Phase 3: System Integration & Offline Deployment
+Weeks 7–8
+Embed the optimized quantized model into the application runtime environment.
+Connect the inference engine output to the dynamic results view and history logger.
+Verify that all core features function seamlessly without active internet connectivity.
+Phase 4: Testing, Evaluation & Documentation
+Weeks 9–10
+Perform rigorous testing: measure inference latency, RAM/storage footprint, and battery drain on target low-cost mobile hardware.
+Conduct usability checks to ensure intuitive navigation from image capture to viewing historical logs.
+Compile final project documentation, source code repositories, and user manuals.
+
+
