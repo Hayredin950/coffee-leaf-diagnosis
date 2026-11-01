@@ -30,6 +30,7 @@ Format: ADR-## | Date | Decision | Rationale | Alternatives rejected | Affects |
 | ADR-013 | 2026-10-21 | Report the **macro-F1 and the per-class recall**, not accuracy alone | The corpus is imbalanced (Healthy is 32 %); accuracy would be inflated by the dominant classes | Accuracy alone | SO2, SO3 | Accepted |
 | ADR-014 | 2026-10-21 | The API's `/predict` **applies abstention by default**, with an opt-out for the evaluation harness | The server must not present an unconfident class as a diagnosis either | Always returning the raw class | SO3, SO4 | Accepted |
 | ADR-015 | 2026-10-21 | Deliver the **Amharic localisation infrastructure** but keep the shipped UI English-only | Shipping unreviewed Amharic text would be worse than shipping none; the translations need a qualified translator | Machine-translating the strings and shipping them | SO5, NFR-15 | Accepted — reported as a limitation |
+| ADR-016 | 2026-11-01 | **`08-PRODUCT-VISION.md` is a product document, not the design baseline.** The FYP I design deliverable stays the wireframe set in `docs/design/ui-wireframes.md` (Screens 1–5 plus the web client); any screen in the vision that is not there enters through a change request (Part B) before it is built or reported. | Designing twenty screens at W2 would break the requirement trace that the W13 design review is scored on; writing them down anyway is what stops a W10 argument about a fourth tab from becoming a W12 redesign. | Designing the full set now | Chapter 4, W13 review | Accepted |
 
 ---
 

@@ -18,6 +18,13 @@ image-generation prompt set, one prompt per screen.
 17–32 · `[POST]` after graduation, deliberately out of scope now · `⟦VERIFY⟧` a figure or platform
 capability that must be checked before it is quoted.
 
+**Where this sits against the design baseline.** `docs/design/ui-wireframes.md` specifies Screens 1–5 and
+the web client; that is the FYP I design deliverable and it is what Chapter 4 reports. This file is a
+*product* document: it describes the end state those screens are the first slice of, so a decision taken
+in W10 can be judged against something written down rather than against whoever argues hardest. Any
+screen here that is not in the wireframe set enters through a change request before it is built or
+reported (ADR-016).
+
 ---
 
 ## 1. The user
