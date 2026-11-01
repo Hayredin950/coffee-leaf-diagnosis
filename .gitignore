@@ -3,6 +3,17 @@
 chat.txt
 Pasted image.png
 
+# Hayredin's own forward-looking working notes — the product vision and the
+# image-prompt set. Deliberately NOT in this repository and NOT in the group
+# repository: they are personal design thinking, not the FYP I deliverable, and
+# they describe twenty screens where the design baseline specifies five. Kept on
+# disk, never committed. See ADR-016.
+docs/08-PRODUCT-VISION.md
+docs/09-APP-IMAGE-PROMPTS.md
+
+# The mockups generated from those prompts, same rule.
+docs/design/assets/
+
 # ─── Datasets — never redistributed (licences permit it, discipline does not) ─
 # The repository carries download instructions and the split manifest only.
 data/raw/

@@ -18,7 +18,6 @@
 | **A whole afternoon** | | | `docs/proposal/Appendix-A-Proposal.md` → `docs/literature/` → `docs/requirements/` → `docs/design/` → `docs/report/` |
 | **Just want to know what to do today** | | `docs/02-WEEKLY-PLAN.md` — find your column (H / B / Y / N) | |
 | **Want to know why this isn't an ordinary project** | | | `docs/06-DIFFERENTIATION.md` → `docs/07-IMPACT-AND-SCALE.md` |
-| **Want to see what the finished app looks like** | | `docs/08-PRODUCT-VISION.md` §6 (screens) and §7 (flows) | |
 | **Are preparing for the defense** | | | `docs/appendices/Appendix-D-N-Defense.md` + `docs/defense/slides-and-demo.md` |
 
 ---
@@ -57,8 +56,6 @@ Final-Year-Project/
 │   ├── 05-DECISION-LOG.md           ← ADRs, scope changes, the weekly troubleshooting drill
 │   ├── 06-DIFFERENTIATION.md        ← the five ★ features vs. the public GitHub projects
 │   ├── 07-IMPACT-AND-SCALE.md       ← what this adds to Ethiopia and the world, and what "winning" requires
-│   ├── 08-PRODUCT-VISION.md         ← the finished product: personas, every screen, every flow, the AI stack
-│   ├── 09-APP-IMAGE-PROMPTS.md      ← 18 copy-paste prompts to generate the app's screens
 │   │
 │   ├── proposal/
 │   │   └── Appendix-A-Proposal.md   ← the full 14-section proposal
