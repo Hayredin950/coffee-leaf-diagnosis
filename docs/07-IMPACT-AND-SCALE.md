@@ -29,7 +29,7 @@ timing touches tens of thousands of households.
 
 | Fact | Value | Source |
 |---|---|---|
-| Mean coffee leaf rust **incidence** in Ethiopia | **35.3 %** | Berehanu 2023, *Arch. Phytopathol. Plant Prot.* — our ref [56] |
+| Mean coffee leaf rust **incidence** in Ethiopia | **35.3 %** | Belachew *et al.* 2020, *Trop. Plant Pathol.* 45(5) — our ref [58] |
 | Mean rust **severity** | **9.09 %** | same |
 | Projected yield loss from climate-related abiotic stress by 2060 | **up to 70 %** | Tadesse, Tesfaye & Abera 2020, *Cogent Food & Agric.* |
 | Classes that matter to a smallholder | Rust, Cercospora, Phoma, leaf miner, healthy | JMuBEN taxonomy |
@@ -206,7 +206,7 @@ is the fastest way to lose, and it spends the credibility we need later.
 | US$2.89 bn / 7.43 M bags, 2024/25 | ✔ Daily Coffee News, Jun 2026 | Cite the underlying USDA/UNIDO report |
 | 12.1 M bags, 2026/27 | ✔ UNIDO 2025 | — |
 | 496,200 t (2022), 5th world / 1st Africa | ✔ FAO | — |
-| 35.3 % incidence / 9.09 % severity | ✔ Berehanu 2023 — ref [56] | Confirm page numbers at the W5 library pass |
+| 35.3 % incidence / 9.09 % severity | ✔ Belachew *et al.* 2020 — ref [58] | Confirm page numbers at the W5 library pass |
 | Up to 70 % yield loss by 2060 | ✔ Tadesse et al. 2020 | — |
 | ≈10 % of government revenue | `⟦VERIFY⟧` dated | Find a current source or drop it |
 | ≈50 % domestic consumption | `⟦VERIFY⟧` dated | Find a current source or drop it |

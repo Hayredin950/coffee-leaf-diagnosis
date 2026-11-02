@@ -19,7 +19,7 @@ diseases. Coffee leaf rust (*Hemileia vastatrix*), Cercospora leaf spot (brown e
 *Cercospora coffeicola*), coffee leaf miner (*Leucoptera coffeella*) and Phoma leaf spot (brown
 leaf spot, *Phoma costarricensis*) are among the most economically significant [1]–[4]. Field
 surveys across south-western Ethiopia recorded a mean leaf rust incidence of 35.3 % and a
-severity of 9.09 %, with altitude identified as the dominant driver of epidemics [5]. The
+severity of 9.09 %, with altitude identified as the dominant driver of epidemics [58]. The
 consequence is that **detection, rather than treatment, is the binding constraint** on yield
 loss: by the time a farmer recognises the problem, the window for inexpensive early
 intervention has closed [2], [3].

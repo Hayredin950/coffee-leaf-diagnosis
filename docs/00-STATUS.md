@@ -6,6 +6,12 @@
 **Assessment date:** 21 October 2026 (Week 1)
 **Status:** 🟡 **Conditional approval — proposal revision pending**
 
+> ⚠️ **This is a Week 1 snapshot (21 October 2026) and several rows below are now out of date.**
+> The repository exists, the logbook W1–W2 is written, the requirements and design baseline are in
+> place, and the 16-week plan is in PR #1. **Read `docs/11-BRIEFING.md` for the current position**;
+> this file is kept because §2 is still the best written statement of the nine things that had to be
+> settled, and of the citation traps.
+
 ---
 
 ## 1. Where the project actually stands
