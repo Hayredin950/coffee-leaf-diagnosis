@@ -218,7 +218,7 @@ counts, which is exactly what the project has been missing.
 | **Collection** | Original smartphone resolution **4000×2250 RGB**, mostly laboratory shots on a white background, manually collected and labelled on a Brazilian farm |
 | **Verification** | ✅ Fetched 21 Oct 2026 |
 | **Role** | Small, but **full-resolution, single-stress, expert-labelled** — an ideal high-resolution spot-check set, and a good demonstration of what the model does with a real 4K photo rather than a 128×128 crop |
-| **Second-source check (7 Nov 2026)** | The Kaggle mirror `alvarole/coffee-leaves-disease` lists exactly **542 JPG + 542 XML** — matches. Tier **T1**. |
+| **Second-source check (7 Nov 2026)** | The Kaggle record `alvarole/coffee-leaves-disease` — uploaded by the **same author** — lists exactly **542 JPG + 542 XML**. It is a second release, not an independent one, so the count is **T2**, not T1. |
 
 ### A.11 Ethiopian coffee-leaf dataset — **new, and the only Ethiopian data in public**
 

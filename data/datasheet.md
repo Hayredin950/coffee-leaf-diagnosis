@@ -40,10 +40,13 @@ the internal-to-external shift can be measured rather than assumed.
 | S5 | Saposoa Peru (`mfpxg4y65r`) | Peru | Arabica | Uniform protocol, fixed distance, homogeneous light, specialist diagnosis | Rust, Healthy (+ *Mycena*) | 1,500 | 1 RAR, 3.45 GB — **not verified** | T3 |
 | S6 | RoCoLE (`c5yvn32dzg` v2) | Ecuador | **Robusta** | Field, natural backgrounds, smartphone at 200–300 mm | Rust, Healthy (+ red spider mite) | 1,560 | **1,560** — 390 plants × 4 views | **T1** |
 | S7 | CoffeeLeaf-CO v2 (`22756170`) | Colombia | Arabica | Field collection, consumer Android phones, natural light | Rust, Miner (+ weevil); healthy as background | 2,315 | 1 zip, 167.5 MB — **not verified** | T3 |
-| S8 | Silva 2020 (`vfxf4trtcg` v5) | Brazil | Arabica | Mostly lab on white background, original 4000×2250 | Rust, Miner | 542 | **542** (285 rust + 257 miner) | **T1** |
+| S8 | Silva 2020 (`vfxf4trtcg` v5) | Brazil | Arabica | Mostly lab on white background, original 4000×2250 | Rust, Miner | 542 | **542** (285 rust + 257 miner) | **T2**¹ |
 | **S9** | **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Ethiopia** | Arabica | Field photographs; `train aug/` augmented, `test/` curated | **Cercospora**, Rust, Phoma, Healthy | — | **12,000** = 10,800 train-aug + 1,200 test | **T2** |
 | **S10** | Uganda augmented (Kaggle `chelangatspecioza/…34`) | Uganda | Arabica | Same farms as S4, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** (9,045 / 8,330 / 8,960) | **T2** |
 | | **Total (distinct, verified sets only)** | **7 countries** | **2 species** | | | | **≈ 99,000** | |
+
+¹ Silva's count is confirmed by the author's own Kaggle upload — a second release, not an independent
+one.
 
 **Tier definitions** (full explanation in `docs/12-DATASET-VERIFICATION.md` §0): **T1** verified
 against two independent releases; **T2** verified from one publisher file manifest; **T3** published

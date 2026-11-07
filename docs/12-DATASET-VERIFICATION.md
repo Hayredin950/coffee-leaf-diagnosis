@@ -42,7 +42,7 @@ This is the table to paste into the proposal, the datasheet, and the message to 
 | 5a | **Uganda — original** | Kaggle `chelangatspecioza/coffeedataset34` | **12,480** (4,200 / 4,050 / 4,230) | originals **not uploaded** | T3 | Rust, Phoma, Healthy |
 | 5b | **Uganda — augmented** | same Kaggle record | 26,315 (9,025 / 8,330 / 8,960) | **26,335** (9,045 / 8,330 / 8,960) | **T2** | Rust, Phoma, Healthy |
 | 6 | **Saposoa, Peru** | Mendeley `mfpxg4y65r` v2 | 1,500 (500 × 3) | 1 RAR, 3.45 GB — contents not opened | T3 (RAR) | Rust, Healthy, *Mycena* |
-| 7 | **Silva 2020** | Mendeley `vfxf4trtcg` v5 | 542 | **542 JPG + 542 XML** (285 rust + 257 miner) | **T1** | Rust, Miner |
+| 7 | **Silva 2020** | Mendeley `vfxf4trtcg` v5 | 542 | **542 JPG + 542 XML** (285 rust + 257 miner) | **T2**¹ | Rust, Miner |
 | 8 | **CoffeeLeaf-CO v2** | Zenodo `22756170` | 2,315 images, 12,794 instances | 1 zip, 167.5 MB | T3 (zip) | Rust, Miner, weevil |
 | 9 | **Ethiopian (NEW)** | Kaggle `biniyamyoseph/ethiopian-coffee-leaf-disease` | — | **12,000 JPG** (10,800 train-aug + 1,200 test) | **T2** | **Cercospora**, Rust, Phoma, Healthy |
 | 10 | **CerradoCoffeeLeaf (NEW)** | GitHub `joaofmari/…` | 1,476 (7 classes) | **not released — download link is a placeholder** | T4 | 7 classes |
@@ -51,6 +51,9 @@ This is the table to paste into the proposal, the datasheet, and the message to 
 | 13 | **Laksh619 HF (NEW)** | HF `Laksh619/Coffee-Cocoa-Diseases` | — | **4,000** (8 classes × 500) | **T2** | coffee + cocoa |
 | 14 | **dvelaren CLR (NEW)** | GitHub `dvelaren/clr-dataset` | — | **4,398 JPG**, 5 rust-severity stages, 3-month time series | **T2** | rust severity only |
 | 15 | **iCog 2019 (checked)** | GitHub `iCogLabs/Coffee-Disease-Dataset` | — | **repository is empty (0 bytes)** | **T2** | none |
+
+¹ Silva's 542 is confirmed by the same author's own Kaggle upload (`alvarole/coffee-leaves-disease`),
+which is a second *release* but not an independent one — hence T2, not T1.
 
 **The usable total for the project is not one number.** It is:
 - **58,549** for the five-class training corpus (JMuBEN + JMuBEN2),
