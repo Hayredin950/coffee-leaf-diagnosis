@@ -94,7 +94,7 @@ headline model; the exclusion is asserted by test T-05 and by a CI check.
 | CoffeeLeaf-CO v2 | Colombia | Arabica | Field, consumer phones | Rust, Leaf Miner (+ weevil as `unsupported`) | 2,315 |
 | Silva 2020 | Brazil | Arabica | Lab, full resolution 4000×2250 | Rust, Leaf Miner | 542 |
 
-**The Ethiopian set is the only external Cercospora benchmark in public.** It is used with a stated
+**The Ethiopian set is the only Cercospora set we can verify and hold out.** It is used with a stated
 provenance caveat: it is a self-uploaded CC0 Kaggle record with no paper and no named annotator, and
 its balanced `test/` split reflects curation rather than random field sampling, so its accuracy is an
 upper bound.

@@ -214,7 +214,7 @@ by test T-05 and by a CI check:
 | Set | Role | Why it is a genuine shift |
 |---|---|---|
 | Uganda 2025 (3,322) | External test (and, in ablation variant B, a training source) | Different country, real farms, smartphone, uncontrolled light |
-| **Ethiopian `test/` (1,200)** | **External test — the only external Cercospora set** | **Same country as the target user**, different farms, curated 300-per-class test split |
+| **Ethiopian `test/` (1,200)** | **External test — the only Cercospora set we can verify and hold out** | **Same country as the target user**, different farms, curated 300-per-class test split |
 | RoCoLE (1,560) | External test | Different **species** (Robusta), different country, natural backgrounds, a 390-plant grouping structure |
 | Saposoa Peru (1,500) | External test | Uniform, specialist-labelled protocol — a "clean" shift that probes a different failure mode |
 | CoffeeLeaf-CO v2 (2,315) | External test | Different country, detection-annotated field imagery with a verified split |
@@ -237,8 +237,11 @@ and the caveat is printed beside the result.
 | **Cercospora** | — | **✔ (300)** | — | — | — | — |
 | *unsupported* | — | — | red spider mite | *Mycena* | weevil | — |
 
-**Cercospora now has one external test: the 300-image Ethiopian `test/` split.** Before 7 November
-2026 the registry said no public field corpus contained it; that is no longer true. The evaluation
+**Cercospora now has one usable external test: the 300-image Ethiopian `test/` split.** Before
+7 November 2026 the registry said no public field corpus contained it; that is no longer true. BRACOL
+contains Cercospora but is a planned training source, so it cannot serve as external; the HF set
+`Laksh619/Coffee-Cocoa-Diseases` has 500 `coffee_browneye` images but is an unverified coffee+cocoa
+aggregation and is not used. The evaluation
 must still state that (a) the set has no published provenance and (b) 300 images give a 95 % binomial
 confidence interval of roughly ±5.7 points on a recall near 90 % — so it is a benchmark, not a
 verdict. Phoma is now tested by two sets (Uganda and Ethiopian), which is a real improvement over one.

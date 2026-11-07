@@ -54,8 +54,8 @@ This is the table to paste into the proposal, the datasheet, and the message to 
 
 **The usable total for the project is not one number.** It is:
 - **58,549** for the five-class training corpus (JMuBEN + JMuBEN2),
-- **+12,000** Ethiopian field images that we did not know existed (four of our five classes, and the
-  only external Cercospora data in existence as far as we can find),
+- **+12,000** Ethiopian field images that we did not know existed (four of our five classes, and —
+  as far as we can verify — the only Cercospora set we can use as an independent external test),
 - **+1,560** RoCoLe, **+542** Silva, **+3,322** Uganda, **+1,500** Saposoa, **+2,315** CoffeeLeaf-CO
   as external sets.
 
@@ -141,7 +141,8 @@ So the description is again off, this time by **+20 in Healthy**.
 - It is **Ethiopian** — the only Ethiopian coffee-leaf dataset we have found.
 - It is **perfectly balanced** at 3,000 per class, and the **test split is clean and balanced** (300 each).
 - It contains **Cercospora**, which is exactly the class for which our registry currently says
-  *"no independent external test exists"*. This dataset removes that limitation.
+  *"no independent external test exists"*. This dataset is the only Cercospora set we have found
+  that we can hold out, verify and use as a test.
 - It has **four of our five classes** — only Leaf Miner is missing.
 
 **Why we still handle it carefully:**
@@ -230,8 +231,8 @@ Do not propagate it. BRACOL is `10.17632/yy2k5y8mxg.1`.
 
 1. **"The published Uganda dataset is a 3,322-image augmented slice of a 12,480-image original."**
    We can show the arithmetic from the authors' own two releases.
-2. **"There is exactly one Ethiopian coffee-leaf dataset in public, it has 12,000 images, and its
-   test split is the only external Cercospora benchmark that exists."**
+2. **"The only Ethiopian coffee-leaf dataset we can find has 12,000 images, and its held-out test
+   split is the only external Cercospora set we can verify and will not train on."**
    That sentence belongs in the proposal's data section and in the defense.
 
 ### 5.3 What to request from the authors (this week)
@@ -295,7 +296,9 @@ If the group reads nothing else, this is what is actually true on 7 November 202
 5. **Uganda is three releases, not one:** 12,480 original (not uploaded), 26,335 augmented (counted),
    3,322 on Mendeley (counted). The published 3,312 is wrong by ten.
 6. **An Ethiopian dataset exists:** 12,000 images, four classes, 1,200-image clean test split, CC0,
-   no paper. It is the only external Cercospora benchmark in existence.
+   no paper. It is the only Cercospora set we can verify and hold out. (Two other sources mention
+   Cercospora: BRACOL is a planned training source, so it cannot be external; `Laksh619/Coffee-Cocoa-
+   Diseases` has 500 `coffee_browneye` images but is an unverified coffee+cocoa aggregation.)
 7. **Saposoa's third class is *Mycena citricolor*, not Cercospora.** Mapping it would corrupt the labels.
 8. **Every Kaggle mirror relabels the licence, and most get it wrong.** Cite the DOI, not the mirror.
 9. **Four archives cannot be counted without an authenticated download.** The Colab notebook opens them.

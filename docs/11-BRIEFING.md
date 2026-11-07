@@ -170,14 +170,14 @@ evidence: `docs/12-DATASET-VERIFICATION.md`.
 | **RoCoLe** (`c5yvn32dzg`) | rust, healthy (+ mite) | **1,560** = 390 plants × 4 | CC BY 4.0 | external; **different species** |
 | **Uganda** (`k36wnd6knb`) | rust, Phoma, healthy | **3,322** (claim 3,312; **already augmented**) | CC BY 4.0 | external — **African field** |
 | **Uganda augmented** (Kaggle) | rust, Phoma, healthy | **26,335** (claim 26,315) | mixed | ablation-B training |
-| **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Cercospora**, rust, Phoma, healthy | **12,000** (1,200 clean test) | CC0 (unverified) | external — **only external Cercospora** |
+| **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Cercospora**, rust, Phoma, healthy | **12,000** (1,200 clean test) | CC0 (unverified) | external — **only usable Cercospora test** |
 | **Saposoa, Peru** (`mfpxg4y65r`) | rust, healthy + *Mycena* | 1,500 (unverified) | CC BY 4.0 | external |
 | **CoffeeLeaf-CO v2** (Zenodo `22756170`) | rust, miner + weevil | 2,315 (unverified) | CC BY 4.0 | external |
 | **Silva 2020** (`vfxf4trtcg`) | rust, miner | **542** (285 + 257) | CC BY 4.0 | external, full-res |
 
 **The two sentences to say about this table:**
 1. *"The five-class training corpus is 58,549 images, verified from two independent mirrors; the paper's 58,555 is six images wrong."*
-2. *"There is exactly one Ethiopian coffee-leaf dataset in public — 12,000 images, four classes, a 1,200-image clean test split — and it is the only external Cercospora benchmark that exists."*
+2. *"The only Ethiopian coffee-leaf dataset we can find has 12,000 images, four classes and a 1,200-image clean test split, and it is the only Cercospora set we can verify and hold out."*
 
 **Never train on the external five.** That is DR-07 / T-05 / decision D-006. The whole contribution is
 that the external numbers are honest.
@@ -216,7 +216,7 @@ No published paper in this field reports these:
    (counted), 3,322 on Mendeley (counted). The published 3,312 is wrong by ten, and the
    "3,312-image dataset" in the literature is a slice of a dataset nearly four times larger.
 5. **An Ethiopian dataset exists** — 12,000 images, four classes, a 1,200-image clean test split,
-   CC0, no paper — and it is the only external Cercospora benchmark in public.
+   CC0, no paper — and it is the only Cercospora set we can verify and hold out.
 
 Add the count reconciliation: paper says **58,555**, two independent mirrors say **58,549**. We
 report the **observed count**, not the published one.
@@ -647,7 +647,7 @@ When the advisor or John asks *"where are we?"* — say this, in this order:
 > **15 November**. The repository is up with 43 files and the full requirements and design baseline.
 > The 16-week plan is in PR #1 waiting to be merged, and the Google Doc has the six sections you asked
 > for. On the data side, ten corpora are verified with licences and counts — including an Ethiopian
-> set of 12,000 images that is the only external Cercospora benchmark — and the leakage-safe
+> set of 12,000 images that is the only usable external Cercospora test — and the leakage-safe
 > split script runs and passes its audit. This week I am writing the proposal's gap and novelty section,
 > and getting the observed dataset counts into the datasheet by Wednesday. The main open item is CI and
 > the two GitHub accounts, and the JARC review of the knowledge base.

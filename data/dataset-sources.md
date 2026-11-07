@@ -13,8 +13,8 @@
 > That pass found: the true JMuBEN total is **58,549** (two independent mirrors agree); the Uganda
 > Mendeley release contains **3,322** files, not the claimed 3,312; Uganda has a **12,480-image
 > original** and a **26,335-image augmented** release that this registry did not know about; and an
-> **Ethiopian dataset of 12,000 images** exists on Kaggle and is the only external Cercospora
-> benchmark in public. The three-tier evidence scale (T1 verified twice … T4 claimed only) is defined
+> **Ethiopian dataset of 12,000 images** exists on Kaggle and is the only Cercospora set we can
+> verify and hold out. The three-tier evidence scale (T1 verified twice … T4 claimed only) is defined
 > in §0 of that file. **This registry keeps the provenance; that file keeps the count.**
 
 ## Download rules
@@ -234,7 +234,7 @@ most consequential find of the verification pass.
 | **Classes** | Cercospora, Healthy, Leaf rust, Phoma — **four of our five; no Leaf Miner** |
 | **Counts — observed (7 Nov 2026)** | **12,000 JPG** — `train aug/` **2,700 × 4 = 10,800**; `test/` **300 × 4 = 1,200** |
 | **Tier** | **T2** (Kaggle file manifest, every file enumerated) |
-| **Why it matters** | It is **Ethiopian**; it is **perfectly balanced**; and its **test split is the only external Cercospora benchmark that exists**. Our registry previously said Cercospora had no independent external test. |
+| **Why it matters** | It is **Ethiopian**; it is **perfectly balanced**; and its **test split is the only Cercospora set we can verify and hold out**. Our registry previously said Cercospora had no independent external test. (BRACOL also contains Cercospora but is a planned training source, so it cannot be external; `Laksh619/Coffee-Cocoa-Diseases` has 500 `coffee_browneye` images but is an unverified coffee+cocoa aggregation.) |
 | **How to use it** | **External test only** (T-05): the 1,200-image `test/` split. **Never train on it.** |
 | **⚠️ Provenance** | Self-uploaded, no paper, no named annotator, licence unverifiable. The balanced `test/` split is a sign of **curation, not of a random field sample**, so its accuracy will be optimistic. State this in the same sentence as the result. |
 | **⚠️ Augmentation** | `train aug/` is explicitly augmented ⇒ 10,800 files ≠ 10,800 independent samples. |
@@ -285,7 +285,7 @@ and a reviewer may otherwise ask "did you consider X?".
 |---|---|---|
 | **Training** (headline model) | JMuBEN + JMuBEN2 (58,549) (+ BRACOL as the second Arabica source) | All 5 |
 | **Training** (ablation variant B) | The above **+ Uganda augmented (26,335)** | All 5, with 26k African field images added — far stronger than the 3,322-image record |
-| **External evaluation — African** | Uganda Mendeley (3,322) · **Ethiopian `test/` split (1,200)** | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only external Cercospora benchmark in public |
+| **External evaluation — African** | Uganda Mendeley (3,322) · **Ethiopian `test/` split (1,200)** | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only Cercospora set we can verify and hold out |
 | **External evaluation — other** | RoCoLe (1,560) · Silva (542) · Saposoa (1,500) · CoffeeLeaf-CO (2,315) | Rust, Miner, Healthy |
 | **Optional — ★4 only** | dvelaren CLR (4,398) | rust severity, longitudinal |
 
