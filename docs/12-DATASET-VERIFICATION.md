@@ -213,6 +213,13 @@ Every large mirror **relabels the licence**, and the relabelling is wrong:
 **Rule for the report:** cite the **Mendeley DOI or the Zenodo DOI**, never the mirror, and state the
 licence from the DOI record. If a reviewer asks "why does Kaggle say MIT?", the answer is in this table.
 
+**The `NC` clause has a product consequence, not just a citation consequence.** The augmented Uganda
+mirror is CC BY-NC-SA 4.0. If BunaDoctor is to become a company, a model trained on that mirror
+cannot be sold. The Mendeley original (`k36wnd6knb`, CC BY 4.0) can. The two releases are the same
+farms; only the licence differs. **Train on the original; use the augmented release only as a
+research ablation, and say so.** This is the single most expensive mistake available in this dataset
+search, and it is invisible unless the licence field is read.
+
 **One more trap:** the PeerJ cs-3386 paper cites BRACOL with the **RoCoLe DOI** (`c5yvn32dzg`).
 Do not propagate it. BRACOL is `10.17632/yy2k5y8mxg.1`.
 

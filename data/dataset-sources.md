@@ -95,6 +95,32 @@ correct spelling **"Cercospora"** everywhere except where it must match a source
 identifier, in which case it records the mapping explicitly in `data/dataset-sources.md` and in
 `scripts/prepare_data.py`.
 
+#### A.4.1 Every Kaggle mirror, and the licence each one claims
+
+Checked 7 November 2026 with the Kaggle view endpoint. **A mirror's licence field is not the
+publisher's licence.** Three of these are wrong, and one is a genuine trap.
+
+| Mirror | Record it copies | Size (unpacked) | Licence on the mirror | Verdict |
+|---|---|---|---|---|
+| `noamaanabdulazeem/jmuben-coffee-dataset` | JMuBEN + JMuBEN2 | 1.84 GB | "Unknown" | Wrong. Upstream is CC BY 4.0. Use for speed; cite Mendeley. |
+| `anitagarg123/coffee-leaves` | RoCoLe | 2.27 GB | "Unknown" | Wrong. Upstream is CC BY 4.0. Includes `RoCoLE-csv.csv`, which the Mendeley record also has. |
+| `diegopgonzlez/rocoleoriginal` | RoCoLe | 2.27 GB | **CC BY-SA 4.0** | A **share-alike** claim on a CC BY 4.0 record. Do not rely on it. |
+| `alvarole/coffee-leaves-disease` | Silva 2020 | 1.50 GB | "Data files © Original Authors" | Same author as the Mendeley record, so this is a second *release*, not an independent source. |
+| `chelangatspecioza/coffeedataset34` | Uganda 2025, **augmented** | 435 MB | **CC BY-NC-SA 4.0** | **Non-commercial.** See the warning below. |
+| `biniyamyoseph/ethiopian-coffee-leaf-disease` | itself (no upstream) | 2.12 GB | **CC0 1.0** | The uploader's own record. No paper. |
+| `jonatanfragoso/bracol-for-yolov8-detection` | BRACOL, re-annotated | 335 MB | CC BY 4.0 | **Incomplete** — 2,885 images, not the 3,894 of the original. Do not use it to verify a count. |
+
+> **⚠️ The Uganda augmented mirror is CC BY-NC-SA 4.0.** The `NC` clause forbids commercial use.
+> BunaDoctor is meant to be a product, so **the headline model must train on the Mendeley original
+> (`k36wnd6knb`, CC BY 4.0), not on the Kaggle augmented re-upload**. The augmented set can be used
+> for an ablation only if that ablation is not part of the shipped model, and the report must say
+> which one was used. This is exactly the kind of trap that a "download the biggest coffee dataset"
+> search walks into.
+
+> **⚠️ The two Kaggle size fields disagree.** The `datasets/view` endpoint reports `totalBytes`
+> (unpacked) while `datasets/list` reports the download size. On the JMuBEN mirror they differ by
+> more than 2×. **Never quote a size from the API**; quote the archive size from the publisher.
+
 ### A.5 BRACOL — the second Arabica source
 
 | Field | Value |
@@ -276,6 +302,15 @@ and a reviewer may otherwise ask "did you consider X?".
 | **Laksh619/Coffee-Cocoa-Diseases** (HF) | https://huggingface.co/datasets/Laksh619/Coffee-Cocoa-Diseases | 4,000 = 8 classes × 500, **coffee + cocoa**. Half the classes are cocoa; merging would teach the model cocoa diseases. Example of why a "coffee leaf" search result must be inspected. |
 | **minayahhh liberica / robusta** (Kaggle) | `minayahhh/liberica-coffee-leaf-dataset`, `minayahhh/robusta-coffee-leaf-dataset` | 1.49 GB / 790 MB, **no description, licence "Unknown"**. Cannot characterise classes or provenance. |
 | **johnandrewborabo binary** (Kaggle) | `johnandrewborabo/coffee-leaf-binary-classification-dataset` | 3.1 GB, Healthy vs Unhealthy. Binary — collapses the taxonomy we are building. |
+| **trongtri04042004 partial Uganda** (Kaggle) | `trongtri04042004/coffee-dataset-mendeley` | 25 MB, **6 downloads**. Its entire manifest is `coffee dataset/Health leaves/1_*.jpg` — a single class of the Uganda set. **Not Saposoa, despite the name.** Checked 7 Nov 2026. |
+| **tuannguyenhoang merged 5-class** (Kaggle) | `tuannguyenhoang/coffee-leaves-disease-5-classes-merged-dataset` | 2.09 GB, "Unknown". A YOLO merge whose files are named `BRACOL_REVIEWED_*` — i.e. **it contains a re-annotated BRACOL**, so training on it and testing on BRACOL leaks. Rejected. |
+| **tuannguyenhoang/coffee-leaves** (Kaggle) | `tuannguyenhoang/coffee-leaves` | 11 GB, "Unknown", no description. Cannot be characterised; a merge of unknown provenance. |
+| **humpreyocay liberica/robusta** (Kaggle) | `humpreyocay/self-captured-liberica-robusta-coffee-leaves` | 2.12 GB, "Unknown", no description. Self-captured, but the species mix (liberica + robusta) and the class list are undocumented. |
+| **gihozopatrick coffee pests** (Kaggle) | `gihozopatrick/coffee-pests-and-diseases` | 1.53 GB, "Unknown", no description. Possibly Ugandan; **cannot be verified** from the manifest. |
+| **mohas8/coffee-disease** (Kaggle) | `mohas8/coffee-disease` | 142 MB, "Unknown", no description, 6 downloads. Unverifiable. |
+| **jorgearoca/coffee-rust multispectral** (Kaggle) | `jorgearoca/coffee-rust` | 6,726 **multispectral** images (RGB JPG + five TIF bands: blue, green, red, NIR, red-edge), CC0, 386 downloads. Real and well-formed, but it is a **remote-sensing** product, not a phone photograph — incompatible with the deployment target. |
+| **izzaiqbal/capstone-project** (Kaggle) | `izzaiqbal/capstone-project` | Folder layout `Coffee Leaf Diseases/Coffee leaf Diseases/Healthy/…`. No description, no licence, no provenance. Unverifiable merge. |
+| **badasstechie/coffee-leaf-diseases** (Kaggle) | `badasstechie/coffee-leaf-diseases` | Pre-split `test/` tree, no description, no licence. Unverifiable. |
 
 ---
 
@@ -284,10 +319,15 @@ and a reviewer may otherwise ask "did you consider X?".
 | Purpose | Datasets | Classes covered |
 |---|---|---|
 | **Training** (headline model) | JMuBEN + JMuBEN2 (58,549) (+ BRACOL as the second Arabica source) | All 5 |
-| **Training** (ablation variant B) | The above **+ Uganda augmented (26,335)** | All 5, with 26k African field images added — far stronger than the 3,322-image record |
+| **Training** (ablation variant B) | The above **+ Uganda original (3,322, CC BY 4.0)** | All 5, with African field data added |
+| **Research-only ablation** | Uganda augmented (26,335, **CC BY-NC-SA 4.0**) | **Non-commercial.** Report it as an ablation, never ship a model trained on it. |
 | **External evaluation — African** | Uganda Mendeley (3,322) · **Ethiopian `test/` split (1,200)** | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only Cercospora set we can verify and hold out |
 | **External evaluation — other** | RoCoLe (1,560) · Silva (542) · Saposoa (1,500) · CoffeeLeaf-CO (2,315) | Rust, Miner, Healthy |
 | **Optional — ★4 only** | dvelaren CLR (4,398) | rust severity, longitudinal |
+
+**⚠️ Licence rule for a product.** The headline model must be trainable on CC BY 4.0 / CC0 data
+only. The augmented Uganda mirror is **CC BY-NC-SA 4.0**; it is excluded from the shipped model and
+may appear only as a research ablation, labelled as such.
 
 **⚠️ The headline model must exclude every external set from training**, and the exclusion is
 asserted by test T-05 and by a CI check that compares the training manifest's source IDs
