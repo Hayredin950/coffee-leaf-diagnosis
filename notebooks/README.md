@@ -1,5 +1,7 @@
 # Notebooks
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Hayredin950/coffee-leaf-diagnosis/blob/main/notebooks/00-dataset-verification.ipynb)
+
 | File | What it does |
 |---|---|
 | `00-dataset-verification.ipynb` | Counts every coffee-leaf image **before any preprocessing**, on Colab or Kaggle, and writes a dashboard plus JSON/CSV/Markdown |
