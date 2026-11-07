@@ -223,8 +223,10 @@ capture or gallery selection. It classifies entirely on the device, presents the
 class with per-class confidence and a confidence-based recommendation to retake the photo,
 resolves the prediction against an embedded agronomic knowledge base, and records the
 diagnosis in a local, searchable database. A REST API and a web client expose the same model
-and the same knowledge base for extension officers and for demonstration. The data are nine
-independently licensed public corpora from six countries, all under CC BY 4.0.
+and the same knowledge base for extension officers and for demonstration. The data are ten
+independently licensed public corpora from seven countries, all under CC BY 4.0 or CC0; the
+per-source counts are verified against the publishers' file manifests and recorded in
+`docs/12-DATASET-VERIFICATION.md`.
 
 ### 1.5.2 Limitations
 

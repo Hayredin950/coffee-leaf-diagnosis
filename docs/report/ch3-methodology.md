@@ -69,23 +69,35 @@ laboratory-curated and field-collected capture conditions.
 **Table 3.1** — The training corpus. The per-class counts are those published by the sources;
 the observed counts are recorded in the datasheet after download.
 
-| Source | Country | Species | Environment | Classes | Published images |
-|---|---|---|---|---|---|
-| JMuBEN | Kenya | Arabica | Plantation, both leaf surfaces, varied weather | Rust, Cercospora, Phoma | 22,591 |
-| JMuBEN2 | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 |
-| BRACOL | Brazil | Arabica | Field, abaxial side, white background, 5 phones | All 5 | 1,747 leaves + 2,147 crops |
-| Uganda 2025 | Uganda | Arabica | Real farms, smartphone, varied light | Rust, Phoma, Healthy | 3,312 |
+| Source | Country | Species | Environment | Classes | Published images | Observed |
+|---|---|---|---|---|---|---|
+| JMuBEN | Kenya | Arabica | Plantation, both leaf surfaces, varied weather | Rust, Cercospora, Phoma | 22,591 | — |
+| JMuBEN2 | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | — |
+| **JMuBEN + JMuBEN2** | Kenya | Arabica | — | All 5 | 58,555 | **58,549** (two mirrors agree) |
+| BRACOL | Brazil | Arabica | Field, abaxial side, white background, 5 phones | All 5 | 1,747 leaves + 2,147 crops | — |
+| Uganda 2025 | Uganda | Arabica | Real farms, smartphone, varied light; already augmented | Rust, Phoma, Healthy | 3,312 | **3,322** |
+| Uganda augmented (Kaggle) | Uganda | Arabica | Same farms, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** |
+
+The observed counts are the ones the report quotes; the published figures are shown beside them so
+that the six-image JMuBEN discrepancy and the ten-image Uganda discrepancy are visible rather than
+silent. The full evidence table is `docs/12-DATASET-VERIFICATION.md`.
 
 **Table 3.2** — The external evaluation sets. These are excluded from training in the
 headline model; the exclusion is asserted by test T-05 and by a CI check.
 
-| Source | Country | Species | Environment | Classes tested |
-|---|---|---|---|---|
-| Uganda 2025 | Uganda | Arabica | Real farms | Rust, Phoma, Healthy |
-| RoCoLE | Ecuador | **Robusta** | Field, natural backgrounds | Rust, Healthy (+ red spider mite as `unsupported`) |
-| Saposoa Peru | Peru | Arabica | Uniform protocol, specialist diagnosis | Rust, Healthy (+ *Mycena* as `unsupported`) |
-| CoffeeLeaf-CO v2 | Colombia | Arabica | Field, consumer phones | Rust, Leaf Miner (+ weevil as `unsupported`) |
-| Silva 2020 | Brazil | Arabica | Lab, full resolution 4000×2250 | Rust, Leaf Miner |
+| Source | Country | Species | Environment | Classes tested | n |
+|---|---|---|---|---|---|
+| Uganda 2025 | Uganda | Arabica | Real farms | Rust, Phoma, Healthy | 3,322 |
+| **Ethiopian (Kaggle)** | **Ethiopia** | Arabica | Field; curated `test/` split | **Cercospora**, Rust, Phoma, Healthy | **1,200** |
+| RoCoLE | Ecuador | **Robusta** | Field, natural backgrounds | Rust, Healthy (+ red spider mite as `unsupported`) | 1,560 |
+| Saposoa Peru | Peru | Arabica | Uniform protocol, specialist diagnosis | Rust, Healthy (+ *Mycena* as `unsupported`) | 1,500 |
+| CoffeeLeaf-CO v2 | Colombia | Arabica | Field, consumer phones | Rust, Leaf Miner (+ weevil as `unsupported`) | 2,315 |
+| Silva 2020 | Brazil | Arabica | Lab, full resolution 4000×2250 | Rust, Leaf Miner | 542 |
+
+**The Ethiopian set is the only external Cercospora benchmark in public.** It is used with a stated
+provenance caveat: it is a self-uploaded CC0 Kaggle record with no paper and no named annotator, and
+its balanced `test/` split reflects curation rather than random field sampling, so its accuracy is an
+upper bound.
 
 ### 3.2.2 The leakage-safe split
 

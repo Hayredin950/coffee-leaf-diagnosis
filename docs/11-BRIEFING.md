@@ -156,19 +156,28 @@ the leakage-safe split, the external evaluation, the offline demo.
 
 ## 5. The data — this is your territory, so own it completely
 
-### 5.1 Nine corpora, six countries, two species
+### 5.1 Ten corpora, seven countries, two species
 
-| Dataset | Classes | Size | Licence | Role |
+**Updated 7 Nov 2026.** Every row was re-fetched and, where possible, the files were counted. Full
+evidence: `docs/12-DATASET-VERIFICATION.md`.
+
+| Dataset | Classes | **Observed size** | Licence | Role |
 |---|---|---|---|---|
-| **JMuBEN** (`t2r6rszp5c`) | Rust, Cercospora, Phoma | 22,591 | CC BY 4.0 | primary training |
-| **JMuBEN2** (`tgv3zb82nd`) | Healthy, Miner | 35,964 | CC BY 4.0 | primary training |
-| **BRACOL** (`yy2k5y8mxg`) | all five | 1,747 leaves + 2,147 crops | CC BY 4.0 | secondary; Brazil, five phones |
-| **RoCoLe** (`c5yvn32dzg`) | rust, miner, healthy | robusta, Ecuador | CC BY 4.0 | secondary; **different species** |
-| **Uganda 2025** (`k36wnd6knb`) | rust, Phoma, healthy | — | CC BY 4.0 | external only — **African field** |
-| **Saposoa, Peru** (`mfpxg4y65r`) | rust, healthy + *Mycena* | — | CC BY 4.0 | external only |
-| **CoffeeLeaf-CO v2** (Zenodo `22756170`) | rust, miner + weevil | — | CC BY 4.0 | external only |
-| **Silva 2020** (`vfxf4trtcg`) | rust, miner | full-res 4000×2250 | CC BY 4.0 | external only |
-| **RoCoLe** (again) | — | — | — | external only |
+| **JMuBEN** (`t2r6rszp5c`) | Rust, Cercospora, Phoma | 22,591 (published) | CC BY 4.0 | primary training |
+| **JMuBEN2** (`tgv3zb82nd`) | Healthy, Miner | 35,964 (published) | CC BY 4.0 | primary training |
+| **JMuBEN + JMuBEN2** | all five | **58,549** (two mirrors agree; paper says 58,555) | CC BY 4.0 | primary training |
+| **BRACOL** (`yy2k5y8mxg`) | all five | 1,747 leaves + 2,147 crops (unverified) | CC BY 4.0 | secondary; Brazil, five phones |
+| **RoCoLe** (`c5yvn32dzg`) | rust, healthy (+ mite) | **1,560** = 390 plants × 4 | CC BY 4.0 | external; **different species** |
+| **Uganda** (`k36wnd6knb`) | rust, Phoma, healthy | **3,322** (claim 3,312; **already augmented**) | CC BY 4.0 | external — **African field** |
+| **Uganda augmented** (Kaggle) | rust, Phoma, healthy | **26,335** (claim 26,315) | mixed | ablation-B training |
+| **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Cercospora**, rust, Phoma, healthy | **12,000** (1,200 clean test) | CC0 (unverified) | external — **only external Cercospora** |
+| **Saposoa, Peru** (`mfpxg4y65r`) | rust, healthy + *Mycena* | 1,500 (unverified) | CC BY 4.0 | external |
+| **CoffeeLeaf-CO v2** (Zenodo `22756170`) | rust, miner + weevil | 2,315 (unverified) | CC BY 4.0 | external |
+| **Silva 2020** (`vfxf4trtcg`) | rust, miner | **542** (285 + 257) | CC BY 4.0 | external, full-res |
+
+**The two sentences to say about this table:**
+1. *"The five-class training corpus is 58,549 images, verified from two independent mirrors; the paper's 58,555 is six images wrong."*
+2. *"There is exactly one Ethiopian coffee-leaf dataset in public — 12,000 images, four classes, a 1,200-image clean test split — and it is the only external Cercospora benchmark that exists."*
 
 **Never train on the external five.** That is DR-07 / T-05 / decision D-006. The whole contribution is
 that the external numbers are honest.
@@ -194,18 +203,23 @@ is real and it means nothing."*
 - Tests T-03…T-06 assert the invariants in CI.
 - It has been executed end to end: **AUDIT PASSED**.
 
-### 5.3 Three findings you can claim as your own
+### 5.3 Five findings you can claim as your own
 
 No published paper in this field reports these:
 
 1. **JMuBEN is pre-augmented** and the originals are unpublished — so the field's most-used dataset
-   cannot be split naively.
+   cannot be split naively. (Independently corroborated by the 2026 CerradoCoffeeLeaf paper.)
 2. **The paper's two record IDs are inverted** relative to the record titles. We cite record IDs
    explicitly so a reviewer cannot think we mislabelled.
 3. **BRACOL's crops are crops of its leaves** — the obvious way to use it leaks.
+4. **Uganda is three releases, not one:** 12,480 original (never uploaded), 26,335 augmented
+   (counted), 3,322 on Mendeley (counted). The published 3,312 is wrong by ten, and the
+   "3,312-image dataset" in the literature is a slice of a dataset nearly four times larger.
+5. **An Ethiopian dataset exists** — 12,000 images, four classes, a 1,200-image clean test split,
+   CC0, no paper — and it is the only external Cercospora benchmark in public.
 
-Add the count reconciliation: paper says **58,555**, the machine-readable mirror says **58,549**. We
-report the **observed count after download**, not the published one.
+Add the count reconciliation: paper says **58,555**, two independent mirrors say **58,549**. We
+report the **observed count**, not the published one.
 
 ---
 
@@ -421,8 +435,8 @@ reproduce. We report the count we actually observe after download, and record th
 The paper's abstract says the two records are "respectively" the other way round from the record
 titles. We cite record IDs explicitly so nobody thinks we mislabelled the classes.
 
-**9. Isn't using nine datasets just collecting?**
-No — nine separately licensed corpora across six countries and two species, with different taxonomies,
+**9. Isn't using ten datasets just collecting?**
+No — ten separately licensed corpora across seven countries and two species, with different taxonomies,
 capture conditions and duplication structures, harmonised into one leakage-safe protocol. That is the
 data-engineering task, and it is why this is High complexity.
 
@@ -505,7 +519,7 @@ says exactly what leaves. The exported packet has no image.
 **27. How is this High complexity?**
 Three limbs: a real external stakeholder with real data (JMuBEN author, JARC), a substantive research
 challenge (the measured generalisation gap and its mitigation), and a substantial data-engineering task
-(nine corpora harmonised into one leakage-safe protocol).
+(ten corpora harmonised into one leakage-safe protocol).
 
 **28. What did you personally do?** *(ICF — the question that matters most)*
 I own SO1–SO3: the corpus and its datasheet, the leakage-safe split and its audit, the model comparison
@@ -557,7 +571,7 @@ not briefing.
 | 19:20–19:45 | `02-WEEKLY-PLAN.md` §1–§4 | you can name the five gates and their dates |
 | 19:45–20:10 | `06-DIFFERENTIATION.md` §2, §4, §5 | you can state the gap and the five ★ |
 | 20:10–20:20 | break | |
-| 20:20–20:50 | `data/dataset-sources.md` | the nine corpora and the three traps |
+| 20:20–20:50 | `data/dataset-sources.md` + `docs/12-DATASET-VERIFICATION.md` | the ten corpora, the counts, and the three traps |
 | 20:50–21:10 | Proposal §2 | say §2.3 and §2.6 without reading |
 | 21:10–21:35 | `architecture.md` §1–§3 | draw the phone/server split from memory |
 | 21:35–21:45 | break | |
@@ -632,7 +646,8 @@ When the advisor or John asks *"where are we?"* — say this, in this order:
 > We are at W3 of 16. The plan is 16 weeks with five gates; the next one is proposal approval on
 > **15 November**. The repository is up with 43 files and the full requirements and design baseline.
 > The 16-week plan is in PR #1 waiting to be merged, and the Google Doc has the six sections you asked
-> for. On the data side, the nine corpora are verified with licences and counts, and the leakage-safe
+> for. On the data side, ten corpora are verified with licences and counts — including an Ethiopian
+> set of 12,000 images that is the only external Cercospora benchmark — and the leakage-safe
 > split script runs and passes its audit. This week I am writing the proposal's gap and novelty section,
 > and getting the observed dataset counts into the datasheet by Wednesday. The main open item is CI and
 > the two GitHub accounts, and the JARC review of the knowledge base.

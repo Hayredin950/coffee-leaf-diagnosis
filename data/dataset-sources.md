@@ -4,6 +4,18 @@
 > records the HTTP status and the endpoint used. Nothing here is from memory.
 >
 > **Owner:** Hayredin Mohammed · **Reviewed by:** Nahom Solomon
+>
+> ---
+>
+> ### ⚠️ Read `docs/12-DATASET-VERIFICATION.md` first
+>
+> On **7 November 2026** every record was re-fetched and, where possible, **the files were counted**.
+> That pass found: the true JMuBEN total is **58,549** (two independent mirrors agree); the Uganda
+> Mendeley release contains **3,322** files, not the claimed 3,312; Uganda has a **12,480-image
+> original** and a **26,335-image augmented** release that this registry did not know about; and an
+> **Ethiopian dataset of 12,000 images** exists on Kaggle and is the only external Cercospora
+> benchmark in public. The three-tier evidence scale (T1 verified twice … T4 claimed only) is defined
+> in §0 of that file. **This registry keeps the provenance; that file keeps the count.**
 
 ## Download rules
 
@@ -132,11 +144,32 @@ identifier, in which case it records the mapping explicitly in `data/dataset-sou
 | **DOI** | 10.17632/k36wnd6knb.1 |
 | **Version / date** | v1, 7 February 2025 |
 | **Licence** | CC BY 4.0 |
-| **Counts** | **3,312** images, JPEG 256×256 — Healthy 1,179 / Coffee Leaf Rust 1,023 / Phoma 1,110 |
+| **Counts — published** | **3,312** images, JPEG 256×256 — Healthy 1,179 / Coffee Leaf Rust 1,023 / Phoma 1,110 |
+| **Counts — observed (7 Nov 2026)** | **3,322 JPG** — Healthy **1,179** / CLR **1,033** / Phoma **1,110**. **The CLR class has ten more files than the description claims.** Tier T2 (Mendeley file manifest). |
 | **Collection** | Smartphone on Ugandan farms; varying light (daylight and low light); leaves at early, medium and advanced growth stages. Duplicates removed; rotation, flipping and brightness augmentation applied. |
-| **Verification** | ✅ Fetched 21 Oct 2026 |
+| **Verification** | ✅ Fetched 21 Oct 2026 · ✅ files counted 7 Nov 2026 |
 | **Role in the project** | **The most valuable single dataset for the project.** It is African, from real farms, with a different camera and a different protocol — a genuine domain shift from Kenya's curated JMuBEN. It tests Rust, Phoma and Healthy. It cannot test Cercospora or Miner. |
 | **⚠️** | The augmentation was already applied by the publishers, so the "duplicates removed" claim must be verified independently by the group's own pHash clustering. |
+
+#### A.7.1 The two larger Uganda releases — this registry missed them
+
+The same authors uploaded a **larger Kaggle release**. Its description gives the pre-augmentation
+counts, which is exactly what the project has been missing.
+
+| Release | Record | Claimed | Observed | Tier |
+|---|---|---|---|---|
+| **Original, before augmentation** | Kaggle `chelangatspecioza/coffeedataset34` (description) | **12,480** = Healthy 4,200 / CLR 4,050 / Phoma 4,230 | **not uploaded** | T3 |
+| **Augmented** | Kaggle `chelangatspecioza/coffeedataset34` | 26,315 = 9,025 / 8,330 / 8,960 | **26,335** = **9,045** / 8,330 / 8,960 | **T2** |
+| **Mendeley v1** | Mendeley `k36wnd6knb` v1 | 3,312 = 1,179 / 1,023 / 1,110 | **3,322** = 1,179 / **1,033** / 1,110 | **T2** |
+
+**Consequences:**
+1. The "3,312-image Uganda dataset" in the literature is a **slice** of a 12,480-image original.
+2. The augmented release (26,335) is the largest African field corpus available and is a far stronger
+   ablation-B training set than the 3,322-image record.
+3. Both public releases are augmented ⇒ **request the 12,480 originals** from the authors (Soroti
+   University: Specioza Chelangat, Racheal Anirwoth, Kizito Najib Mayanja, Abubakhari Sserwadda).
+4. The augmented release carries **CC BY-NC-SA 4.0** on one mirror and **CC BY-SA 4.0** on another;
+   the Mendeley record is CC BY 4.0. Cite the Mendeley DOI and state the conflict.
 
 ### A.8 Saposoa, Peru 2026
 
@@ -185,6 +218,35 @@ identifier, in which case it records the mapping explicitly in `data/dataset-sou
 | **Collection** | Original smartphone resolution **4000×2250 RGB**, mostly laboratory shots on a white background, manually collected and labelled on a Brazilian farm |
 | **Verification** | ✅ Fetched 21 Oct 2026 |
 | **Role** | Small, but **full-resolution, single-stress, expert-labelled** — an ideal high-resolution spot-check set, and a good demonstration of what the model does with a real 4K photo rather than a 128×128 crop |
+| **Second-source check (7 Nov 2026)** | The Kaggle mirror `alvarole/coffee-leaves-disease` lists exactly **542 JPG + 542 XML** — matches. Tier **T1**. |
+
+### A.11 Ethiopian coffee-leaf dataset — **new, and the only Ethiopian data in public**
+
+Discovered 7 November 2026. This record was not in any earlier version of this registry and is the
+most consequential find of the verification pass.
+
+| Field | Value |
+|---|---|
+| **Record** | Kaggle `biniyamyoseph/ethiopian-coffee-leaf-disease` |
+| **Uploader** | Biniyam Yoseph |
+| **Updated** | 8 June 2024 · **2.12 GB** · 1,606 downloads |
+| **Licence** | CC0 (the uploader's claim; **no institution, no paper, no methodology statement**) |
+| **Classes** | Cercospora, Healthy, Leaf rust, Phoma — **four of our five; no Leaf Miner** |
+| **Counts — observed (7 Nov 2026)** | **12,000 JPG** — `train aug/` **2,700 × 4 = 10,800**; `test/` **300 × 4 = 1,200** |
+| **Tier** | **T2** (Kaggle file manifest, every file enumerated) |
+| **Why it matters** | It is **Ethiopian**; it is **perfectly balanced**; and its **test split is the only external Cercospora benchmark that exists**. Our registry previously said Cercospora had no independent external test. |
+| **How to use it** | **External test only** (T-05): the 1,200-image `test/` split. **Never train on it.** |
+| **⚠️ Provenance** | Self-uploaded, no paper, no named annotator, licence unverifiable. The balanced `test/` split is a sign of **curation, not of a random field sample**, so its accuracy will be optimistic. State this in the same sentence as the result. |
+| **⚠️ Augmentation** | `train aug/` is explicitly augmented ⇒ 10,800 files ≠ 10,800 independent samples. |
+
+### A.12 CerradoCoffeeLeaf — announced, **not released** (cite as prior work)
+
+| Field | Value |
+|---|---|
+| **Record** | GitHub `joaofmari/cerradocoffeeleaf-cross-dataset-analysis` |
+| **What it claims** | 1,476 in-the-wild Brazilian field images, **7 classes**, predefined 64/16/20 splits, designed for cross-dataset generalisation |
+| **Status (7 Nov 2026)** | **Not downloadable.** The README's Zenodo link is the literal placeholder `[LINK]`; the dataset repository returns 404. Tier **T4**. |
+| **Why it is still valuable** | It **independently confirms our central data claim**: *"preliminary inspection suggests the presence of augmented samples, which may inflate within-dataset performance"* (JMuBEN). Cite it in §2 of the proposal as corroboration, and do not wait for the data. |
 
 ---
 
@@ -207,6 +269,13 @@ and a reviewer may otherwise ask "did you consider X?".
 | **BRACOT** | https://data.mendeley.com/datasets/pmkbyjpf6k/1 | 300 images of instance segmentation. Small and of uncertain provenance. |
 | **Ethiopian Coffee & Tea Authority website** | https://ethiocta.gov.et/ | The domain resolves but **currently serves gambling SEO spam**; `/about` and `/services` return 404. **Do not cite it.** |
 | **Coffee and Tea Research Institute** | `ctri.gov.et` | Does not resolve. The institute's functions now sit inside **EIAR / Jimma Agricultural Research Center**. Cite JARC. |
+| **iCog Labs Coffee Disease Dataset** | https://github.com/iCogLabs/Coffee-Disease-Dataset | 2019 iCog Makers challenge, Addis Ababa. **The repository is empty** — created and last pushed 2019-04-11, 0 bytes. Checked 7 Nov 2026. Dead end. |
+| **dvelaren/clr-dataset** | https://github.com/dvelaren/clr-dataset | **4,398 JPG**, 5 rust-severity stages, 3-month time series, EAFIT Colombia. **Severity only** — no healthy, no other disease. Useless for five-class training; keep as a reference for ★4 (longitudinal history). |
+| **Zenodo 14628690** | https://zenodo.org/records/14628690 | `dataset.zip`, 810.8 MB, CC BY 4.0, but **no description, no class statement, no paper**. Cannot be characterised from metadata; low priority. |
+| **brainer-fp66/coffee-leaf-diseases** (HF) | https://huggingface.co/datasets/brainer-fp66/coffee-leaf-diseases | 1,511 images — Healthy 362 / Miner 336 / Phoma 338 / **Red Spider Mite 116** / Rust 359. Smaller than JMuBEN, duplicates its classes, and the mite class is out-of-taxonomy. Sanity-check set only. |
+| **Laksh619/Coffee-Cocoa-Diseases** (HF) | https://huggingface.co/datasets/Laksh619/Coffee-Cocoa-Diseases | 4,000 = 8 classes × 500, **coffee + cocoa**. Half the classes are cocoa; merging would teach the model cocoa diseases. Example of why a "coffee leaf" search result must be inspected. |
+| **minayahhh liberica / robusta** (Kaggle) | `minayahhh/liberica-coffee-leaf-dataset`, `minayahhh/robusta-coffee-leaf-dataset` | 1.49 GB / 790 MB, **no description, licence "Unknown"**. Cannot characterise classes or provenance. |
+| **johnandrewborabo binary** (Kaggle) | `johnandrewborabo/coffee-leaf-binary-classification-dataset` | 3.1 GB, Healthy vs Unhealthy. Binary — collapses the taxonomy we are building. |
 
 ---
 
@@ -214,9 +283,11 @@ and a reviewer may otherwise ask "did you consider X?".
 
 | Purpose | Datasets | Classes covered |
 |---|---|---|
-| **Training** (headline model) | JMuBEN + JMuBEN2 (+ BRACOL as the second Arabica source) | All 5 |
-| **Training** (ablation variant B) | The above **+ Uganda 2025** | All 5, with African field data added |
-| **External evaluation** | Uganda 2025 · RoCoLe · Saposoa Peru · CoffeeLeaf-CO v2 · Silva 2020 | Rust, Phoma, Healthy, Miner across 5 sets; Cercospora has **no independent external test** — stated as a limitation |
+| **Training** (headline model) | JMuBEN + JMuBEN2 (58,549) (+ BRACOL as the second Arabica source) | All 5 |
+| **Training** (ablation variant B) | The above **+ Uganda augmented (26,335)** | All 5, with 26k African field images added — far stronger than the 3,322-image record |
+| **External evaluation — African** | Uganda Mendeley (3,322) · **Ethiopian `test/` split (1,200)** | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only external Cercospora benchmark in public |
+| **External evaluation — other** | RoCoLe (1,560) · Silva (542) · Saposoa (1,500) · CoffeeLeaf-CO (2,315) | Rust, Miner, Healthy |
+| **Optional — ★4 only** | dvelaren CLR (4,398) | rust severity, longitudinal |
 
 **⚠️ The headline model must exclude every external set from training**, and the exclusion is
 asserted by test T-05 and by a CI check that compares the training manifest's source IDs
@@ -236,8 +307,11 @@ against the external set IDs.
 | 6 | Saposoa Peru (`mfpxg4y65r` v2) | ☐ | ☐ | ☐ | `data/raw/peru/` |
 | 7 | CoffeeLeaf-CO v2 (`22756170`) | ☐ | ☐ | ☐ | `data/raw/coffeeleafco/` |
 | 8 | Silva 2020 (`vfxf4trtcg` v5) | ☐ | ☐ | ☐ | `data/raw/silva/` |
+| 9 | **Ethiopian** (Kaggle `biniyamyoseph/…`) | ☐ | ☐ | ☐ | `data/raw/ethiopian/` |
+| 10 | **Uganda augmented** (Kaggle `chelangatspecioza/coffeedataset34`) | ☐ | ☐ | ☐ | `data/raw/uganda_aug/` |
 
-`data/raw/` is gitignored. The paths above are the only place the raw data lives.
+`data/raw/` is gitignored. The paths above are the only place the raw data lives. Run
+`notebooks/00-dataset-verification.ipynb` after placing the archives; it fills every ☐ in this table.
 
 ---
 

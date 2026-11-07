@@ -30,26 +30,48 @@ the internal-to-external shift can be measured rather than assumed.
 
 ### 2.1 Sources
 
-| # | Source | Country | Species | Capture environment | Classes contributed | Images (published) | Images [OBSERVE] |
-|---|---|---|---|---|---|---|---|
-| S1 | JMuBEN (`t2r6rszp5c`) | Kenya | Arabica | Field plantation, both leaf surfaces, varied weather; cropped and augmented by the publishers | Rust, Cercospora, Phoma | 22,591 | |
-| S2 | JMuBEN2 (`tgv3zb82nd`) | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | |
-| S3 | BRACOL (`yy2k5y8mxg`) | Brazil | Arabica | Field, abaxial side, white background, 5 smartphones | All 5 | 1,747 leaves + 2,147 crops | |
-| S4 | Uganda 2025 (`k36wnd6knb`) | Uganda | Arabica | Real farms, smartphone, daylight and low light | Rust, Phoma, Healthy | 3,312 | |
-| S5 | Saposoa Peru (`mfpxg4y65r`) | Peru | Arabica | Uniform protocol, fixed distance, homogeneous light, specialist diagnosis | Rust, Healthy (+ *Mycena*) | 1,500 | |
-| S6 | RoCoLE (`c5yvn32dzg` v2) | Ecuador | **Robusta** | Field, natural backgrounds, smartphone at 200–300 mm | Rust, Healthy (+ red spider mite) | 1,560 | |
-| S7 | CoffeeLeaf-CO v2 (`22756170`) | Colombia | Arabica | Field collection, consumer Android phones, natural light | Rust, Miner (+ weevil); healthy as background | 2,315 | |
-| S8 | Silva 2020 (`vfxf4trtcg` v5) | Brazil | Arabica | Mostly lab on white background, original 4000×2250 | Rust, Miner | 542 | |
-| | **Total** | **6 countries** | **2 species** | | | **~58,000–60,000** | |
+| # | Source | Country | Species | Capture environment | Classes contributed | Images (published) | **Images observed (7 Nov 2026)** | Tier |
+|---|---|---|---|---|---|---|---|---|
+| S1 | JMuBEN (`t2r6rszp5c`) | Kenya | Arabica | Field plantation, both leaf surfaces, varied weather; cropped and augmented by the publishers | Rust, Cercospora, Phoma | 22,591 | 3 zips, 549.1 MB (internals not opened) | T3 |
+| S2 | JMuBEN2 (`tgv3zb82nd`) | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | 2 zips, 1,291.7 MB (internals not opened) | T3 |
+| S1+2 | **JMuBEN combined** | Kenya | Arabica | — | All 5 | **58,555** (paper) | **58,549** — two independent mirrors agree | **T1** |
+| S3 | BRACOL (`yy2k5y8mxg`) | Brazil | Arabica | Field, abaxial side, white background, 5 smartphones | All 5 | 1,747 leaves + 2,147 crops | 1 zip, 164.5 MB — **not verified** | T3 |
+| S4 | Uganda (`k36wnd6knb`) | Uganda | Arabica | Real farms, smartphone, daylight and low light; **already augmented** | Rust, Phoma, Healthy | 3,312 | **3,322** (1,179 / **1,033** / 1,110) | **T2** |
+| S5 | Saposoa Peru (`mfpxg4y65r`) | Peru | Arabica | Uniform protocol, fixed distance, homogeneous light, specialist diagnosis | Rust, Healthy (+ *Mycena*) | 1,500 | 1 RAR, 3.45 GB — **not verified** | T3 |
+| S6 | RoCoLE (`c5yvn32dzg` v2) | Ecuador | **Robusta** | Field, natural backgrounds, smartphone at 200–300 mm | Rust, Healthy (+ red spider mite) | 1,560 | **1,560** — 390 plants × 4 views | **T1** |
+| S7 | CoffeeLeaf-CO v2 (`22756170`) | Colombia | Arabica | Field collection, consumer Android phones, natural light | Rust, Miner (+ weevil); healthy as background | 2,315 | 1 zip, 167.5 MB — **not verified** | T3 |
+| S8 | Silva 2020 (`vfxf4trtcg` v5) | Brazil | Arabica | Mostly lab on white background, original 4000×2250 | Rust, Miner | 542 | **542** (285 rust + 257 miner) | **T1** |
+| **S9** | **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Ethiopia** | Arabica | Field photographs; `train aug/` augmented, `test/` curated | **Cercospora**, Rust, Phoma, Healthy | — | **12,000** = 10,800 train-aug + 1,200 test | **T2** |
+| **S10** | Uganda augmented (Kaggle `chelangatspecioza/…34`) | Uganda | Arabica | Same farms as S4, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** (9,045 / 8,330 / 8,960) | **T2** |
+| | **Total (distinct, verified sets only)** | **7 countries** | **2 species** | | | | **≈ 99,000** | |
+
+**Tier definitions** (full explanation in `docs/12-DATASET-VERIFICATION.md` §0): **T1** verified
+against two independent releases; **T2** verified from one publisher file manifest; **T3** published
+figure, archive not opened; **T4** claimed only.
+
+**Why the total is "≈ 99,000" and not a single number.** JMuBEN 58,549 + Uganda (larger release)
+26,335 + RoCoLe 1,560 + Silva 542 + Ethiopian 12,000 = **98,986**. Uganda is counted **once**, at its
+larger release, because the 3,322-image Mendeley set and the 26,335-image Kaggle set are two
+augmentations of the same farms — adding them would double-count. BRACOL, Saposoa and CoffeeLeaf-CO
+are excluded from the total because their archives are still unopened (T3). The project's *training*
+corpus is **58,549**; the external sets are counted separately. Quoting one "total" would hide
+exactly the distinction the datasheet exists to make.
 
 ### 2.2 Class distribution
 
-The published per-class counts for JMuBEN and JMuBEN2 combined are:
+The per-class counts for JMuBEN and JMuBEN2 combined were **observed** on 7 November 2026 and agree
+across two independent mirrors (Kaggle `noamaanabdulazeem/jmuben-coffee-dataset` and HF
+`Project-AgML/arabica_coffee_leaf_disease_classification`). The paper's Table 1 is six images larger.
 
-| Class | Cercospora | Healthy | Leaf Rust | Leaf Miner | Phoma |
-|---|---|---|---|---|---|
-| Published count | 7,681 | 18,983 | 8,336 | 16,978 | 6,571 |
-| Share | 13.1 % | 32.4 % | 14.2 % | 29.0 % | 11.2 % |
+| Class | Cercospora | Healthy | Leaf Rust | Leaf Miner | Phoma | **Total** |
+|---|---|---|---|---|---|---|
+| Paper Table 1 | 7,682 | 18,985 | 8,337 | 16,979 | 6,572 | 58,555 |
+| **Observed (T1)** | **7,681** | **18,983** | **8,336** | **16,978** | **6,571** | **58,549** |
+| Share of observed | 13.1 % | 32.4 % | 14.2 % | 29.0 % | 11.2 % | 100 % |
+
+The Ethiopian external set (S9) is perfectly balanced by construction:
+**3,000 Cercospora / 3,000 Healthy / 3,000 Rust / 3,000 Phoma** across its train-augmented and test
+splits, of which the **clean test split is 300 per class (1,200 total)**.
 
 **The corpus is imbalanced.** Healthy and Miner together are 61 % of the data; Phoma and
 Cercospora together are only 24 %. Consequences the group must handle and report:
@@ -191,27 +213,35 @@ by test T-05 and by a CI check:
 
 | Set | Role | Why it is a genuine shift |
 |---|---|---|
-| Uganda 2025 | External test (and, in ablation variant B, a training source) | Different country, real farms, smartphone, uncontrolled light |
-| RoCoLE | External test | Different **species** (Robusta), different country, natural backgrounds, a 390-plant grouping structure |
-| Saposoa Peru | External test | Uniform, specialist-labelled protocol — a "clean" shift that probes a different failure mode |
-| CoffeeLeaf-CO v2 | External test | Different country, detection-annotated field imagery with a verified split |
-| Silva 2020 | External test | Original 4000×2250 resolution — tests the pipeline on realistic file sizes and detail |
+| Uganda 2025 (3,322) | External test (and, in ablation variant B, a training source) | Different country, real farms, smartphone, uncontrolled light |
+| **Ethiopian `test/` (1,200)** | **External test — the only external Cercospora set** | **Same country as the target user**, different farms, curated 300-per-class test split |
+| RoCoLE (1,560) | External test | Different **species** (Robusta), different country, natural backgrounds, a 390-plant grouping structure |
+| Saposoa Peru (1,500) | External test | Uniform, specialist-labelled protocol — a "clean" shift that probes a different failure mode |
+| CoffeeLeaf-CO v2 (2,315) | External test | Different country, detection-annotated field imagery with a verified split |
+| Silva 2020 (542) | External test | Original 4000×2250 resolution — tests the pipeline on realistic file sizes and detail |
+
+**The Ethiopian set's provenance caveat travels with every number computed on it:** it is a
+self-uploaded Kaggle dataset (CC0) with no paper, no named annotator and no methodology statement.
+Its balanced `test/` split is evidence of curation, not of a random field sample, so its accuracy is
+an **upper bound**. It is used because it is the only way to report Cercospora recall outside Kenya,
+and the caveat is printed beside the result.
 
 ### 4.4 A note on what the external sets can and cannot test
 
-| Class | Uganda | RoCoLE | Saposoa | CoffeeLeaf-CO | Silva |
-|---|---|---|---|---|---|
-| Rust | ✔ | ✔ | ✔ | ✔ | ✔ |
-| Healthy | ✔ | ✔ | ✔ | (background) | — |
-| Phoma | ✔ | — | — | — | — |
-| Leaf Miner | — | — | — | ✔ | ✔ |
-| Cercospora | — | — | — | — | — |
-| *unsupported* | — | red spider mite | *Mycena* | weevil | — |
+| Class | Uganda | **Ethiopian** | RoCoLE | Saposoa | CoffeeLeaf-CO | Silva |
+|---|---|---|---|---|---|---|
+| Rust | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| Healthy | ✔ | ✔ | ✔ | ✔ | (background) | — |
+| Phoma | ✔ | ✔ | — | — | — | — |
+| Leaf Miner | — | — | — | — | ✔ | ✔ |
+| **Cercospora** | — | **✔ (300)** | — | — | — | — |
+| *unsupported* | — | — | red spider mite | *Mycena* | weevil | — |
 
-**Cercospora has no independent external test.** No public field corpus contains it. This is a
-real limitation of the evaluation and it is stated as such in Chapter 6 — it also means the
-Cercospora numbers the group reports are the least trustworthy of the five, and the report
-says so.
+**Cercospora now has one external test: the 300-image Ethiopian `test/` split.** Before 7 November
+2026 the registry said no public field corpus contained it; that is no longer true. The evaluation
+must still state that (a) the set has no published provenance and (b) 300 images give a 95 % binomial
+confidence interval of roughly ±5.7 points on a recall near 90 % — so it is a benchmark, not a
+verdict. Phoma is now tested by two sets (Uganda and Ethiopian), which is a real improvement over one.
 
 ## 5. Licensing, permissions and ethics
 

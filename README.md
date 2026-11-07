@@ -19,6 +19,7 @@
 | **Just want to know what to do today** | | `docs/02-WEEKLY-PLAN.md` — find your column (H / B / Y / N) | |
 | **Need the content for the shared Google Doc** | | `docs/10-GOOGLE-DOC-PLAN.md` — the six headings, paste-ready | |
 | **Need to be ready to explain or defend the whole project** | **`docs/11-BRIEFING.md`** | | |
+| **Need to prove a dataset count, or answer "how many images, before preprocessing?"** | **`docs/12-DATASET-VERIFICATION.md`** + `notebooks/00-dataset-verification.ipynb` | | |
 | **Want to know why this isn't an ordinary project** | | | `docs/06-DIFFERENTIATION.md` → `docs/07-IMPACT-AND-SCALE.md` |
 | **Are preparing for the defense** | | | `docs/appendices/Appendix-D-N-Defense.md` + `docs/defense/slides-and-demo.md` |
 
@@ -100,10 +101,13 @@ Final-Year-Project/
 │       └── Appendix-M-Ethics.md
 │
 ├── data/
-│   ├── dataset-sources.md            ← the 9 verified sources + the rejected ones
+│   ├── dataset-sources.md            ← the verified sources + the rejected ones
 │   ├── datasheet.md                 ← the full datasheet (§9.2, §9.6)
 │   ├── knowledge-base.md            ← the KB content plan and the source map
 │   └── knowledge_base.json          ← (to be created in FYP I week 9)
+│
+├── notebooks/
+│   └── 00-dataset-verification.ipynb ← Colab: probe, download, count before preprocessing, hash
 │
 └── scripts/
     └── prepare_data.py               ← the leakage-safe split pipeline with the audit gate
