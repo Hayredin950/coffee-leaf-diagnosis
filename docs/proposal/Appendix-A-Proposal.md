@@ -334,16 +334,20 @@ A validated, open-source, offline diagnostic tool is a deliverable that outlives
 The literature is organised thematically into five strands.
 
 **Strand 1 — Dataset construction and leakage.** The field's dominant dataset is JMuBEN
-[1], comprising 58,549–58,555 Arabica images across five classes collected at Mutira
+[1], comprising 58,550 files across five classes collected at Mutira
 plantation, Kirinyaga, Kenya, labelled by a plant pathologist. The dataset card and the
 dataset's own paper both document that the released images are **cropped to the region of
 interest, resized, and augmentation-augmented (rotation and flipping)** to equalise sizes —
 and the original uncropped field photographs are not published. The consequence is structural:
-a random split leaks near-duplicates. BRACOL [5] has the same property in a different form —
+a random split leaks near-duplicates. **This group counted the files on 8 November 2026 and found
+that the 58,550 files contain only 3,757 distinct images (93.6 % are byte-identical copies), and
+that the Healthy class is 18,984 files but 63 distinct images — frames of a single leaf.** That
+measurement is the project's first original contribution and the reason the evaluation protocol
+begins with MD5 deduplication. BRACOL [5] has the same property in a different form —
 its 2,147 symptom images are **crops of the 1,747 whole-leaf photographs** — and ROCoLE [19]
-provides four views per plant. The group's preliminary analysis therefore treats
-*duplicate grouping before splitting* as a methodological precondition rather than an
-optimisation.
+provides four views per plant, plus 67 images duplicated across different plant IDs. The group's
+analysis therefore treats *duplicate grouping before splitting* as a methodological precondition
+rather than an optimisation. Full audit: `docs/14-DUPLICATION-AUDIT.md`.
 
 **Strand 2 — Model accuracy on curated imagery.** Reported in-domain accuracies are high and
 rising: 93–99 % across eleven architectures on JMuBEN with balanced classes [7]; 97.37 % on

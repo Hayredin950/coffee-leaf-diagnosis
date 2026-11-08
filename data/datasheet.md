@@ -32,18 +32,18 @@ the internal-to-external shift can be measured rather than assumed.
 
 | # | Source | Country | Species | Capture environment | Classes contributed | Images (published) | **Images observed (7 Nov 2026)** | Tier |
 |---|---|---|---|---|---|---|---|---|
-| S1 | JMuBEN (`t2r6rszp5c`) | Kenya | Arabica | Field plantation, both leaf surfaces, varied weather; cropped and augmented by the publishers | Rust, Cercospora, Phoma | 22,591 | 3 zips, 549.1 MB (internals not opened) | T3 |
-| S2 | JMuBEN2 (`tgv3zb82nd`) | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | 2 zips, 1,291.7 MB (internals not opened) | T3 |
-| S1+2 | **JMuBEN combined** | Kenya | Arabica | — | All 5 | **58,555** (paper) | **58,549** — two independent mirrors agree | **T1** |
-| S3 | BRACOL (`yy2k5y8mxg`) | Brazil | Arabica | Field, abaxial side, white background, 5 smartphones | All 5 | 1,747 leaves + 2,147 crops | 1 zip, 164.5 MB — **not verified** | T3 |
-| S4 | Uganda (`k36wnd6knb`) | Uganda | Arabica | Real farms, smartphone, daylight and low light; **already augmented** | Rust, Phoma, Healthy | 3,312 | **3,322** (1,179 / **1,033** / 1,110) | **T2** |
+| S1 | JMuBEN (`t2r6rszp5c`) | Kenya | Arabica | Field plantation, both leaf surfaces, varied weather; cropped and augmented by the publishers | Rust, Cercospora, Phoma | 22,591 | **22,588 files → 2,055 distinct** | **T1** |
+| S2 | JMuBEN2 (`tgv3zb82nd`) | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | **35,962 files → 1,702 distinct** | **T1** |
+| S1+2 | **JMuBEN combined** | Kenya | Arabica | — | All 5 | **58,555** (paper) | **58,550 files → 3,757 distinct** | **T1** |
+| S3 | BRACOL (`yy2k5y8mxg`) | Brazil | Arabica | Field, abaxial side, white background, 5 smartphones | All 5 | 1,747 leaves + 2,147 crops | **1,747 files → 1,746 distinct** (Mendeley file truncated; 345 restored from HF mirror) | **T1** |
+| S4 | Uganda (`k36wnd6knb`) | Uganda | Arabica | Real farms, smartphone, daylight and low light; **already augmented** | Rust, Phoma, Healthy | 3,312 | **3,322 files → 1,810 distinct, 102 zero-byte** | **T1** |
 | S5 | Saposoa Peru (`mfpxg4y65r`) | Peru | Arabica | Uniform protocol, fixed distance, homogeneous light, specialist diagnosis | Rust, Healthy (+ *Mycena*) | 1,500 | 1 RAR, 3.45 GB — **not verified** | T3 |
-| S6 | RoCoLE (`c5yvn32dzg` v2) | Ecuador | **Robusta** | Field, natural backgrounds, smartphone at 200–300 mm | Rust, Healthy (+ red spider mite) | 1,560 | **1,560** — 390 plants × 4 views | **T1** |
+| S6 | RoCoLE (`c5yvn32dzg` v2) | Ecuador | **Robusta** | Field, natural backgrounds, smartphone at 200–300 mm | Rust, Healthy (+ red spider mite) | 1,560 | **1,560 files → 1,493 distinct** | **T1** |
 | S7 | CoffeeLeaf-CO v2 (`22756170`) | Colombia | Arabica | Field collection, consumer Android phones, natural light | Rust, Miner (+ weevil); healthy as background | 2,315 | 1 zip, 167.5 MB — **not verified** | T3 |
 | S8 | Silva 2020 (`vfxf4trtcg` v5) | Brazil | Arabica | Mostly lab on white background, original 4000×2250 | Rust, Miner | 542 | **542** (285 rust + 257 miner) | **T2**¹ |
 | **S9** | **Ethiopian** (Kaggle `biniyamyoseph/…`) | **Ethiopia** | Arabica | Field photographs; `train aug/` augmented, `test/` curated | **Cercospora**, Rust, Phoma, Healthy | — | **12,000** = 10,800 train-aug + 1,200 test | **T2** |
 | **S10** | Uganda augmented (Kaggle `chelangatspecioza/…34`) | Uganda | Arabica | Same farms as S4, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** (9,045 / 8,330 / 8,960) | **T2** |
-| | **Total (distinct, verified sets only)** | **7 countries** | **2 species** | | | | **≈ 99,000** | |
+| | **Total (distinct, file-verified sets)** | **7 countries** | **2 species** | | | | **≈ 9,350 distinct** + Ethiopian 12,000 files (not deduplicated) | |
 
 ¹ Silva's count is confirmed by the author's own Kaggle upload — a second release, not an independent
 one.
@@ -52,40 +52,54 @@ one.
 against two independent releases; **T2** verified from one publisher file manifest; **T3** published
 figure, archive not opened; **T4** claimed only.
 
-**Why the total is "≈ 99,000" and not a single number.** JMuBEN 58,549 + Uganda (larger release)
-26,335 + RoCoLe 1,560 + Silva 542 + Ethiopian 12,000 = **98,986**. Uganda is counted **once**, at its
-larger release, because the 3,322-image Mendeley set and the 26,335-image Kaggle set are two
-augmentations of the same farms — adding them would double-count. BRACOL, Saposoa and CoffeeLeaf-CO
-are excluded from the total because their archives are still unopened (T3). The project's *training*
-corpus is **58,549**; the external sets are counted separately. Quoting one "total" would hide
-exactly the distinction the datasheet exists to make.
+**Why there is no single "total".** Two numbers matter and they are not the same:
+**files** (what the publishers count) and **distinct images** (what a model can learn from).
+JMuBEN + JMuBEN2 is 58,550 files but **3,757 distinct images**; 93.6 % of the files are
+byte-identical copies. Uganda is 3,322 files and 1,810 distinct. Any corpus total that adds file
+counts is inflated by roughly the duplication rate of each source, so the datasheet reports
+**distinct** counts wherever they have been measured and leaves the rest at their file count with a
+tier label. The audit is `docs/14-DUPLICATION-AUDIT.md`; the raw output is
+`data/audit/duplication-report.md`.
 
 ### 2.2 Class distribution
 
 The per-class counts for JMuBEN and JMuBEN2 combined were **observed** on 7 November 2026 and agree
 across two independent mirrors (Kaggle `noamaanabdulazeem/jmuben-coffee-dataset` and HF
 `Project-AgML/arabica_coffee_leaf_disease_classification`). The paper's Table 1 is six images larger.
+On **8 November 2026** the archives were opened and every file was hashed. The file count and the
+distinct-image count are both shown, because they differ by a factor of fifteen.
 
 | Class | Cercospora | Healthy | Leaf Rust | Leaf Miner | Phoma | **Total** |
 |---|---|---|---|---|---|---|
 | Paper Table 1 | 7,682 | 18,985 | 8,337 | 16,979 | 6,572 | 58,555 |
-| **Observed (T1)** | **7,681** | **18,983** | **8,336** | **16,978** | **6,571** | **58,549** |
-| Share of observed | 13.1 % | 32.4 % | 14.2 % | 29.0 % | 11.2 % | 100 % |
+| **Observed files (T1)** | **7,681** | **18,984** | **8,336** | **16,978** | **6,571** | **58,550** |
+| **Distinct images** | **322** | **63** | **1,042** | **1,639** | **691** | **3,757** |
+| Duplicate share | 95.8 % | 99.7 % | 87.5 % | 90.3 % | 89.5 % | **93.6 %** |
+
+The **Healthy class is the crisis**: 18,984 files resolve to 63 distinct images, and visually those
+63 are frames of a single leaf (`data/figures/jmuben-healthy-63.png`). A model evaluated on a random
+split of this class is measured on memorisation. The report states the distinct count, and the
+healthy training signal must come from BRACOL, Uganda and RoCoLe, not from JMuBEN.
 
 The Ethiopian external set (S9) is perfectly balanced by construction:
 **3,000 Cercospora / 3,000 Healthy / 3,000 Rust / 3,000 Phoma** across its train-augmented and test
 splits, of which the **clean test split is 300 per class (1,200 total)**.
 
-**The corpus is imbalanced.** Healthy and Miner together are 61 % of the data; Phoma and
-Cercospora together are only 24 %. Consequences the group must handle and report:
-- a **majority-class baseline** (always Healthy) scores ≈ 32 % and is the floor that any model
-  must beat by a wide margin (§9.1 of the proposal);
+**The corpus is imbalanced — and the effective imbalance is worse than the file counts suggest.**
+On distinct images the five classes are 322 / 63 / 1,042 / 1,639 / 691, i.e. Miner is **26× larger
+than Healthy**. Consequences the group must handle and report:
+- a **majority-class baseline** (always Miner) scores ≈ 44 % on the distinct-image corpus and is the
+  floor that any model must beat by a wide margin (§9.1 of the proposal);
 - **macro-averaged metrics** are the primary reported metric, not accuracy, because accuracy
   is inflated by the two dominant classes;
 - the two minority classes are the ones most likely to be missed on field photographs — which
   is exactly what the published model card for EfficientNet-B2 shows for Cercospora (9.1 %
   recall on a ConvNeXt model, 0.717 F1 on the EfficientNet-B2) — so **per-class recall is
-  reported for every class on every dataset**, not just the averages.
+  reported for every class on every dataset**, not just the averages;
+- **Healthy cannot be learned from JMuBEN.** 62 usable distinct healthy images is below the
+  threshold at which a 5-class model can generalise; healthy must be sourced from BRACOL (1,747
+  leaves, all five classes), Uganda (739 distinct) and RoCoLe (780). This is a corpus-design
+  decision, not a footnote.
 
 [OBSERVE] the observed distribution after the union with BRACOL, and record the change.
 

@@ -36,7 +36,7 @@ This is the table to paste into the proposal, the datasheet, and the message to 
 | 1 | **JMuBEN** | Mendeley `t2r6rszp5c` v1 | 22,591 | 3 zips, 549.1 MB — internals not opened | T3 (zip) | Rust, Cercospora, Phoma |
 | 2 | **JMuBEN2** | Mendeley `tgv3zb82nd` v1 | 35,964 | 2 zips, 1,291.7 MB — internals not opened | T3 (zip) | Healthy, Miner |
 | 1+2 | **JMuBEN combined** | — | **58,555** (paper Table 1) | **58,549** | **T1** | all five |
-| 3 | **BRACOL** | Mendeley `yy2k5y8mxg` v1 | 1,747 leaves + 2,147 crops | 1 zip, 164.5 MB — **contents not verified** | T3 (zip) | all five |
+| 3 | **BRACOL** | Mendeley `yy2k5y8mxg` v1 | 1,747 leaves + 2,147 crops | **1,747 files, 1,746 distinct** — Mendeley file is truncated; 345 images restored from the HF mirror | **T1** | all five (62 mixed excluded) |
 | 4 | **RoCoLe** | Mendeley `c5yvn32dzg` v2 | 1,560 | **1,560 JPG**, 2.27 GB, **390 plants × 4 views** | **T1** | Rust, Healthy, red spider mite |
 | 5 | **Uganda (Mendeley)** | Mendeley `k36wnd6knb` v1 | 3,312 | **3,322 JPG**, 256×256, **already augmented** | **T2** | Rust, Phoma, Healthy |
 | 5a | **Uganda — original** | Kaggle `chelangatspecioza/coffeedataset34` | **12,480** (4,200 / 4,050 / 4,230) | originals **not uploaded** | T3 | Rust, Phoma, Healthy |
@@ -61,6 +61,36 @@ which is a second *release* but not an independent one — hence T2, not T1.
   as far as we can verify — the only Cercospora set we can use as an independent external test),
 - **+1,560** RoCoLe, **+542** Silva, **+3,322** Uganda, **+1,500** Saposoa, **+2,315** CoffeeLeaf-CO
   as external sets.
+
+---
+
+## 1.5 Update — the archives were opened (8 November 2026)
+
+The table above counts **files**. Six archives were then downloaded and every image was hashed.
+The file count and the **distinct-image** count are not the same number, and for the primary
+benchmark they differ by a factor of fifteen.
+
+| Dataset | Files | **Distinct** | Duplicate share | Unusable |
+|---|---:|---:|---:|---:|
+| JMuBEN + JMuBEN2 | 58,550 | **3,757** | **93.6 %** | 1 corrupt |
+| Uganda (Mendeley) | 3,322 | **1,810** | 45.5 % | 102 zero-byte |
+| RoCoLe | 1,560 | **1,493** | 4.3 % | 0 |
+| Silva | 542 | **542** | 0 % | 0 |
+| BRACOL | 1,747 | **1,746** | 0.1 % | 0 |
+
+Per class, JMuBEN is: Rust 8,336 → 1,042 · Cercospora 7,681 → 322 · Phoma 6,571 → 691 ·
+Miner 16,978 → 1,639 · **Healthy 18,984 → 63**. The 63 healthy images are visually frames of one
+leaf (`data/figures/jmuben-healthy-63.png`).
+
+**Tier change:** JMuBEN, JMuBEN2, Uganda, RoCoLe and BRACOL move from *manifest-verified* to
+**file-verified** — the bytes were counted, not the listing. BRACOL needed a repair: the publisher's
+zip stops at 1,402 of 1,747 images (SHA-256 matches Mendeley's manifest, so the file is broken at the
+source), and the missing 345 were restored from the Hugging Face mirror `luisangelico/bracol`,
+verified byte-identical on the files both sources share.
+
+Method, proof and limitations: **`docs/14-DUPLICATION-AUDIT.md`**.
+Raw output: `data/audit/duplication-report.md` and `.json`.
+Reproduce: `python scripts/audit_duplicates.py --raw data/raw --out data/audit`.
 
 ---
 

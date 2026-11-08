@@ -67,29 +67,38 @@ Nine corpora were selected, spanning six countries, two *Coffea* species, and bo
 laboratory-curated and field-collected capture conditions.
 
 **Table 3.1** — The training corpus. The per-class counts are those published by the sources;
-the observed counts are recorded in the datasheet after download.
+the observed counts were taken from the publisher archives on 8 November 2026. **Distinct** is the
+number of byte-unique images after MD5 deduplication, and it is the number the report uses.
 
-| Source | Country | Species | Environment | Classes | Published images | Observed |
-|---|---|---|---|---|---|---|
-| JMuBEN | Kenya | Arabica | Plantation, both leaf surfaces, varied weather | Rust, Cercospora, Phoma | 22,591 | — |
-| JMuBEN2 | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | — |
-| **JMuBEN + JMuBEN2** | Kenya | Arabica | — | All 5 | 58,555 | **58,549** (two mirrors agree) |
-| BRACOL | Brazil | Arabica | Field, abaxial side, white background, 5 phones | All 5 | 1,747 leaves + 2,147 crops | — |
-| Uganda 2025 | Uganda | Arabica | Real farms, smartphone, varied light; already augmented | Rust, Phoma, Healthy | 3,312 | **3,322** |
-| Uganda augmented (Kaggle) | Uganda | Arabica | Same farms, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** |
+| Source | Country | Species | Environment | Classes | Published images | Observed files | Distinct |
+|---|---|---|---|---|---|---|---|
+| JMuBEN | Kenya | Arabica | Plantation, both leaf surfaces, varied weather | Rust, Cercospora, Phoma | 22,591 | 22,588 | 2,055 |
+| JMuBEN2 | Kenya | Arabica | Same campaign | Miner, Healthy | 35,964 | 35,962 | 1,702 |
+| **JMuBEN + JMuBEN2** | Kenya | Arabica | — | All 5 | 58,555 | **58,550** | **3,757** |
+| BRACOL | Brazil | Arabica | Field, abaxial side, white background, 5 phones | All 5 | 1,747 leaves + 2,147 crops | 1,747 | 1,746 |
+| Uganda 2025 | Uganda | Arabica | Real farms, smartphone, varied light; already augmented | Rust, Phoma, Healthy | 3,312 | **3,322** | **1,810** |
+| Uganda augmented (Kaggle) | Uganda | Arabica | Same farms, augmented | Rust, Phoma, Healthy | 26,315 | **26,335** | not deduplicated |
 
-The observed counts are the ones the report quotes; the published figures are shown beside them so
-that the six-image JMuBEN discrepancy and the ten-image Uganda discrepancy are visible rather than
-silent. The full evidence table is `docs/12-DATASET-VERIFICATION.md`.
+**The gap between "observed files" and "distinct" is the finding.** 93.6 % of the JMuBEN files are
+byte-identical copies of another file, and 45.5 % of Uganda's are; 102 Uganda files are zero bytes.
+The Healthy class of JMuBEN is 18,984 files and **63 distinct images**, which are visually frames of
+a single leaf. A random split of the file list therefore places the same image in train and test
+hundreds of times. The split groups by MD5 **before** any stratification, and every accuracy figure
+in this report is labelled with the distinct-image corpus it was computed on. The full audit is
+`docs/14-DUPLICATION-AUDIT.md`; the machine-readable output is `data/audit/duplication-report.json`.
+
+The published figures are shown beside the observed ones so that the six-image JMuBEN discrepancy
+and the ten-image Uganda discrepancy are visible rather than silent. The full evidence table is
+`docs/12-DATASET-VERIFICATION.md`.
 
 **Table 3.2** — The external evaluation sets. These are excluded from training in the
 headline model; the exclusion is asserted by test T-05 and by a CI check.
 
-| Source | Country | Species | Environment | Classes tested | n |
+| Source | Country | Species | Environment | Classes tested | Distinct n |
 |---|---|---|---|---|---|
-| Uganda 2025 | Uganda | Arabica | Real farms | Rust, Phoma, Healthy | 3,322 |
+| Uganda 2025 | Uganda | Arabica | Real farms | Rust, Phoma, Healthy | 1,810 |
 | **Ethiopian (Kaggle)** | **Ethiopia** | Arabica | Field; curated `test/` split | **Cercospora**, Rust, Phoma, Healthy | **1,200** |
-| RoCoLE | Ecuador | **Robusta** | Field, natural backgrounds | Rust, Healthy (+ red spider mite as `unsupported`) | 1,560 |
+| RoCoLE | Ecuador | **Robusta** | Field, natural backgrounds | Rust, Healthy (+ red spider mite as `unsupported`) | 1,493 |
 | Saposoa Peru | Peru | Arabica | Uniform protocol, specialist diagnosis | Rust, Healthy (+ *Mycena* as `unsupported`) | 1,500 |
 | CoffeeLeaf-CO v2 | Colombia | Arabica | Field, consumer phones | Rust, Leaf Miner (+ weevil as `unsupported`) | 2,315 |
 | Silva 2020 | Brazil | Arabica | Lab, full resolution 4000×2250 | Rust, Leaf Miner | 542 |

@@ -1,0 +1,362 @@
+{
+  "thresholds": [
+    4,
+    6,
+    8,
+    12
+  ],
+  "headline_threshold": 8,
+  "classes": [
+    {
+      "dataset": "bracol",
+      "label": "coffee-datasets",
+      "files": 1747,
+      "exact_unique": 1746,
+      "duplicate_copies": 1,
+      "perceptual_clusters": {
+        "4": 1383,
+        "6": 871,
+        "8": 429,
+        "12": 42
+      },
+      "unreadable": [],
+      "largest_group": 2,
+      "largest_group_example": [
+        "coffee-datasets/coffee-datasets/leaf/images/813.jpg",
+        "coffee-datasets/coffee-datasets/leaf/images/1022.jpg"
+      ]
+    },
+    {
+      "dataset": "jmuben",
+      "label": "Cerscospora",
+      "files": 7681,
+      "exact_unique": 322,
+      "duplicate_copies": 7359,
+      "perceptual_clusters": {
+        "4": 78,
+        "6": 77,
+        "8": 76,
+        "12": 65
+      },
+      "unreadable": [],
+      "largest_group": 24,
+      "largest_group_example": [
+        "Cerscospora-20210326T085017Z-001/Cerscospora/9 (3755).jpg",
+        "Cerscospora-20210326T085017Z-001/Cerscospora/6 (183).jpg",
+        "Cerscospora-20210326T085017Z-001/Cerscospora/6 (199).jpg"
+      ]
+    },
+    {
+      "dataset": "jmuben",
+      "label": "Leaf rust",
+      "files": 8336,
+      "exact_unique": 1042,
+      "duplicate_copies": 7294,
+      "perceptual_clusters": {
+        "4": 456,
+        "6": 404,
+        "8": 339,
+        "12": 233
+      },
+      "unreadable": [],
+      "largest_group": 8,
+      "largest_group_example": [
+        "Leaf rust-20210326T083416Z-001/Leaf rust/5 (3166).jpg",
+        "Leaf rust-20210326T083416Z-001/Leaf rust/20210125_183112(0).jpg.jpg",
+        "Leaf rust-20210326T083416Z-001/Leaf rust/2 (606).jpg"
+      ]
+    },
+    {
+      "dataset": "jmuben",
+      "label": "Phoma",
+      "files": 6571,
+      "exact_unique": 691,
+      "duplicate_copies": 5880,
+      "perceptual_clusters": {
+        "4": 176,
+        "6": 173,
+        "8": 166,
+        "12": 148
+      },
+      "unreadable": [],
+      "largest_group": 10,
+      "largest_group_example": [
+        "Phoma-20210326T082051Z-001/Phoma/3 (1399).jpg",
+        "Phoma-20210326T082051Z-001/Phoma/6 (2647).jpg",
+        "Phoma-20210326T082051Z-001/Phoma/6 (2640).jpg"
+      ]
+    },
+    {
+      "dataset": "jmuben2",
+      "label": "Healthy",
+      "files": 18984,
+      "exact_unique": 63,
+      "duplicate_copies": 18921,
+      "perceptual_clusters": {
+        "4": 11,
+        "6": 11,
+        "8": 11,
+        "12": 10
+      },
+      "unreadable": [
+        "Healthy-20210326T083815Z-001/Healthy/2 (691).jpg"
+      ],
+      "largest_group": 520,
+      "largest_group_example": [
+        "Healthy-20210326T083815Z-001/Healthy/2 (907).jpg",
+        "Healthy-20210326T083815Z-001/Healthy/1 (4206).jpg",
+        "Healthy-20210326T083815Z-001/Healthy/10 (933).jpg"
+      ]
+    },
+    {
+      "dataset": "jmuben2",
+      "label": "Miner",
+      "files": 16978,
+      "exact_unique": 1639,
+      "duplicate_copies": 15339,
+      "perceptual_clusters": {
+        "4": 311,
+        "6": 297,
+        "8": 279,
+        "12": 228
+      },
+      "unreadable": [],
+      "largest_group": 80,
+      "largest_group_example": [
+        "Miner-20210326T082341Z-001/Miner/1 (8258).jpg",
+        "Miner-20210326T082341Z-001/Miner/1 (16358).jpg",
+        "Miner-20210326T082341Z-001/Miner/1 (14626).jpg"
+      ]
+    },
+    {
+      "dataset": "rocole",
+      "label": "RoCoLe A robusta coffee leaf images dataset",
+      "files": 1560,
+      "exact_unique": 1493,
+      "duplicate_copies": 67,
+      "perceptual_clusters": {
+        "4": 1474,
+        "6": 1459,
+        "8": 1451,
+        "12": 1438
+      },
+      "unreadable": [],
+      "largest_group": 2,
+      "largest_group_example": [
+        "RoCoLe A robusta coffee leaf images dataset/Photos/C11P19E1.jpg",
+        "RoCoLe A robusta coffee leaf images dataset/Photos/C12P28E1.jpg"
+      ]
+    },
+    {
+      "dataset": "silva",
+      "label": "miner_img_xml",
+      "files": 257,
+      "exact_unique": 257,
+      "duplicate_copies": 0,
+      "perceptual_clusters": {
+        "4": 257,
+        "6": 256,
+        "8": 247,
+        "12": 109
+      },
+      "unreadable": [],
+      "largest_group": 1,
+      "largest_group_example": [
+        "miner_img_xml/miner_img_xml/bicho_mineiro73.jpg"
+      ]
+    },
+    {
+      "dataset": "silva",
+      "label": "rust_xml_image",
+      "files": 285,
+      "exact_unique": 285,
+      "duplicate_copies": 0,
+      "perceptual_clusters": {
+        "4": 284,
+        "6": 276,
+        "8": 244,
+        "12": 113
+      },
+      "unreadable": [],
+      "largest_group": 1,
+      "largest_group_example": [
+        "rust_xml_image/rust_xml_image/name120.jpg"
+      ]
+    },
+    {
+      "dataset": "uganda",
+      "label": "Health leaves",
+      "files": 1179,
+      "exact_unique": 739,
+      "duplicate_copies": 440,
+      "perceptual_clusters": {
+        "4": 721,
+        "6": 710,
+        "8": 685,
+        "12": 600
+      },
+      "unreadable": [
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_503.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_405.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_500.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_531.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_519.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_406.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_491.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_397.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_510.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_433.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_412.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_431.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_439.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_535.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_403.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_536.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_400.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_399.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_411.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_492.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_512.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_435.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_505.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_515.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_529.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_521.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_432.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_506.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_530.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_523.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_396.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_408.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_417.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_420.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_527.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_423.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_520.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_393.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_502.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_534.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_507.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_495.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_427.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_422.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_413.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_511.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_391.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_516.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_508.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_401.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_426.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_436.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_418.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_540.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_430.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_419.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_525.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_421.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_537.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_428.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_533.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_425.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_532.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_524.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_528.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_437.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_499.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_517.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_514.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_394.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_392.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_498.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_493.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_414.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_497.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_407.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_496.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_504.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_398.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_538.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_522.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_494.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_424.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_395.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_513.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_440.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_429.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_410.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_518.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_415.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_501.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_402.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_539.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_404.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_416.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_434.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_509.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_438.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_526.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_409.jpg"
+      ],
+      "largest_group": 6,
+      "largest_group_example": [
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_1079.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_1068.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/Health leaves/1_1040.jpg"
+      ]
+    },
+    {
+      "dataset": "uganda",
+      "label": "leaf rust",
+      "files": 1033,
+      "exact_unique": 617,
+      "duplicate_copies": 416,
+      "perceptual_clusters": {
+        "4": 592,
+        "6": 582,
+        "8": 568,
+        "12": 507
+      },
+      "unreadable": [
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/leaf rust/1200_43.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/leaf rust/1200_44.jpg"
+      ],
+      "largest_group": 15,
+      "largest_group_example": [
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/leaf rust/1200_72.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/leaf rust/1200_19.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/leaf rust/1200_90.jpg"
+      ]
+    },
+    {
+      "dataset": "uganda",
+      "label": "phoma",
+      "files": 1110,
+      "exact_unique": 454,
+      "duplicate_copies": 656,
+      "perceptual_clusters": {
+        "4": 446,
+        "6": 435,
+        "8": 412,
+        "12": 337
+      },
+      "unreadable": [],
+      "largest_group": 24,
+      "largest_group_example": [
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/phoma/2300_383.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/phoma/2300_654.jpg",
+        "A Machine  Learning Dataset for Classification of Common Coffee Leaf Diseases in Uganda/coffee dataset/phoma/2300_327.jpg"
+      ]
+    }
+  ],
+  "totals": {
+    "files": 65721,
+    "exact_unique": 9348,
+    "duplicate_copies": 56373,
+    "perceptual_clusters": {
+      "4": 6189,
+      "6": 5551,
+      "8": 4907,
+      "12": 3830
+    }
+  }
+}

@@ -65,13 +65,18 @@ research/data/algorithmic/systems challenge **or** a real external stakeholder w
 
 ### 2.2 Data leakage — the single largest threat to your mark
 
-Three of your four datasets contain near-duplicate structure that a naive random split will leak:
+Three of your four datasets contain near-duplicate structure that a naive random split will leak.
+**Measured on 8 Nov 2026 — this is no longer a suspicion:**
 
-| Dataset | Leakage mechanism | Correct split unit |
-|---|---|---|
-| JMuBEN / JMuBEN2 | Released images are **cropped, resized and rotation/flip-augmented** from a smaller original set | Group by original capture, or use perceptual-hash duplicate clustering |
-| BRACOL | The 2,147 symptom crops are **crops of the 1,747 whole-leaf photos** | Group leaf ↔ its crops together |
-| ROCoLE | 4 images per plant (`C##P##` filenames) | Group by plant ID |
+| Dataset | Leakage mechanism | Measured | Correct split unit |
+|---|---|---|---|
+| JMuBEN / JMuBEN2 | **93.6 % of files are byte-identical copies**; Healthy is 18,984 files → **63 distinct images** | 58,550 files → 3,757 distinct | MD5 group first, then stratify |
+| BRACOL | The 2,147 symptom crops are **crops of the 1,747 whole-leaf photos** | 1,747 files → 1,746 distinct (publisher zip truncated; repaired from HF mirror) | Group leaf ↔ its crops together |
+| ROCoLE | 4 images per plant (`C##P##`) **and 67 images duplicated across different plant IDs** | 1,560 files → 1,493 distinct | MD5 first, then plant ID |
+| Uganda | 45.5 % duplicate copies, **102 zero-byte files** | 3,322 files → 1,810 distinct | MD5 first; drop zero-byte |
+
+Full audit: `docs/14-DUPLICATION-AUDIT.md`. Every dataset in one table (downloaded, manifest-verified,
+unopened, rejected): `docs/15-MASTER-DATASET-REPORT.md`. Reproduce: `python scripts/audit_duplicates.py`.
 
 Guideline §9.3: *"Split the data before any preprocessing that learns from it, and never tune on
 the test set."* §9.3 also requires cross-validation on small datasets.
@@ -88,7 +93,7 @@ versions floating in your earlier notes:
 | JMuBEN (Rust/Cercospora/Phoma) | Mendeley `t2r6rszp5c` — https://data.mendeley.com/datasets/t2r6rszp5c/1 |
 | JMuBEN2 (Miner/Healthy) | Mendeley `tgv3zb82nd` — https://data.mendeley.com/datasets/tgv3zb82nd/1 |
 | ⚠️ The paper's "respectively" is **inverted** relative to the record titles | Cite the record IDs explicitly so a reviewer doesn't think you mislabelled |
-| Image count | **58,549** (measured, Hugging Face mirror) vs 58,555 (paper). Record which one you used and why |
+| Image count | **58,550 files → 3,757 distinct images** (measured from the archives, 8 Nov 2026). The paper's 58,555 and the mirrors' 58,549 are file counts. See `docs/14-DUPLICATION-AUDIT.md` |
 | BRACOL | https://data.mendeley.com/datasets/yy2k5y8mxg/1 (doi:10.17632/yy2k5y8mxg.1) — authors Krohling, Esgario, Ventura (UFES) |
 | ⚠️ PeerJ cs-3386 cites BRACOL with the **RoCoLe** DOI | Do not propagate that error |
 | BRACOL counts | 1,747 whole leaves + 2,147 symptom crops (Mendeley card) vs 2,722 (Omdena mirror). **Count the files yourself** and state which you used |

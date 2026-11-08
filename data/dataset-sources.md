@@ -16,6 +16,15 @@
 > **Ethiopian dataset of 12,000 images** exists on Kaggle and is the only Cercospora set we can
 > verify and hold out. The three-tier evidence scale (T1 verified twice … T4 claimed only) is defined
 > in §0 of that file. **This registry keeps the provenance; that file keeps the count.**
+>
+> ### ⚠️ Then on 8 November 2026 the archives were opened
+>
+> Six archives were downloaded and every image hashed. **JMuBEN + JMuBEN2 contain 58,550 files but
+> only 3,757 distinct images (93.6 % are byte-identical copies).** The Healthy class is 18,984 files
+> and 63 distinct images. Uganda has 3,322 files, **1,810 distinct** and **102 zero-byte files**.
+> RoCoLe has 67 images duplicated across different plant IDs. See
+> **`docs/14-DUPLICATION-AUDIT.md`** for the table, the method and the proof. Any count below that is
+> a **file** count must be read as such, and the split groups by MD5 before anything else.
 
 ## Download rules
 
@@ -72,11 +81,24 @@
 | The Kaggle mirror (Data Explorer) | 7,681 | 8,336 | 6,571 | ~17,000 | ~19,000 | ~58,500 |
 | The Hugging Face mirror (machine-readable API) | **7,681** | **8,336** | **6,571** | **16,978** | **18,983** | **58,549** |
 
-**Decision:** the group uses the **Hugging Face figures (58,549)** as the reference count,
-because they are the only ones obtainable from a machine-readable API and can be independently
-reproduced by anyone. The six-image discrepancy against the paper is recorded in the datasheet.
-**Hayredin must re-count the files after download and record what is actually present** — the
-datasheet reports the observed count, not the published one.
+**Decision:** the group uses the **observed archive counts (58,550 files)** as the reference *file*
+count, because they are the only ones counted from the publisher's own bytes. The mirrors report
+58,549 (one file short) and the paper reports 58,555 (a rounded/estimated figure). All three are
+recorded in the datasheet.
+
+**But the number that goes in the report is the distinct-image count, not the file count:**
+
+| Class | Files | Distinct images |
+|---|---:|---:|
+| Leaf rust | 8,336 | 1,042 |
+| Cercospora | 7,681 | 322 |
+| Phoma | 6,571 | 691 |
+| Miner | 16,978 | 1,639 |
+| Healthy | 18,984 | 63 |
+| **Total** | **58,550** | **3,757** |
+
+Counted 8 Nov 2026 from `t2r6rszp5c-1.zip` + `tgv3zb82nd-1.zip`, MD5 over every file. Proof and
+caveats in `docs/14-DUPLICATION-AUDIT.md`.
 
 > The paper's Table 1 also contains a typo: the fifth row is labelled "Rust 6572" where it
 > means "Phoma 6572". The abstract has it right.
@@ -132,7 +154,10 @@ publisher's licence.** Three of these are wrong, and one is a genuine trap.
 | **Version / date** | v1, 6 November 2019 |
 | **Licence** | CC BY 4.0 |
 | **Archive** | One file, `BRACOL_coffee_leaf_ images_datasets.zip` (note the stray double space in the name), 164,516,964 bytes |
-| **Counts** | **1,747 whole-leaf photographs** and **2,147 cropped symptom images**. **⚠️ The Omdena mirror documents 2,722 symptom images.** The group counts the files after download and states which figure it used. |
+| **⚠️ The publisher's file is truncated** | The Mendeley archive stops at image `688.jpg`: **1,402 of 1,747** images, no zip central directory. Two independent downloads are byte-identical, and the SHA-256 matches Mendeley's own manifest (`25a2fc97…`), so the file is broken **at the source**, not in transit. |
+| **Repair** | The missing 345 images were restored from the Hugging Face mirror `luisangelico/bracol`, whose `dataset.csv` and `images/1.jpg` are byte-identical to the Mendeley release. **Now 1,747 files, 1,746 distinct, 0 unreadable.** Cite Mendeley; the mirror is a repair channel, not a separate source. |
+| **Counts — observed (8 Nov 2026)** | **1,747 whole-leaf photographs**, 210.3 MB. `dataset.csv` has 1,747 rows. The 2,147 symptom crops are **not** in this archive — it ships the leaf images plus labels only. |
+| **Class encoding in `dataset.csv`** | `predominant_stress`: **0 = healthy (272) · 1 = leaf miner (387) · 2 = leaf rust (531) · 3 = phoma (348) · 4 = cercospora (147) · 5 = mixed infection (62)**. Only the 1,685 single-label rows are usable for 5-class training; the 62 mixed rows need a separate label or exclusion. |
 | **Classes** | leaf miner, leaf rust, brown leaf spot (Phoma), cercospora leaf spot, healthy |
 | **Collection** | Santa Maria de Marechal Floreano, Espírito Santo, Brazil, across different times of the year. **Exactly five phones:** ASUS Zenfone 2, Xiaomi Redmi 5A, Xiaomi S2, Galaxy S8, iPhone 6S. The **abaxial (lower) leaf side**, on a white background, partially controlled conditions. "The acquisition of the images was done without much criterion to make the dataset more heterogeneous." Labelling assisted by an expert. |
 | **Severity bands** | On the leaf dataset, computed from segmentation masks: healthy < 0.1 %; very low 0.1–5 %; low 5–10 %; high 10–15 %; very high > 15 % |
@@ -151,12 +176,12 @@ publisher's licence.** Three of these are wrong, and one is a genuine trap.
 | **DOI** | 10.17632/c5yvn32dzg.2 |
 | **Version / date** | v2, 17 May 2019 |
 | **Licence** | CC BY 4.0 |
-| **Counts** | **1,560** images = 4 views × 390 plants |
+| **Counts** | **1,560** images = 4 views × 390 plants. **1,493 distinct** (67 byte-identical duplicates, counted 8 Nov 2026). |
 | **Classes** | healthy 791 · red spider mite 167 · rust L1 344 / L2 166 / L3 62 / L4 30 |
 | **Collection** | 5 MP smartphone, f/2.2 autofocus, working distance 200–300 mm, no zoom. Cloudy, sunny and windy days; backgrounds of other plants and weeds; upper and back leaf sides. CIIDEA, ESPAM MFL, Calceta, Manabí, Ecuador (−0.834206, −80.177159). Rust severity by the OIRSA/LANREF method. |
 | **Annotations** | Labelbox web tool — object segmentation + classification; export to JSON, CSV, COCO, VOC, XLSX |
 | **Verification** | ✅ Fetched 21 Oct 2026 |
-| **⚠️ Leakage** | **Split by plant ID** (`C##P##`), never by image. Four near-duplicate views of one leaf otherwise land in both partitions. |
+| **⚠️ Leakage** | **Split by plant ID** (`C##P##`), never by image. Four near-duplicate views of one leaf otherwise land in both partitions. **⚠️ The 67 duplicates are cross-plant**: e.g. `C11P19E1.jpg` = `C12P28E1.jpg`. A plant-level split alone still leaks them — deduplicate by MD5 *before* assigning plants to folds. See `docs/14-DUPLICATION-AUDIT.md` §5. |
 | **⚠️ Taxonomy** | Has red spider mite (a pest) and four rust severity levels. Collapse L1–L4 → `rust`. **Red spider mite is NOT leaf miner** — it must be an `unsupported` class. |
 | **⚠️ Note** | The Kaggle mirror `nirmalsankalana/rocole-a-robusta-coffee-leaf-images-dataset` lists the licence as MIT — **incorrect**; the source is CC BY 4.0. It is classification-only with **no annotations** and its folder names are not fully verifiable. Use the Mendeley record. |
 
@@ -171,11 +196,11 @@ publisher's licence.** Three of these are wrong, and one is a genuine trap.
 | **Version / date** | v1, 7 February 2025 |
 | **Licence** | CC BY 4.0 |
 | **Counts — published** | **3,312** images, JPEG 256×256 — Healthy 1,179 / Coffee Leaf Rust 1,023 / Phoma 1,110 |
-| **Counts — observed (7 Nov 2026)** | **3,322 JPG** — Healthy **1,179** / CLR **1,033** / Phoma **1,110**. **The CLR class has ten more files than the description claims.** Tier T2 (Mendeley file manifest). |
+| **Counts — observed (8 Nov 2026)** | **3,322 files** — Healthy **1,179** / CLR **1,033** / Phoma **1,110**. **But only 1,810 are distinct images, and 102 files are zero bytes** (Healthy 100, CLR 2). Usable: Healthy **739** / CLR **617** / Phoma **454**. The CLR class has ten more files than the description claims; the "duplicates removed" claim in the description is **false**. |
 | **Collection** | Smartphone on Ugandan farms; varying light (daylight and low light); leaves at early, medium and advanced growth stages. Duplicates removed; rotation, flipping and brightness augmentation applied. |
-| **Verification** | ✅ Fetched 21 Oct 2026 · ✅ files counted 7 Nov 2026 |
-| **Role in the project** | **The most valuable single dataset for the project.** It is African, from real farms, with a different camera and a different protocol — a genuine domain shift from Kenya's curated JMuBEN. It tests Rust, Phoma and Healthy. It cannot test Cercospora or Miner. |
-| **⚠️** | The augmentation was already applied by the publishers, so the "duplicates removed" claim must be verified independently by the group's own pHash clustering. |
+| **Verification** | ✅ Fetched 21 Oct 2026 · ✅ files counted and hashed 8 Nov 2026 |
+| **Role in the project** | **The most valuable single dataset for the project.** It is African, from real farms, with a different camera and a different protocol — a genuine domain shift from Kenya's curated JMuBEN. It tests Rust, Phoma and Healthy. It cannot test Cercospora or Miner. **Use 1,810, not 3,322.** |
+| **⚠️** | The augmentation was already applied by the publishers, and 45.5 % of the files are byte-identical copies. Drop the 102 zero-byte files first; then group by MD5. Proof in `docs/14-DUPLICATION-AUDIT.md` §4. |
 
 #### A.7.1 The two larger Uganda releases — this registry missed them
 
@@ -316,14 +341,18 @@ and a reviewer may otherwise ask "did you consider X?".
 
 ## C. Final corpus plan
 
-| Purpose | Datasets | Classes covered |
-|---|---|---|
-| **Training** (headline model) | JMuBEN + JMuBEN2 (58,549) (+ BRACOL as the second Arabica source) | All 5 |
-| **Training** (ablation variant B) | The above **+ Uganda original (3,322, CC BY 4.0)** | All 5, with African field data added |
-| **Research-only ablation** | Uganda augmented (26,335, **CC BY-NC-SA 4.0**) | **Non-commercial.** Report it as an ablation, never ship a model trained on it. |
-| **External evaluation — African** | Uganda Mendeley (3,322) · **Ethiopian `test/` split (1,200)** | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only Cercospora set we can verify and hold out |
-| **External evaluation — other** | RoCoLe (1,560) · Silva (542) · Saposoa (1,500) · CoffeeLeaf-CO (2,315) | Rust, Miner, Healthy |
+| Purpose | Datasets | Distinct images | Classes covered |
+|---|---|---|---|
+| **Training** (headline model) | JMuBEN + JMuBEN2 (**3,757 distinct / 58,550 files**) + BRACOL (1,747 leaves) | ~5,500 | All 5 — but Healthy is thin (62 distinct from JMuBEN), so healthy comes from BRACOL + Uganda |
+| **Training** (ablation variant B) | The above **+ Uganda original (1,810 distinct / 3,322 files, CC BY 4.0)** | ~7,300 | All 5, with African field data added |
+| **Research-only ablation** | Uganda augmented (26,335 files, **CC BY-NC-SA 4.0**) | not deduplicated | **Non-commercial.** Report it as an ablation, never ship a model trained on it. |
+| **External evaluation — African** | Uganda Mendeley (**1,810**) · **Ethiopian `test/` split (1,200 files, ~1,200 unique)** | ~3,000 | Rust, Phoma, Healthy, **Cercospora** — the Ethiopian test split is the only Cercospora set we can verify and hold out |
+| **External evaluation — other** | RoCoLe (**1,493 distinct** / 1,560) · Silva (542) · Saposoa (1,500) · CoffeeLeaf-CO (2,315) | ~5,850 | Rust, Miner, Healthy |
 | **Optional — ★4 only** | dvelaren CLR (4,398) | rust severity, longitudinal |
+
+**⚠️ Deduplicate before splitting.** 93.6 % of the JMuBEN files are byte-identical copies and
+45.5 % of Uganda's are. The split groups by MD5 **first**; the manifest records the effective
+sample size. See `docs/14-DUPLICATION-AUDIT.md`.
 
 **⚠️ Licence rule for a product.** The headline model must be trainable on CC BY 4.0 / CC0 data
 only. The augmented Uganda mirror is **CC BY-NC-SA 4.0**; it is excluded from the shipped model and
