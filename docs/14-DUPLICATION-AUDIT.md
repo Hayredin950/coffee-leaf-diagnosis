@@ -121,6 +121,19 @@ The same photograph appears under **two different plant IDs**. RoCoLe's protocol
 split still puts one copy in train and the other in test. Deduplicate by hash
 **before** assigning plants to folds.
 
+**27 of those 67 copies carry contradictory labels** — the same bytes are
+`healthy` in one row and `red_spider_mite` in another, or `rust_level_1` vs
+`rust_level_2`:
+
+```
+C12P36E1.jpg (healthy)  == C11P23E1.jpg (red_spider_mite)
+C11P26H2.jpg (rust L1)  == C11P14H2.jpg (rust L2)
+C12P25E2.jpg (rust L1)  == C11P15E2.jpg (rust L2)
+```
+
+Per-class distinct: healthy **759**, rust **594**, mite **167**. Keep one copy
+per MD5 and record which label was kept.
+
 Silva is clean: 542 files, 542 unique, no unreadable files.
 
 ---

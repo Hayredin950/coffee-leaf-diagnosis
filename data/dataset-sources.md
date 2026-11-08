@@ -176,7 +176,7 @@ publisher's licence.** Three of these are wrong, and one is a genuine trap.
 | **DOI** | 10.17632/c5yvn32dzg.2 |
 | **Version / date** | v2, 17 May 2019 |
 | **Licence** | CC BY 4.0 |
-| **Counts** | **1,560** images = 4 views × 390 plants. **1,493 distinct** (67 byte-identical duplicates, counted 8 Nov 2026). |
+| **Counts** | **1,560** images = 4 views × 390 plants. **1,493 distinct** (67 byte-identical duplicates, counted 8 Nov 2026). Per-class distinct: healthy **759**, rust **594**, mite **167**. **27 of the 67 duplicates carry contradictory labels** (e.g. `C12P36E1.jpg` healthy = `C11P23E1.jpg` red_spider_mite). |
 | **Classes** | healthy 791 · red spider mite 167 · rust L1 344 / L2 166 / L3 62 / L4 30 |
 | **Collection** | 5 MP smartphone, f/2.2 autofocus, working distance 200–300 mm, no zoom. Cloudy, sunny and windy days; backgrounds of other plants and weeds; upper and back leaf sides. CIIDEA, ESPAM MFL, Calceta, Manabí, Ecuador (−0.834206, −80.177159). Rust severity by the OIRSA/LANREF method. |
 | **Annotations** | Labelbox web tool — object segmentation + classification; export to JSON, CSV, COCO, VOC, XLSX |

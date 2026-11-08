@@ -10,6 +10,7 @@ One document, every dataset. It separates four things the field normally mixes t
 4. whether we are **allowed to ship** a model trained on it.
 
 Everything below is reproducible from the URLs, hashes and commands in §7.
+**In a hurry? The one-page visual version is `docs/16-DATASET-CHEATSHEET.md`.**
 
 ---
 
@@ -160,6 +161,18 @@ C12P36E1.jpg == C11P23E1.jpg
 A plant-level split still puts one copy in train and the other in test. Deduplicate by MD5 **before**
 assigning plants to folds.
 
+**27 of the 67 duplicates carry contradictory labels** — the same bytes are `healthy` in one row and
+`red_spider_mite` in another, or `rust_level_1` in one and `rust_level_2` in another. Examples:
+
+```
+C12P36E1.jpg (healthy)  == C11P23E1.jpg (red_spider_mite)
+C11P26H2.jpg (rust L1)  == C11P14H2.jpg (rust L2)
+C12P25E2.jpg (rust L1)  == C11P15E2.jpg (rust L2)
+```
+
+So RoCoLe is not just a leakage trap; it has a **label-integrity** defect. Keep one copy per MD5 and
+record which label was kept. Per-class distinct: healthy **759**, rust **594**, mite **167**.
+
 ### 2.5 Silva — clean
 
 542 files, 542 distinct, 0 unreadable, 542 XML annotations. The only fully clean archive in the set.
@@ -173,7 +186,7 @@ assigning plants to folds.
    accuracy sitting next to 1.9 % external rust recall.
 2. **The Healthy class is one leaf.** 18,984 files → 63 distinct files (62 decodable), visually a
    single leaf.
-   Healthy must come from BRACOL (272), Uganda (739) and RoCoLe (780), not from JMuBEN.
+   Healthy must come from BRACOL (272), Uganda (739) and RoCoLe (759), not from JMuBEN.
 3. **BRACOL's official archive is truncated.** Detected by SHA-256 against the publisher's own
    manifest; repaired from a verified mirror. 1,747/1,747 now, all decodable.
 4. **Uganda has 102 zero-byte files and 45.5 % duplicates.** Usable count is 1,810, not 3,322.

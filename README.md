@@ -20,7 +20,7 @@
 | **Need the content for the shared Google Doc** | | `docs/10-GOOGLE-DOC-PLAN.md` — the six headings, paste-ready | |
 | **Need to be ready to explain or defend the whole project** | **`docs/11-BRIEFING.md`** | | |
 | **Need to prove a dataset count, or answer "how many images, before preprocessing?"** | **`docs/12-DATASET-VERIFICATION.md`** + `notebooks/00-dataset-verification.ipynb` (run guide: `notebooks/README.md`) | | |
-| **Need the whole dataset picture in one table (downloaded, manifest-verified, unopened, rejected)** | **`docs/15-MASTER-DATASET-REPORT.md`** | **`docs/14-DUPLICATION-AUDIT.md`** (files ≠ distinct images) | |
+| **Need the whole dataset picture in one table (downloaded, manifest-verified, unopened, rejected)** | **`docs/15-MASTER-DATASET-REPORT.md`** | **`docs/16-DATASET-CHEATSHEET.md`** (one page, figures) · **`docs/14-DUPLICATION-AUDIT.md`** (files ≠ distinct images) | |
 | **Want to know why this isn't an ordinary project** | | | `docs/06-DIFFERENTIATION.md` → `docs/07-IMPACT-AND-SCALE.md` |
 | **Are preparing for the defense** | | | `docs/appendices/Appendix-D-N-Defense.md` + `docs/defense/slides-and-demo.md` |
 

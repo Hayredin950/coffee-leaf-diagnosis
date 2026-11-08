@@ -98,7 +98,7 @@ than Healthy**. Consequences the group must handle and report:
   reported for every class on every dataset**, not just the averages;
 - **Healthy cannot be learned from JMuBEN.** 62 usable distinct healthy images is below the
   threshold at which a 5-class model can generalise; healthy must be sourced from BRACOL (1,747
-  leaves, all five classes), Uganda (739 distinct) and RoCoLe (780). This is a corpus-design
+  leaves, all five classes), Uganda (739 distinct) and RoCoLe (759). This is a corpus-design
   decision, not a footnote.
 
 [OBSERVE] the observed distribution after the union with BRACOL, and record the change.
