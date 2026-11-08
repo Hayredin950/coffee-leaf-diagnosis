@@ -31,8 +31,8 @@
 1. **Cite the original, not the mirror.** The Kaggle and Hugging Face mirrors carry incorrect
    licence labels ("Unknown", "MIT", "CC BY-SA 4.0") that contradict the upstream CC BY 4.0
    record. Always attribute the Mendeley or Zenodo record.
-2. **Do not commit the data.** The repository stays under 50 MB (NFR-32). `data/README.md`
-   carries these URLs and `scripts/prepare_data.py` reproduces the split from them.
+2. **Do not commit the data.** The repository stays under 50 MB (NFR-32). This registry carries the
+   URLs and `scripts/prepare_data.py` reproduces the split from them.
 3. **Record the checksum** of every archive in `data/dataset-sources.md` after downloading, so
    the corpus is verifiable later.
 4. **Respect the terms of each platform.** Mendeley, Zenodo and Kaggle all require a free
